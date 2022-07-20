@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ActionPlan" representedClassName="ActionPlan" syncable="YES">
+        <attribute name="actionDesc" optional="YES" attributeType="String"/>
+        <attribute name="actionName" optional="YES" attributeType="String"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="learningResources" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="successParameter" optional="YES" attributeType="String"/>
+        <relationship name="requirements" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Requirement" inverseName="actionPlan" inverseEntity="Requirement"/>
+    </entity>
+    <entity name="Goal" representedClassName="Goal" syncable="YES">
+        <attribute name="goalDesc" optional="YES" attributeType="String"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
+        <relationship name="requirement" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Requirement" inverseName="goal" inverseEntity="Requirement"/>
+    </entity>
+    <entity name="Requirement" representedClassName="Requirement" syncable="YES">
+        <attribute name="requirementTitle" optional="YES" attributeType="String"/>
+        <relationship name="actionPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActionPlan" inverseName="requirements" inverseEntity="ActionPlan"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="requirement" inverseEntity="Goal"/>
+    </entity>
+    <elements>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Requirement" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="ActionPlan" positionX="-36" positionY="9" width="128" height="134"/>
+    </elements>
 </model>

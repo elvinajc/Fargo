@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A419BA872887FEB30073E723 /* ActionPlan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA812887FEB30073E723 /* ActionPlan+CoreDataClass.swift */; };
+		A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA822887FEB30073E723 /* ActionPlan+CoreDataProperties.swift */; };
+		A419BA892887FEB30073E723 /* Requirement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA832887FEB30073E723 /* Requirement+CoreDataClass.swift */; };
+		A419BA8A2887FEB30073E723 /* Requirement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA842887FEB30073E723 /* Requirement+CoreDataProperties.swift */; };
+		A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA852887FEB30073E723 /* Goal+CoreDataClass.swift */; };
+		A419BA8C2887FEB30073E723 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA862887FEB30073E723 /* Goal+CoreDataProperties.swift */; };
+		A419BA97288804B00073E723 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA96288804B00073E723 /* ColorPallete.swift */; };
+		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
+		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
+		A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */; };
+		A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49DE2DF288862750074CAF3 /* TabBar.storyboard */; };
+		A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2E1288863750074CAF3 /* TabBarVC.swift */; };
+		A4AAB6BD288866230010782C /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BC288866230010782C /* PlanVC.swift */; };
+		A4AAB6BF2888662D0010782C /* MyGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BE2888662D0010782C /* MyGoalVC.swift */; };
+		A4AAB6C3288866470010782C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C2288866470010782C /* Plan.storyboard */; };
+		A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C4288866510010782C /* MyGoal.storyboard */; };
 		A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F428879BDC00D7253D /* AppDelegate.swift */; };
 		A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F628879BDC00D7253D /* SceneDelegate.swift */; };
-		A4F768F928879BDC00D7253D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F828879BDC00D7253D /* ViewController.swift */; };
-		A4F768FC28879BDC00D7253D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F768FA28879BDC00D7253D /* Main.storyboard */; };
 		A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4F768FD28879BDC00D7253D /* Fargo.xcdatamodeld */; };
 		A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F7690028879BDF00D7253D /* Assets.xcassets */; };
 		A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */; };
+		A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7690F28879ED900D7253D /* GoalSettingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A419BA812887FEB30073E723 /* ActionPlan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionPlan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A419BA822887FEB30073E723 /* ActionPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A419BA832887FEB30073E723 /* Requirement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requirement+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A419BA842887FEB30073E723 /* Requirement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requirement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A419BA852887FEB30073E723 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A419BA862887FEB30073E723 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A419BA96288804B00073E723 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
+		A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
+		A49DE2DF288862750074CAF3 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		A49DE2E1288863750074CAF3 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		A4AAB6BC288866230010782C /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
+		A4AAB6BE2888662D0010782C /* MyGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalVC.swift; sourceTree = "<group>"; };
+		A4AAB6C2288866470010782C /* Plan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
+		A4AAB6C4288866510010782C /* MyGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGoal.storyboard; sourceTree = "<group>"; };
 		A4F768F128879BDC00D7253D /* Fargo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fargo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F768F428879BDC00D7253D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F768F628879BDC00D7253D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4F768F828879BDC00D7253D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4F768FB28879BDC00D7253D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4F768FE28879BDC00D7253D /* Fargo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fargo.xcdatamodel; sourceTree = "<group>"; };
 		A4F7690028879BDF00D7253D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4F7690328879BDF00D7253D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4F7690528879BDF00D7253D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4F7690F28879ED900D7253D /* GoalSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSettingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,9 +69,145 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A419BA8D2887FF780073E723 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA852887FEB30073E723 /* Goal+CoreDataClass.swift */,
+				A419BA862887FEB30073E723 /* Goal+CoreDataProperties.swift */,
+				A419BA832887FEB30073E723 /* Requirement+CoreDataClass.swift */,
+				A419BA842887FEB30073E723 /* Requirement+CoreDataProperties.swift */,
+				A419BA812887FEB30073E723 /* ActionPlan+CoreDataClass.swift */,
+				A419BA822887FEB30073E723 /* ActionPlan+CoreDataProperties.swift */,
+			);
+			name = CoreDataModel;
+			path = ../CoreDataModel;
+			sourceTree = "<group>";
+		};
+		A419BA95288804330073E723 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA96288804B00073E723 /* ColorPallete.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		A419BA9A2888077F0073E723 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA982888077A0073E723 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		A4AAB6B6288864860010782C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A49DE2DF288862750074CAF3 /* TabBar.storyboard */,
+				A49DE2E1288863750074CAF3 /* TabBarVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A4AAB6B7288864AE0010782C /* GoalSetting */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6B9288864D40010782C /* View */,
+				A4AAB6BA288864F80010782C /* Controller */,
+				A4AAB6B8288864C70010782C /* Extension */,
+			);
+			path = GoalSetting;
+			sourceTree = "<group>";
+		};
+		A4AAB6B8288864C70010782C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A4AAB6B9288864D40010782C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4AAB6BA288864F80010782C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4F7690F28879ED900D7253D /* GoalSettingVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AAB6BB288866040010782C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A4F768F428879BDC00D7253D /* AppDelegate.swift */,
+				A4F768F628879BDC00D7253D /* SceneDelegate.swift */,
+				A4F7690028879BDF00D7253D /* Assets.xcassets */,
+				A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A4AAB6C62888665E0010782C /* MyGoal */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6C7288866660010782C /* View */,
+				A4AAB6C8288866750010782C /* Controller */,
+			);
+			path = MyGoal;
+			sourceTree = "<group>";
+		};
+		A4AAB6C7288866660010782C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6C4288866510010782C /* MyGoal.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4AAB6C8288866750010782C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6BE2888662D0010782C /* MyGoalVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AAB6C9288866D80010782C /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6CB288866F40010782C /* View */,
+				A4AAB6CA288866EA0010782C /* Controller */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		A4AAB6CA288866EA0010782C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6BC288866230010782C /* PlanVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AAB6CB288866F40010782C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6C2288866470010782C /* Plan.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A4F768E828879BDC00D7253D = {
 			isa = PBXGroup;
 			children = (
+				A4AAB6C62888665E0010782C /* MyGoal */,
+				A4AAB6C9288866D80010782C /* Plan */,
 				A4F768F328879BDC00D7253D /* Fargo */,
 				A4F768F228879BDC00D7253D /* Products */,
 			);
@@ -58,12 +224,12 @@
 		A4F768F328879BDC00D7253D /* Fargo */ = {
 			isa = PBXGroup;
 			children = (
-				A4F768F428879BDC00D7253D /* AppDelegate.swift */,
-				A4F768F628879BDC00D7253D /* SceneDelegate.swift */,
-				A4F768F828879BDC00D7253D /* ViewController.swift */,
-				A4F768FA28879BDC00D7253D /* Main.storyboard */,
-				A4F7690028879BDF00D7253D /* Assets.xcassets */,
-				A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */,
+				A419BA95288804330073E723 /* Themes */,
+				A419BA8D2887FF780073E723 /* CoreDataModel */,
+				A419BA9A2888077F0073E723 /* CoreDataManager */,
+				A4AAB6B6288864860010782C /* TabBar */,
+				A4AAB6B7288864AE0010782C /* GoalSetting */,
+				A4AAB6BB288866040010782C /* Utilities */,
 				A4F7690528879BDF00D7253D /* Info.plist */,
 				A4F768FD28879BDC00D7253D /* Fargo.xcdatamodeld */,
 			);
@@ -128,9 +294,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */,
+				A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */,
 				A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */,
 				A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */,
-				A4F768FC28879BDC00D7253D /* Main.storyboard in Resources */,
+				A4AAB6C3288866470010782C /* Plan.storyboard in Resources */,
+				A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +310,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4F768F928879BDC00D7253D /* ViewController.swift in Sources */,
+				A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */,
+				A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */,
+				A419BA8A2887FEB30073E723 /* Requirement+CoreDataProperties.swift in Sources */,
+				A419BA8C2887FEB30073E723 /* Goal+CoreDataProperties.swift in Sources */,
+				A419BA97288804B00073E723 /* ColorPallete.swift in Sources */,
+				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
+				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
+				A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */,
+				A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */,
 				A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */,
+				A4AAB6BF2888662D0010782C /* MyGoalVC.swift in Sources */,
+				A419BA872887FEB30073E723 /* ActionPlan+CoreDataClass.swift in Sources */,
 				A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */,
+				A4AAB6BD288866230010782C /* PlanVC.swift in Sources */,
+				A419BA892887FEB30073E723 /* Requirement+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A4F768FA28879BDC00D7253D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4F768FB28879BDC00D7253D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,9 +467,10 @@
 				DEVELOPMENT_TEAM = BQD2U9363F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fargo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fargo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = GoalSetting;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,9 +496,10 @@
 				DEVELOPMENT_TEAM = BQD2U9363F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fargo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fargo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = GoalSetting;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

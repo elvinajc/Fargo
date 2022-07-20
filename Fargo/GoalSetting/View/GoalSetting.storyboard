@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R6C-zg-eHQ">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Goal Setting-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="GoalSettingVC" customModule="Fargo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qQT-pM-SCb">
+                                <rect key="frame" x="15" y="107" width="350" height="424"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal / career path you want to achieve " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bwx-Q8-RX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1411764771" green="0.33725491169999999" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. I want to be an iOS Developer at ABCDX company" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-5V-nYp">
+                                        <rect key="frame" x="0.0" y="49" width="350" height="133"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="133" id="0sN-tB-IuQ"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.62745100259999997" green="0.62745100259999997" blue="0.62745100259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why you want to achieve that goals / career?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-fI-ktL">
+                                        <rect key="frame" x="0.0" y="207" width="350" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="BVU-cD-TLg"/>
+                                            <constraint firstAttribute="height" constant="59" id="wnX-22-fTw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1411764771" green="0.33725491169999999" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. I want to get a new experience, get many connections, get big salary to buy a new house" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Jw-mO-SJg">
+                                        <rect key="frame" x="0.0" y="291" width="350" height="133"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" red="0.62745100259999997" green="0.62745100259999997" blue="0.62745100259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.92549026010000002" green="0.89019608500000003" blue="0.87058818339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qQT-pM-SCb" secondAttribute="bottom" constant="279" id="I8Z-Ke-4LN"/>
+                            <constraint firstItem="qQT-pM-SCb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="19" id="aix-Ym-rHR"/>
+                            <constraint firstItem="qQT-pM-SCb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="r53-aQ-M5X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Goal Setting" id="x9f-48-zCR"/>
+                    <connections>
+                        <outlet property="goalField" destination="gzB-5V-nYp" id="46a-fu-S3Y"/>
+                        <outlet property="goalQuestLabel" destination="Bwx-Q8-RX0" id="rAv-Ie-tFa"/>
+                        <outlet property="reasonField" destination="9Jw-mO-SJg" id="SPW-LC-XRg"/>
+                        <outlet property="reasonLabel" destination="K2x-fI-ktL" id="eQc-D4-EMq"/>
+                        <segue destination="RjF-tO-uyo" kind="presentation" identifier="goToTabBar" modalPresentationStyle="fullScreen" id="nrK-QD-L8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="20.616113744075829"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="hgW-XU-ixl">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarSB" storyboardName="TabBar" id="RjF-tO-uyo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Bhk-ha-wKd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjC-SQ-3X6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="-4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hh0-TO-8pA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R6C-zg-eHQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n76-Ia-lDm">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="I61-3S-gN3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PUb-Zs-rZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
