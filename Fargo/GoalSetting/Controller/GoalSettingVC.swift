@@ -33,9 +33,6 @@ class GoalSettingVC: UIViewController {
         
         configureUI()
         
-        //add done button to keyboard (goalfield & reasonfield)
-        goalField.addDoneButtonOnKeyboard()
-        reasonField.addDoneButtonOnKeyboard()
     }
 
     //Function
@@ -43,7 +40,11 @@ class GoalSettingVC: UIViewController {
         confNavBar()
         confTextView()
         addGestureRecDismissKeyboard()
-
+        
+        //add done button to keyboard (goalfield & reasonfield)
+        goalField.addDoneButtonOnKeyboard()
+        reasonField.addDoneButtonOnKeyboard()
+    
         
     }
     
@@ -54,7 +55,7 @@ class GoalSettingVC: UIViewController {
     }
 
     @objc func done() {
-        //SAVE GOAL & REASON KE CORE DATA
+        //MARK: -- SAVE GOAL & REASON KE CORE DATA
         print("doness")
         
         print(goalField.text as Any)

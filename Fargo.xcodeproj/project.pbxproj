@@ -101,6 +101,14 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
+		A4A8F81628892526004F271C /* Default Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8F81428891E85004F271C /* UITextViewExt.swift */,
+			);
+			path = "Default Extension";
+			sourceTree = "<group>";
+		};
 		A4AAB6B6288864860010782C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */,
-				A4A8F81428891E85004F271C /* UITextViewExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				A419BA95288804330073E723 /* Themes */,
+				A4A8F81628892526004F271C /* Default Extension */,
 				A419BA8D2887FF780073E723 /* CoreDataModel */,
 				A419BA9A2888077F0073E723 /* CoreDataManager */,
 				A4AAB6B6288864860010782C /* TabBar */,

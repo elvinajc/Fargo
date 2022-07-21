@@ -8,7 +8,16 @@
 import UIKit
 
 class MyGoalVC: UIViewController {
-
+    
+    //Properties
+    
+//    @IBOutlet weak var progressView: UIView!
+//    
+//    @IBOutlet weak var goalSettingButton: UIButton!
+//    
+//    @IBOutlet weak var goalLabel: UILabel!
+//    @IBOutlet weak var reasonLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +29,9 @@ class MyGoalVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
 
-
+//    @IBAction func goalSettingButtonAct(_ sender: UIButton) {
+//        
+////        self.performSegue(withIdentifier: "goToGoalSetting", sender: self)
+//    }
+    
 }
