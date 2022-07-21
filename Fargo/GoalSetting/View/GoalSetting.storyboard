@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R6C-zg-eHQ">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,38 +13,44 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="GoalSettingVC" customModule="Fargo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="49O-Og-2jf">
-                                <rect key="frame" x="12" y="63" width="350" height="342"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4jh-kE-bPS">
+                                <rect key="frame" x="16" y="100" width="358" height="387"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal / career path you want to achieve " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwx-Q8-RX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal / career path you want to achieve " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bwx-Q8-RX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.1411764771" green="0.33725491169999999" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. I want to be an iOS Developer at ABCDX company" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-5V-nYp">
-                                        <rect key="frame" x="0.0" y="40.5" width="350" height="87.5"/>
+                                    <textView clipsSubviews="YES" tag="1" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uow-rM-DSV">
+                                        <rect key="frame" x="0.0" y="40.333333333333343" width="358" height="133"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" red="0.62745100259999997" green="0.62745100259999997" blue="0.62745100259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="133" id="OQW-qA-mAW"/>
+                                            <constraint firstAttribute="width" constant="358" id="SDB-BV-7SQ"/>
+                                            <constraint firstAttribute="width" secondItem="uow-rM-DSV" secondAttribute="height" multiplier="358:133" id="eBc-h7-Oag"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why you want to achieve that goals / career?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-fI-ktL">
-                                        <rect key="frame" x="0.0" y="148" width="350" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why you want to achieve that goals / career?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-fI-ktL">
+                                        <rect key="frame" x="0.0" y="193.33333333333331" width="358" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.1411764771" green="0.33725491169999999" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. I want to get a new experience, get many connections, get big salary to buy a new house" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Jw-mO-SJg">
-                                        <rect key="frame" x="0.0" y="209" width="350" height="133"/>
+                                    <textView clipsSubviews="YES" tag="2" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Dz-Oht">
+                                        <rect key="frame" x="0.0" y="254" width="358" height="133"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="9Jw-mO-SJg" secondAttribute="height" multiplier="50:19" id="bRd-Od-osY"/>
+                                            <constraint firstAttribute="width" constant="358" id="5zF-UI-bIC"/>
+                                            <constraint firstAttribute="height" constant="133" id="O9U-nq-8wU"/>
                                         </constraints>
-                                        <color key="textColor" red="0.62745100259999997" green="0.62745100259999997" blue="0.62745100259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -54,24 +60,24 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92549026010000002" green="0.89019608500000003" blue="0.87058818339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="49O-Og-2jf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="0WY-jF-ELr"/>
-                            <constraint firstItem="49O-Og-2jf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="19" id="bpH-Xt-87N"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="49O-Og-2jf" secondAttribute="trailing" constant="13" id="btt-XS-tho"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="49O-Og-2jf" secondAttribute="bottom" constant="262" id="pkV-e4-9PD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4jh-kE-bPS" secondAttribute="trailing" constant="16" id="3Wx-U3-BH4"/>
+                            <constraint firstItem="4jh-kE-bPS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="12" id="ASO-dO-te5"/>
+                            <constraint firstItem="4jh-kE-bPS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Bzz-lw-oWg"/>
+                            <constraint firstItem="4jh-kE-bPS" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="PNn-o6-mZg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Goal Setting" id="x9f-48-zCR"/>
                     <connections>
-                        <outlet property="goalField" destination="gzB-5V-nYp" id="46a-fu-S3Y"/>
+                        <outlet property="goalField" destination="uow-rM-DSV" id="58j-fS-c6b"/>
                         <outlet property="goalQuestLabel" destination="Bwx-Q8-RX0" id="rAv-Ie-tFa"/>
-                        <outlet property="reasonField" destination="9Jw-mO-SJg" id="SPW-LC-XRg"/>
+                        <outlet property="reasonField" destination="aN8-Dz-Oht" id="cob-3M-S1d"/>
                         <outlet property="reasonLabel" destination="K2x-fI-ktL" id="eQc-D4-EMq"/>
                         <segue destination="RjF-tO-uyo" kind="presentation" identifier="goToTabBar" modalPresentationStyle="fullScreen" id="nrK-QD-L8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159.2" y="19.95073891625616"/>
+            <point key="canvasLocation" x="1158.4615384615383" y="19.90521327014218"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="hgW-XU-ixl">
@@ -89,7 +95,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R6C-zg-eHQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n76-Ia-lDm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -103,6 +109,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

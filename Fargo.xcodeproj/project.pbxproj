@@ -19,6 +19,7 @@
 		A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */; };
 		A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49DE2DF288862750074CAF3 /* TabBar.storyboard */; };
 		A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2E1288863750074CAF3 /* TabBarVC.swift */; };
+		A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F81428891E85004F271C /* UITextViewExt.swift */; };
 		A4AAB6BD288866230010782C /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BC288866230010782C /* PlanVC.swift */; };
 		A4AAB6BF2888662D0010782C /* MyGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BE2888662D0010782C /* MyGoalVC.swift */; };
 		A4AAB6C3288866470010782C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C2288866470010782C /* Plan.storyboard */; };
@@ -44,6 +45,7 @@
 		A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
 		A49DE2DF288862750074CAF3 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A49DE2E1288863750074CAF3 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		A4A8F81428891E85004F271C /* UITextViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExt.swift; sourceTree = "<group>"; };
 		A4AAB6BC288866230010782C /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
 		A4AAB6BE2888662D0010782C /* MyGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalVC.swift; sourceTree = "<group>"; };
 		A4AAB6C2288866470010782C /* Plan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */,
+				A4A8F81428891E85004F271C /* UITextViewExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -206,8 +209,6 @@
 		A4F768E828879BDC00D7253D = {
 			isa = PBXGroup;
 			children = (
-				A4AAB6C62888665E0010782C /* MyGoal */,
-				A4AAB6C9288866D80010782C /* Plan */,
 				A4F768F328879BDC00D7253D /* Fargo */,
 				A4F768F228879BDC00D7253D /* Products */,
 			);
@@ -229,6 +230,8 @@
 				A419BA9A2888077F0073E723 /* CoreDataManager */,
 				A4AAB6B6288864860010782C /* TabBar */,
 				A4AAB6B7288864AE0010782C /* GoalSetting */,
+				A4AAB6C62888665E0010782C /* MyGoal */,
+				A4AAB6C9288866D80010782C /* Plan */,
 				A4AAB6BB288866040010782C /* Utilities */,
 				A4F7690528879BDF00D7253D /* Info.plist */,
 				A4F768FD28879BDC00D7253D /* Fargo.xcdatamodeld */,
@@ -317,6 +320,7 @@
 				A419BA97288804B00073E723 /* ColorPallete.swift in Sources */,
 				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
+				A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */,
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
 				A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */,
 				A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */,

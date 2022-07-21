@@ -20,21 +20,30 @@ class GoalSettingVC: UIViewController {
     
     @IBOutlet weak var reasonField: UITextView!
     
-
+  //  var pickerTag: Int = 0;
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        configureUI()
-       
+        
+        //textfield delegate
         goalField.delegate = self
+        reasonField.delegate = self
+        
+        configureUI()
+        
+        //add done button to keyboard (goalfield & reasonfield)
+        goalField.addDoneButtonOnKeyboard()
+        reasonField.addDoneButtonOnKeyboard()
     }
 
     //Function
     func configureUI(){
         confNavBar()
         confTextView()
+        addGestureRecDismissKeyboard()
+
         
     }
     
@@ -48,6 +57,9 @@ class GoalSettingVC: UIViewController {
         //SAVE GOAL & REASON KE CORE DATA
         print("doness")
         
+        print(goalField.text as Any)
+        print(reasonField.text as Any)
+        
         //perform segue
         self.performSegue(withIdentifier: "goToTabBar", sender: self)
         
@@ -58,14 +70,31 @@ class GoalSettingVC: UIViewController {
         goalField.layer.cornerRadius = 8
         goalField.text =  "e.g. I want to be an iOS Developer at ABCDX company"
         goalField.textColor = .softGray
-        goalField.returnKeyType = .done
+   
         
         reasonField.tag = 2
         reasonField.layer.cornerRadius = 8
         reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
-        goalField.textColor = .softGray
-        goalField.returnKeyType = .done
+        reasonField.textColor = .softGray
+       
         
+    }
+    
+    func addGestureRecDismissKeyboard(){
+        //Looks for single or multiple taps.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 

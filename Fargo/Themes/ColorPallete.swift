@@ -21,5 +21,6 @@ extension UIColor {
     static var redTomato = UIColor(red: 0.76, green: 0.39, blue: 0.28, alpha: 1.00)
     static var lilDarkGray = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.00)
     static var softGray = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.00)
+    static var brownBorder = UIColor(red: 0.74, green: 0.71, blue: 0.71, alpha: 1.00)
 }
 

@@ -7,9 +7,9 @@
 
 import UIKit
 
-var isSelected : Bool = false
 
 extension GoalSettingVC: UITextViewDelegate{
+
     func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil {
             if textView.textColor == UIColor.lightGray {
@@ -17,15 +17,30 @@ extension GoalSettingVC: UITextViewDelegate{
             }
         }
     }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        var currentFirstResponder: UITextView?
+
+        if textView.tag == 1{
+            currentFirstResponder = goalField
+        } else if textView.tag == 2{
+            print(currentFirstResponder)
+            currentFirstResponder = reasonField
+        }
+
+        return true
+    }
+
     //  Func delegate ketika text view idea desc diedit
     func textViewDidBeginEditing(_ textView: UITextView) {
+        print(textView.tag)
         switch textView.tag {
             case 1 :
                         goalField.text = ""
                         goalField.textColor = UIColor.black
                         print(1)
                         return
-            
+
             case 2 :    reasonField.text = ""
                         reasonField.textColor = UIColor.black
                         print(2)
@@ -34,39 +49,59 @@ extension GoalSettingVC: UITextViewDelegate{
                 return
         }
         
+//                if textView == goalField{
+//                    goalField.text = ""
+//                    goalField.textColor = UIColor.black
+//                    print(1)
+//                    return
+//                }
+//                if textView == reasonField{
+//                    reasonField.text = ""
+//                    reasonField.textColor = UIColor.black
+//                    print(2)
+//                    return
+//                }
+//
     }
-
-      
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
+        
+
+    
+//    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
+//        print(textView.text); //the textView parameter is the textView where text was changed
+//    }
+    
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
         switch textView.tag {
             case 1 :     if goalField.text == "\n"{
                         goalField.resignFirstResponder()
                         }
             case 2 :   if reasonField.text == "\n"{
                         reasonField.resignFirstResponder()
+                        print("ALALALA")
                         }
             default: ""
         }
           return true
-      }
-      
+    }
+
       func textViewDidEndEditing(_ textView: UITextView) {
           if textView.text == "" {
-            
+
               switch textView.tag {
                   case 1 :       goalField.text = "e.g. I want to be an iOS Developer at ABCDX company"
-                                 goalField.textColor = UIColor.gray
+                                 goalField.textColor = UIColor.softGray
                               //   goalField.returnKeyType = .done
-                  case 2 :     reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
-                  reasonField.textColor = UIColor.softGray
-                  //  goalField.returnKeyType = .done
-                  default:
-                     ""
+                  case 2 :      reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
+                                reasonField.textColor = UIColor.softGray
+                             //  goalField.returnKeyType = .done
+                  default: ""
               }
-              
-          
-          }
+        }
       }
+
+
     
 }
