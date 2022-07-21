@@ -33,7 +33,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Voa-g1-03Y">
                                                 <rect key="frame" x="13.666666666666657" y="9.3333333333333286" width="315.66666666666674" height="147"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgd-X4-8Sa" customClass="CircleProgessView" customModule="Fargo" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgd-X4-8Sa" customClass="CircleProgressView" customModule="Fargo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="147"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
