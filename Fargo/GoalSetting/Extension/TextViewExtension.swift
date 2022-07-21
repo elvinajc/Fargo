@@ -93,10 +93,10 @@ extension GoalSettingVC: UITextViewDelegate{
               switch textView.tag {
                   case 1 :       goalField.text = "e.g. I want to be an iOS Developer at ABCDX company"
                                  goalField.textColor = UIColor.softGray
-                              //   goalField.returnKeyType = .done
+                            
                   case 2 :      reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
                                 reasonField.textColor = UIColor.softGray
-                             //  goalField.returnKeyType = .done
+                          
                   default: ""
               }
         }

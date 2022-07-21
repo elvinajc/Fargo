@@ -10,7 +10,7 @@
         <!--My Goal-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="MyGoalSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MyGoalVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyGoalSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MyGoalVC" customModule="Fargo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                                                                     </preferredSymbolConfiguration>
                                                                     <color key="baseForegroundColor" red="0.1411764771" green="0.33725491169999999" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="editBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0yS-lj-BuB"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -137,10 +140,26 @@ house.</string>
                         <color key="badgeColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="detailView" destination="Dcb-kW-8El" id="gc7-Kp-4J1"/>
+                        <outlet property="editGoalBtn" destination="bo0-BW-ecn" id="giP-4S-kiX"/>
+                        <outlet property="goalLabel" destination="nV9-BF-pnY" id="Des-Ma-7Px"/>
+                        <outlet property="progressView" destination="pnc-YF-jzp" id="kA4-tE-chv"/>
+                        <outlet property="reasonLabel" destination="PfY-4y-U2W" id="TjG-aA-elH"/>
+                        <segue destination="W30-Th-McA" kind="presentation" identifier="goToGoalSetting" modalPresentationStyle="fullScreen" id="0fJ-r4-Iue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-223.19999999999999" y="50.824587706146929"/>
+        </scene>
+        <!--GoalSetting-->
+        <scene sceneID="SfZ-09-kCt">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="goalSettingSB" storyboardName="GoalSetting" id="W30-Th-McA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AV1-4h-bGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269" y="28"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
