@@ -21,6 +21,7 @@
 		A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2E1288863750074CAF3 /* TabBarVC.swift */; };
 		A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F81428891E85004F271C /* UITextViewExt.swift */; };
 		A4A8F81828894150004F271C /* MyGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F81728894150004F271C /* MyGoalVC.swift */; };
+		A4A8F8402889634B004F271C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F83F2889634B004F271C /* CircleProgressView.swift */; };
 		A4AAB6BD288866230010782C /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BC288866230010782C /* PlanVC.swift */; };
 		A4AAB6C3288866470010782C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C2288866470010782C /* Plan.storyboard */; };
 		A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C4288866510010782C /* MyGoal.storyboard */; };
@@ -47,6 +48,7 @@
 		A49DE2E1288863750074CAF3 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A4A8F81428891E85004F271C /* UITextViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExt.swift; sourceTree = "<group>"; };
 		A4A8F81728894150004F271C /* MyGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalVC.swift; sourceTree = "<group>"; };
+		A4A8F83F2889634B004F271C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		A4AAB6BC288866230010782C /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
 		A4AAB6C2288866470010782C /* Plan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		A4AAB6C4288866510010782C /* MyGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGoal.storyboard; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A4AAB6C4288866510010782C /* MyGoal.storyboard */,
+				A4A8F83F2889634B004F271C /* CircleProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
 				A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */,
 				A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */,
+				A4A8F8402889634B004F271C /* CircleProgressView.swift in Sources */,
 				A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */,
 				A419BA872887FEB30073E723 /* ActionPlan+CoreDataClass.swift in Sources */,
 				A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */,

@@ -11,6 +11,12 @@ class MyGoalVC: UIViewController {
     
     //Properties
     @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var circleProgressView: UIView!
+    
+    @IBOutlet weak var progressPercentNumLabel: UILabel!
+    
+    
+    
     @IBOutlet weak var editGoalBtn: UIButton!
     
     @IBOutlet weak var goalLabel: UILabel!
@@ -43,8 +49,8 @@ class MyGoalVC: UIViewController {
         
         
         //Set percentLabel
-        
-        //Set progressLabel
+        //get percent data dari core data
+
     }
     
     func setRoundLabel(){
