@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p0p-js-f2E">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,30 +14,30 @@
             <objects>
                 <viewController storyboardIdentifier="PlanSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PlanVC" customModule="Fargo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requirement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-rP-dN8">
-                                <rect key="frame" x="16" y="44" width="220" height="47"/>
+                                <rect key="frame" x="16" y="44" width="259" height="47"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZu-nY-MDc">
-                                <rect key="frame" x="26.666666666666657" y="99" width="322" height="69"/>
+                                <rect key="frame" x="26.5" y="99" width="361" height="69"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mbE-mp-V7b">
-                                        <rect key="frame" x="14" y="16" width="293" height="36"/>
+                                        <rect key="frame" x="14" y="16" width="332" height="36"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqF-El-uxa">
-                                                <rect key="frame" x="0.0" y="-0.66666666666666785" width="17.333333333333332" height="37"/>
+                                                <rect key="frame" x="0.0" y="-1.5" width="17.5" height="37.5"/>
                                                 <color key="tintColor" red="0.91372549530000002" green="0.8078432083" blue="0.41176474089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <imageReference key="image" image="lightbulb.fill" catalog="system" symbolScale="default"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-aD-Hqv">
-                                                <rect key="frame" x="25.333333333333343" y="0.0" width="267.66666666666663" height="36"/>
+                                                <rect key="frame" x="25.5" y="0.0" width="306.5" height="36"/>
                                                 <string key="text">List all of requirements to achieve your goal
 e.g. Can implement core data</string>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -59,7 +59,15 @@ e.g. Can implement core data</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VF-Gf-Xzi">
-                                <rect key="frame" x="0.0" y="191" width="375" height="621"/>
+                                <rect key="frame" x="0.0" y="191" width="414" height="705"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Requirement Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="RoB-5s-DFM">
+                                        <rect key="frame" x="103" y="294" width="209" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.69019609689999994" green="0.5647059083" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
@@ -67,7 +75,9 @@ e.g. Can implement core data</string>
                         <color key="backgroundColor" red="0.61568629740000003" green="0.7254902124" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8VF-Gf-Xzi" firstAttribute="top" secondItem="SZu-nY-MDc" secondAttribute="bottom" constant="23" id="89c-Rz-J06"/>
+                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="Bk1-vq-9MS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E2E-rP-dN8" secondAttribute="trailing" constant="139" id="EMJ-RM-8EI"/>
+                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Gdm-CK-hBG"/>
                             <constraint firstItem="8VF-Gf-Xzi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LBr-lO-qZj"/>
                             <constraint firstItem="E2E-rP-dN8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ten-Ew-Wba"/>
                             <constraint firstAttribute="bottomMargin" secondItem="8VF-Gf-Xzi" secondAttribute="bottom" constant="-83" id="X35-6s-hTW"/>
@@ -81,21 +91,27 @@ e.g. Can implement core data</string>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Plan" image="pencil.and.outline" catalog="system" landscapeImage="pencil.and.outline" largeContentSizeImage="pencil.and.outline" selectedImage="pencil.and.outline" id="Xww-sn-ufP">
-                        <color key="badgeColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="badgeColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="i7n-ng-SlK">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" landscapeImage="plus" style="plain" id="Zkt-Jv-NuX">
-                            <color key="tintColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addReqBtnAct:" destination="Y6W-OH-hqX" id="i30-dl-6E0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addReqBtn" destination="Zkt-Jv-NuX" id="2Zl-KE-NBQ"/>
                         <outlet property="infoView" destination="SZu-nY-MDc" id="WpX-0y-N35"/>
+                        <outlet property="noRequirementLabel" destination="RoB-5s-DFM" id="x84-dR-b86"/>
+                        <outlet property="reqDetailView" destination="8VF-Gf-Xzi" id="LuN-NF-vs0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="36.945812807881772"/>
+            <point key="canvasLocation" x="1095.6521739130435" y="36.830357142857139"/>
         </scene>
         <!--Plan-->
         <scene sceneID="LyC-m2-v7r">
@@ -106,7 +122,7 @@ e.g. Can implement core data</string>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AoR-FN-l0L">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

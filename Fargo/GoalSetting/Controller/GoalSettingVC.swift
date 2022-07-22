@@ -31,6 +31,8 @@ class GoalSettingVC: UIViewController {
         goalField.delegate = self
         reasonField.delegate = self
         
+        
+     
         configureUI()
         
     }
@@ -49,9 +51,10 @@ class GoalSettingVC: UIViewController {
     }
     
     func confNavBar(){
+       
         let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(done))
         navigationItem.rightBarButtonItem = doneBtn
-        doneBtn.tintColor = .darkGreen
+        doneBtn.tintColor = .darkChoco
     }
 
     @objc func done() {
