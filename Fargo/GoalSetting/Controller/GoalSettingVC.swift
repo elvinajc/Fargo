@@ -75,7 +75,7 @@ class GoalSettingVC: UIViewController {
         
         reasonField.tag = 2
         reasonField.layer.cornerRadius = 8
-        reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
+        reasonField.text = "e.g. I want to get a new experience, get many connections, get high salary to buy a new house"
         reasonField.textColor = .softGray
        
         

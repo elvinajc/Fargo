@@ -14,10 +14,7 @@ class PlanVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //Set info view to rounded corner
-            infoView.layer.cornerRadius = 7
-            infoView.layer.borderWidth = 1
-            infoView.layer.borderColor = UIColor.brownBorder.cgColor
+        configureUIPlan()
         
     }
     
@@ -26,5 +23,16 @@ class PlanVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
 
+    func configureUIPlan(){
+        configureInfoView()
+    }
 
+    func configureInfoView(){
+        //Set info view to rounded corner
+        infoView.layer.cornerRadius = 7
+        infoView.layer.borderWidth = 1
+        infoView.layer.borderColor = UIColor.brownBorder.cgColor
+    }
+    
+    
 }
