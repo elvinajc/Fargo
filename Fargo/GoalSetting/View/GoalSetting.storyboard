@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-rO-CZQ">
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                                <color key="backgroundColor" red="0.92549026010000002" green="0.89019608500000003" blue="0.87058818339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4jh-kE-bPS">
                                 <rect key="frame" x="16" y="100" width="358" height="387"/>
                                 <subviews>
@@ -58,12 +62,16 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.92549026010000002" green="0.89019608500000003" blue="0.87058818339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.64313727620000005" green="0.75686275960000005" blue="0.73333334920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="N2Y-rO-CZQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2qw-EI-HDs"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4jh-kE-bPS" secondAttribute="trailing" constant="16" id="3Wx-U3-BH4"/>
                             <constraint firstItem="4jh-kE-bPS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="12" id="ASO-dO-te5"/>
                             <constraint firstItem="4jh-kE-bPS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Bzz-lw-oWg"/>
+                            <constraint firstItem="N2Y-rO-CZQ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="HCq-M2-rsc"/>
+                            <constraint firstItem="N2Y-rO-CZQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="IcM-dZ-Uef"/>
                             <constraint firstItem="4jh-kE-bPS" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="PNn-o6-mZg"/>
+                            <constraint firstAttribute="bottom" secondItem="N2Y-rO-CZQ" secondAttribute="bottom" id="sQA-Zw-dUL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Goal Setting" id="x9f-48-zCR"/>
@@ -97,8 +105,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n76-Ia-lDm">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.64313727620000005" green="0.75686275960000005" blue="0.73333334920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.64313727620000005" green="0.75686275960000005" blue="0.73333334920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
