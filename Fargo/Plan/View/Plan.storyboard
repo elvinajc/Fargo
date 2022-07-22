@@ -61,24 +61,35 @@ e.g. Can implement core data</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VF-Gf-Xzi">
                                 <rect key="frame" x="0.0" y="191" width="414" height="705"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Requirement Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="RoB-5s-DFM">
-                                        <rect key="frame" x="103" y="294" width="209" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-gv-KEG">
+                                        <rect key="frame" x="8" y="13" width="398" height="601"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69019609689999994" green="0.5647059083" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="0fw-gv-KEG" firstAttribute="top" secondItem="8VF-Gf-Xzi" secondAttribute="top" constant="13" id="qlw-o5-73y"/>
+                                </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Requirement Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="RoB-5s-DFM">
+                                <rect key="frame" x="102.5" y="494.5" width="209" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.61568629740000003" green="0.7254902124" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerX" secondItem="0fw-gv-KEG" secondAttribute="centerX" id="48h-Kp-Lfd"/>
                             <constraint firstItem="8VF-Gf-Xzi" firstAttribute="top" secondItem="SZu-nY-MDc" secondAttribute="bottom" constant="23" id="89c-Rz-J06"/>
-                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="Bk1-vq-9MS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E2E-rP-dN8" secondAttribute="trailing" constant="139" id="EMJ-RM-8EI"/>
-                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Gdm-CK-hBG"/>
                             <constraint firstItem="8VF-Gf-Xzi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LBr-lO-qZj"/>
+                            <constraint firstItem="0fw-gv-KEG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="O6x-7x-8Em"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0fw-gv-KEG" secondAttribute="trailing" constant="8" id="PaV-IX-dkM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0fw-gv-KEG" secondAttribute="bottom" constant="8" id="QJw-Tr-vmq"/>
+                            <constraint firstItem="0fw-gv-KEG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="Qs4-dG-3hT"/>
                             <constraint firstItem="E2E-rP-dN8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ten-Ew-Wba"/>
                             <constraint firstAttribute="bottomMargin" secondItem="8VF-Gf-Xzi" secondAttribute="bottom" constant="-83" id="X35-6s-hTW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="E2E-rP-dN8" secondAttribute="top" constant="44" id="abe-P8-LMQ"/>
@@ -88,6 +99,7 @@ e.g. Can implement core data</string>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SZu-nY-MDc" secondAttribute="trailing" constant="26.5" id="qqA-NQ-2eQ"/>
                             <constraint firstItem="SZu-nY-MDc" firstAttribute="top" secondItem="E2E-rP-dN8" secondAttribute="bottom" constant="8" id="uKh-yj-Z4j"/>
                             <constraint firstItem="SZu-nY-MDc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26.5" id="wcD-r0-2pa"/>
+                            <constraint firstItem="RoB-5s-DFM" firstAttribute="centerY" secondItem="0fw-gv-KEG" secondAttribute="centerY" id="yIV-cO-Vgr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Plan" image="pencil.and.outline" catalog="system" landscapeImage="pencil.and.outline" largeContentSizeImage="pencil.and.outline" selectedImage="pencil.and.outline" id="Xww-sn-ufP">
@@ -107,11 +119,12 @@ e.g. Can implement core data</string>
                         <outlet property="infoView" destination="SZu-nY-MDc" id="WpX-0y-N35"/>
                         <outlet property="noRequirementLabel" destination="RoB-5s-DFM" id="x84-dR-b86"/>
                         <outlet property="reqDetailView" destination="8VF-Gf-Xzi" id="LuN-NF-vs0"/>
+                        <outlet property="reqTableView" destination="0fw-gv-KEG" id="cga-3W-gAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095.6521739130435" y="36.830357142857139"/>
+            <point key="canvasLocation" x="1095.3846153846152" y="36.255924170616112"/>
         </scene>
         <!--Plan-->
         <scene sceneID="LyC-m2-v7r">

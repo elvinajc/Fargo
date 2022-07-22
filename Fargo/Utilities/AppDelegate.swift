@@ -11,6 +11,12 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: ADDITIONAL FUNC BUAT SET ORIENTATION ONLY POTRAIT 
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        let orientation = UIInterfaceOrientationMask.portrait
+        return orientation
+    }
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

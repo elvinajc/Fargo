@@ -15,11 +15,23 @@ class PlanVC: UIViewController {
     @IBOutlet weak var noRequirementLabel: UILabel!
     @IBOutlet weak var addReqBtn: UIBarButtonItem!
     
+    @IBOutlet weak var reqTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         configureUIPlan()
+        
+        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
+        //Sementara: is hidden = false
+        noRequirementLabel.isHidden = false
+        
+        //TableView
+       self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
+        reqTableView.delegate = self
+        reqTableView.dataSource = self
         
     }
     
@@ -63,28 +75,10 @@ class PlanVC: UIViewController {
     }
     
     func loadAlert(){
-//        let alert = UIAlertController(title: "Add New Requirement", message: "Write the requirement title", preferredStyle: .alert)
-//
-//        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-//
-//            switch action.style{
-//                case .default:
-//                print("default")
-//
-//                case .cancel:
-//                print("cancel")
-//
-//                case .destructive:
-//                print("destructive")
-//
-//            }
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-//    }
         
             let alertController = UIAlertController(title: "Add New Requirement", message: "Write the requirement title", preferredStyle: .alert)
             alertController.addTextField { (textField : UITextField!) -> Void in
-                textField.placeholder = "Requirement title here"
+                textField.placeholder = "Write max. 25 characters"
             }
         
             //Change alert button color:
@@ -105,7 +99,7 @@ class PlanVC: UIViewController {
             alertController.addAction(cancelAction)
             alertController.addAction(saveAction)
         
-            //Bikin save lebih di highlight
+            //Bikin save button lebih di bold
             alertController.preferredAction = saveAction
         
             self.present(alertController, animated: true, completion: nil)
