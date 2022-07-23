@@ -29,7 +29,7 @@ class PlanVC: UIViewController {
         noRequirementLabel.isHidden = false
         
         //TableView
-       self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
+        self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
         reqTableView.delegate = self
         reqTableView.dataSource = self
         
