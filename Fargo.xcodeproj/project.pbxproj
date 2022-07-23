@@ -16,6 +16,7 @@
 		A419BA97288804B00073E723 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA96288804B00073E723 /* ColorPallete.swift */; };
 		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
 		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
+		A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */; };
 		A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49239AA288AB6DF007FFA90 /* RequirementCell.swift */; };
 		A49239AD288AB6DF007FFA90 /* RequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49239AB288AB6DF007FFA90 /* RequirementCell.xib */; };
 		A49239AF288ACE1C007FFA90 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */; };
@@ -46,6 +47,7 @@
 		A419BA96288804B00073E723 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
+		A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanVC.swift; sourceTree = "<group>"; };
 		A49239AA288AB6DF007FFA90 /* RequirementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementCell.swift; sourceTree = "<group>"; };
 		A49239AB288AB6DF007FFA90 /* RequirementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequirementCell.xib; sourceTree = "<group>"; };
 		A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A4AAB6BC288866230010782C /* PlanVC.swift */,
+				A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */,
 				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
+				A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */,
 				A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */,
 				A4A8F81828894150004F271C /* MyGoalVC.swift in Sources */,
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,

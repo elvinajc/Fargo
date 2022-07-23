@@ -106,6 +106,7 @@
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>

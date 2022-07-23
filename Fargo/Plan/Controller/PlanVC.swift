@@ -47,7 +47,7 @@ class PlanVC: UIViewController {
         //Munculin alert utk add requirement
         print("ADD REQUIREMENT")
         
-        loadAlert()
+        loadAddAlert()
         
         
     }
@@ -74,7 +74,7 @@ class PlanVC: UIViewController {
         reqDetailView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
-    func loadAlert(){
+    func loadAddAlert(){
         
             let alertController = UIAlertController(title: "Add New Requirement", message: "Write the requirement title", preferredStyle: .alert)
             alertController.addTextField { (textField : UITextField!) -> Void in
@@ -103,8 +103,42 @@ class PlanVC: UIViewController {
             alertController.preferredAction = saveAction
         
             self.present(alertController, animated: true, completion: nil)
+ 
+    }
+    
+    
+    func loadEditAlert(){
         
+            let alertController = UIAlertController(title: "Edit Requirement Title", message: "Change the requirement title", preferredStyle: .alert)
+            alertController.addTextField { (textField : UITextField!) -> Void in
+                
+                //MARK: -- Text Placeholder ambil dari core data (requirement title).
+                textField.placeholder = "Write max. 25 characters"
+            }
         
+            //Change alert button color:
+            UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.darkChoco
+            
+        
+            //Save & delete action
+            let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+                let title = alertController.textFields![0] as UITextField
+               
+                //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
+                print(title.text)
+                
+            })
+        
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
+
+            alertController.addAction(cancelAction)
+            alertController.addAction(saveAction)
+        
+            //Bikin save button lebih di bold
+            alertController.preferredAction = saveAction
+        
+            self.present(alertController, animated: true, completion: nil)
+ 
     }
     
 }
