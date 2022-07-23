@@ -17,10 +17,14 @@ class PlanVC: UIViewController {
     
     @IBOutlet weak var reqTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
         // Do any additional setup after loading the view.
         configureUIPlan()
         

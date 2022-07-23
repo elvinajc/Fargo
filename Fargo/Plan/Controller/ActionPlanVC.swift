@@ -24,12 +24,14 @@ class ActionPlanVC: UIViewController {
     @IBOutlet weak var noActPlanLabel: UILabel!
     @IBOutlet weak var actTableView: UITableView!
 
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.tabBarController?.tabBar.isHidden = true
         
         // Do any additional setup after loading the view.
         configureUIActPlan()

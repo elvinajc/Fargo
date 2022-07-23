@@ -114,6 +114,10 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-BW-ecn">
                                                                 <rect key="frame" x="305.66666666666669" y="0.0" width="50.333333333333314" height="37.666666666666664"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="H6O-jx-eAZ"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="QcB-PO-V9w"/>
+                                                                </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system" imagePlacement="trailing" title="">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" scale="default" weight="medium">
@@ -142,7 +146,7 @@ ABCDX company</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KYF-u3-hax">
-                                                <rect key="frame" x="0.0" y="230.66666666666663" width="356" height="187"/>
+                                                <rect key="frame" x="0.0" y="231" width="356" height="187"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason To Achieve The Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynx-rx-bsK">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="24"/>
@@ -219,7 +223,7 @@ house.</string>
                 <viewControllerPlaceholder storyboardIdentifier="goalSettingSB" storyboardName="GoalSetting" id="W30-Th-McA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AV1-4h-bGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="28"/>
+            <point key="canvasLocation" x="442" y="50"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.15294116739999999" green="0.3686274886" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
