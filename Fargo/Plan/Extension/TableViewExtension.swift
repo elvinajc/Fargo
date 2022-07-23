@@ -31,21 +31,24 @@ extension PlanVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //Component of Edit Action
         let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
-            //self?.deleteData(ideaTitle: showIdeasList[indexPath.row].ideasTitle!)
-            //showIdeasList.remove(at: indexPath.row)
+            //Munculin alert edit
+            self!.loadEditAlert()
+            
             completionHandler(true)
+            
         }
         edit.backgroundColor = UIColor.lilDarkGray
         
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
+            //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
             //self?.deleteData(ideaTitle: showIdeasList[indexPath.row].ideasTitle!)
             //showIdeasList.remove(at: indexPath.row)
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
         
-
+        //Masukin Edit & Delete ke Trailing Actionnya
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
         configuration.performsFirstActionWithFullSwipe = false
         
