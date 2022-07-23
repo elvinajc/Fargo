@@ -11,6 +11,8 @@ extension PlanVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    
 }
 
 extension PlanVC: UITableViewDataSource{
@@ -21,20 +23,21 @@ extension PlanVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "reqCell", for : indexPath) as? RequirementCell{
-            
         //MARK: -- Harusnya cell.reqTitle.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
         //    cell.reqTitle.text = "ABCDEFG"
-            
+
             cell.layer.cornerRadius = 8
             cell.reqCellView.layer.cornerRadius = 8
             //cell.reqCellView.layer.masksToBounds = true
-            
+            //cell.reqCellView.contentMode = .scaleToFill
+
             return cell
         }
-        
+
         return UITableViewCell()
     }
     

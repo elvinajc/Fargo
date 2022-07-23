@@ -109,6 +109,14 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
+		A452AB3E288BBA7200B4F2DA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A4A8F81628892526004F271C /* Default Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +210,7 @@
 			children = (
 				A4AAB6CB288866F40010782C /* View */,
 				A4AAB6CA288866EA0010782C /* Controller */,
+				A452AB3E288BBA7200B4F2DA /* Extension */,
 			);
 			path = Plan;
 			sourceTree = "<group>";
@@ -210,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				A4AAB6BC288866230010782C /* PlanVC.swift */,
-				A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
