@@ -54,8 +54,26 @@ extension PlanVC: UITableViewDelegate {
     ///////
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //MARK: -- KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN
-        //self.performSegue(withIdentifier: "editIdeas", sender: self)
+        
+        switch tableView.tag{
+            case 1 :
+                
+            //MARK: -- KALO TABLE VIEW : REQUIREMENT (TAG = 1 ) | KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN
+            //Buat ngetes masuk ke halaman action plan:
+            self.performSegue(withIdentifier: "goToActionPlan", sender: self)
+            
+            case 2 :
+            //MARK: -- KALO TABLE VIEW : ACTIONPLAN (TAG = 2 ) | KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL
+            //self.performSegue(withIdentifier: "goToActionVDetails", sender: self)
+            print("Masuk Action Details")
+      
+            default :
+            print("")
+        }
+        
+        
+        
+        
     }
     
     

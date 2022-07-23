@@ -38,23 +38,34 @@ class PlanVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        //Set left nav bar item titlenya dari back ke kosong
+           let backItem = UIBarButtonItem()
+           backItem.title = ""
+           navigationItem.backBarButtonItem = backItem
+        
+        //MARK: -- Passing row yg di select + datanya ke halaman action plan details
+        if (segue.identifier == "goToActionPlan"){
+            let indexPath = reqTableView.indexPathForSelectedRow!
+            let actionPlan = segue.destination as? ActionPlanVC
+           // let selectedRequirement : RequirementData!
+           // selectedRequirement = showIdeasList[indexPath.row]
+           // actionPlan!.selectedRequirement = selectedRequirement
+            reqTableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     //Func
     
     @IBAction func addReqBtnAct(_ sender: UIBarButtonItem) {
-        
         //Munculin alert utk add requirement
-        print("ADD REQUIREMENT")
-        
         loadAddAlert()
-        
-        
     }
     
     
     func configureUIPlan(){
         configureInfoView()
+        setRoundedDetView()
     }
 
     func configureInfoView(){
@@ -62,9 +73,6 @@ class PlanVC: UIViewController {
         infoView.layer.cornerRadius = 7
         infoView.layer.borderWidth = 1
         infoView.layer.borderColor = UIColor.brownBorder.cgColor
-        
-        setRoundedDetView()
-    
     }
     
     func setRoundedDetView(){
@@ -87,9 +95,9 @@ class PlanVC: UIViewController {
         
             //Save & delete action
             let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
-                let title = alertController.textFields![0] as UITextField
+            let title = alertController.textFields![0] as UITextField
                
-                //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
+            //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
                 print(title.text)
                 
             })
@@ -113,7 +121,7 @@ class PlanVC: UIViewController {
             alertController.addTextField { (textField : UITextField!) -> Void in
                 
                 //MARK: -- Text Placeholder ambil dari core data (requirement title).
-                textField.placeholder = "Write max. 25 characters"
+                textField.placeholder = "Tampilin Title Lama"
             }
         
             //Change alert button color:
