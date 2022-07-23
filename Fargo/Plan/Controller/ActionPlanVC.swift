@@ -29,6 +29,7 @@ class ActionPlanVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        self.tabBarController?.tabBar.isHidden = true
         
         // Do any additional setup after loading the view.
         configureUIActPlan()
@@ -38,9 +39,9 @@ class ActionPlanVC: UIViewController {
         noActPlanLabel.isHidden = false
         
         //TableView
-       // self.reqTableView.register(UINib(nibName: "ActPlanCell", bundle: nil), forCellReuseIdentifier: "actCell")
-       // actTableView.delegate = self
-       // actTableView.dataSource = self
+         self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
+         actTableView.delegate = self
+         actTableView.dataSource = self
         
     }
     
@@ -50,15 +51,6 @@ class ActionPlanVC: UIViewController {
     }
     
     //Func
-    
-    
-//    @IBAction func backBtnAct(_ sender: UIBarButtonItem) {
-//        //self.dismiss(animated: <#T##Bool#>)
-//        print("KEPENCET KOK")
-//        navigationController?.popToRootViewController(animated: true)
-//    }
-    
-
     @IBAction func addActBtnAction(_ sender: UIBarButtonItem) {
       //MARK: -- perform segue ke action plan detail
       //  self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)

@@ -1,13 +1,14 @@
 //
-//  TableViewExtension.swift
+//  ActTableViewExtension.swift
 //  Fargo
 //
-//  Created by Elvina Jacia on 22/07/22.
+//  Created by Elvina Jacia on 23/07/22.
 //
+
 
 import UIKit
 
-extension PlanVC: UITableViewDelegate {
+extension ActionPlanVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //cell view height + dikit buat spacing (60 + 2)
         return 62
@@ -29,10 +30,12 @@ extension PlanVC: UITableViewDelegate {
        }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         //Component of Edit Action
         let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
-            //Munculin alert edit
-            self!.loadEditAlert()
+            //MARK: -- Segue ke halaman action detail utk edit
+            //self?.performSegue(withIdentifier: "goToEditAction", sender: <#T##Any?#>)
+            print("Masuk ke Action Details untuk Edit")
             
             completionHandler(true)
             
@@ -48,6 +51,7 @@ extension PlanVC: UITableViewDelegate {
         }
         delete.backgroundColor = UIColor.redTomato
         
+        
         //Masukin Edit & Delete ke Trailing Actionnya
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
         configuration.performsFirstActionWithFullSwipe = false
@@ -57,32 +61,16 @@ extension PlanVC: UITableViewDelegate {
     ///////
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        switch tableView.tag{
-            case 1 :
-                
-            //MARK: -- KALO TABLE VIEW : REQUIREMENT (TAG = 1 ) | KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN
-            //Buat ngetes masuk ke halaman action plan:
-            self.performSegue(withIdentifier: "goToActionPlan", sender: self)
-            
-            case 2 :
             //MARK: -- KALO TABLE VIEW : ACTIONPLAN (TAG = 2 ) | KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL
-            //self.performSegue(withIdentifier: "goToActionVDetails", sender: self)
-            print("Masuk Action Details")
+            //self.performSegue(withIdentifier: "goToAddAction", sender: self)
+            print("Masuk ke Action Details untuk edit")
       
-            default :
-            print("")
         }
-        
-        
-        
-        
-    }
     
     
 }
 
-extension PlanVC: UITableViewDataSource{
+extension ActionPlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //MARK: -- Harusnya return array of data requirement.count
         //Sementara return 1 dlu buat coba
@@ -92,13 +80,13 @@ extension PlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "reqCell", for : indexPath) as? RequirementCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "actCell", for : indexPath) as? ActionCell{
         //MARK: -- Harusnya cell.reqTitle.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
         //    cell.reqTitle.text = "ABCDEFG"
 
             cell.layer.cornerRadius = 8
-            cell.reqCellView.layer.cornerRadius = 8
+            cell.actCellView.layer.cornerRadius = 8
             
 
             return cell

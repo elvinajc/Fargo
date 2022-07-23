@@ -86,7 +86,7 @@ class PlanVC: UIViewController {
         
             let alertController = UIAlertController(title: "Add New Requirement", message: "Write the requirement title", preferredStyle: .alert)
             alertController.addTextField { (textField : UITextField!) -> Void in
-                textField.placeholder = "Write max. 25 characters"
+                textField.placeholder = "Write max. 30 characters"
             }
         
             //Change alert button color:

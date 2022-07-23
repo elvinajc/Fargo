@@ -20,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="385" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requirement Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndh-SX-HTj">
-                                <rect key="frame" x="8" y="20" width="161.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789123456789123456789123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndh-SX-HTj">
+                                <rect key="frame" x="8" y="20" width="369" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -30,9 +30,9 @@
                         <color key="backgroundColor" red="0.99607843159999998" green="0.97647058959999999" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ndh-SX-HTj" secondAttribute="trailing" constant="8" id="5aW-wv-t6M"/>
                             <constraint firstItem="ndh-SX-HTj" firstAttribute="centerY" secondItem="TfI-Pj-zSO" secondAttribute="centerY" id="GlM-Cj-OWA"/>
                             <constraint firstAttribute="bottom" secondItem="ndh-SX-HTj" secondAttribute="bottom" constant="20" symbolic="YES" id="VeD-Ty-Wfx"/>
-                            <constraint firstAttribute="trailing" secondItem="ndh-SX-HTj" secondAttribute="trailing" constant="215.66666666666666" id="ijg-sh-l9s"/>
                             <constraint firstItem="ndh-SX-HTj" firstAttribute="top" secondItem="TfI-Pj-zSO" secondAttribute="top" constant="20" symbolic="YES" id="tnc-yX-t3m"/>
                             <constraint firstItem="ndh-SX-HTj" firstAttribute="leading" secondItem="TfI-Pj-zSO" secondAttribute="leading" constant="8" id="yRf-3N-w1p"/>
                         </constraints>
@@ -52,7 +52,7 @@
                 <outlet property="reqCellView" destination="TfI-Pj-zSO" id="WZQ-d2-o4g"/>
                 <outlet property="reqTitle" destination="ndh-SX-HTj" id="BCJ-az-gVP"/>
             </connections>
-            <point key="canvasLocation" x="176.15384615384616" y="68.246445497630333"/>
+            <point key="canvasLocation" x="176.08695652173915" y="67.633928571428569"/>
         </tableViewCell>
     </objects>
 </document>

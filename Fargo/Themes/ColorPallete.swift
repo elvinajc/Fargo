@@ -26,6 +26,7 @@ extension UIColor {
     
     static var softGray = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.00)
     static var brownBorder = UIColor(red: 0.74, green: 0.71, blue: 0.71, alpha: 1.00)
+    
 }
 
 

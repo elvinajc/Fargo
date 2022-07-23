@@ -17,9 +17,12 @@
 		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
 		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
 		A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */; };
+		A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB46288BF9F700B4F2DA /* ActionCell.swift */; };
+		A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AB47288BF9F700B4F2DA /* ActionCell.xib */; };
+		A452AB4B288C08FE00B4F2DA /* ReqTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB4A288C08FE00B4F2DA /* ReqTableViewExtension.swift */; };
+		A452AB4D288C091F00B4F2DA /* ActTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB4C288C091F00B4F2DA /* ActTableViewExtension.swift */; };
 		A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49239AA288AB6DF007FFA90 /* RequirementCell.swift */; };
 		A49239AD288AB6DF007FFA90 /* RequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49239AB288AB6DF007FFA90 /* RequirementCell.xib */; };
-		A49239AF288ACE1C007FFA90 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */; };
 		A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */; };
 		A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49DE2DF288862750074CAF3 /* TabBar.storyboard */; };
 		A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2E1288863750074CAF3 /* TabBarVC.swift */; };
@@ -48,9 +51,12 @@
 		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
 		A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanVC.swift; sourceTree = "<group>"; };
+		A452AB46288BF9F700B4F2DA /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
+		A452AB47288BF9F700B4F2DA /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
+		A452AB4A288C08FE00B4F2DA /* ReqTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqTableViewExtension.swift; sourceTree = "<group>"; };
+		A452AB4C288C091F00B4F2DA /* ActTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActTableViewExtension.swift; sourceTree = "<group>"; };
 		A49239AA288AB6DF007FFA90 /* RequirementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementCell.swift; sourceTree = "<group>"; };
 		A49239AB288AB6DF007FFA90 /* RequirementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequirementCell.xib; sourceTree = "<group>"; };
-		A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
 		A49DE2DF288862750074CAF3 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A49DE2E1288863750074CAF3 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -114,7 +120,8 @@
 		A452AB3E288BBA7200B4F2DA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A49239AE288ACE1C007FFA90 /* TableViewExtension.swift */,
+				A452AB4A288C08FE00B4F2DA /* ReqTableViewExtension.swift */,
+				A452AB4C288C091F00B4F2DA /* ActTableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -232,6 +239,8 @@
 				A4AAB6C2288866470010782C /* Plan.storyboard */,
 				A49239AB288AB6DF007FFA90 /* RequirementCell.xib */,
 				A49239AA288AB6DF007FFA90 /* RequirementCell.swift */,
+				A452AB47288BF9F700B4F2DA /* ActionCell.xib */,
+				A452AB46288BF9F700B4F2DA /* ActionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +342,7 @@
 				A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */,
 				A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */,
 				A4AAB6C3288866470010782C /* Plan.storyboard in Resources */,
+				A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */,
 				A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */,
 				A49239AD288AB6DF007FFA90 /* RequirementCell.xib in Resources */,
 			);
@@ -350,22 +360,24 @@
 				A419BA8A2887FEB30073E723 /* Requirement+CoreDataProperties.swift in Sources */,
 				A419BA8C2887FEB30073E723 /* Goal+CoreDataProperties.swift in Sources */,
 				A419BA97288804B00073E723 /* ColorPallete.swift in Sources */,
+				A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */,
 				A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */,
 				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
 				A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */,
 				A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */,
 				A4A8F81828894150004F271C /* MyGoalVC.swift in Sources */,
+				A452AB4B288C08FE00B4F2DA /* ReqTableViewExtension.swift in Sources */,
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
 				A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */,
 				A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */,
 				A4A8F8402889634B004F271C /* CircleProgressView.swift in Sources */,
+				A452AB4D288C091F00B4F2DA /* ActTableViewExtension.swift in Sources */,
 				A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */,
 				A419BA872887FEB30073E723 /* ActionPlan+CoreDataClass.swift in Sources */,
 				A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */,
 				A4AAB6BD288866230010782C /* PlanVC.swift in Sources */,
 				A419BA892887FEB30073E723 /* Requirement+CoreDataClass.swift in Sources */,
-				A49239AF288ACE1C007FFA90 /* TableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
