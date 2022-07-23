@@ -34,12 +34,15 @@ class ActionCell: UITableViewCell {
         
         //Ganti button colornya : button.backgroundColor = UIColor.blue
         //Ganti button sesuai kalo dipencet : checkmarkButton.setImage(image, forState: .normal)
+        //Update progress
         
 //        if checkmarkButton.isSelected {
 //            checkmarkButton.isSelected = false
 //        } else{
 //            checkmarkButton.isSelected = true
 //        }
+        
+        print("CHECKMARK DIPENCET")
         
         
     }

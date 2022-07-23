@@ -16,7 +16,7 @@ extension ActionPlanVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
         //Set Trailing Swipe Action Height
-           if let cell = tableView.cellForRow(at: indexPath) as? RequirementCell{
+           if let cell = tableView.cellForRow(at: indexPath) as? ActionCell{
                if let trailingCell = cell.superview{
                    for trailingSwipe in trailingCell.subviews{
                        let typeview = type(of: trailingSwipe.self)
@@ -65,7 +65,7 @@ extension ActionPlanVC: UITableViewDelegate {
             //self.performSegue(withIdentifier: "goToAddAction", sender: self)
             print("Masuk ke Action Details untuk edit")
       
-        }
+    }
     
     
 }
@@ -81,9 +81,9 @@ extension ActionPlanVC: UITableViewDataSource{
     
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "actCell", for : indexPath) as? ActionCell{
-        //MARK: -- Harusnya cell.reqTitle.text = self."namaArray"[indexPath.row]
+        //MARK: -- Harusnya cell.actTitle.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
-        //    cell.reqTitle.text = "ABCDEFG"
+        //    cell.actTitle.text = "ABCDEFG"
 
             cell.layer.cornerRadius = 8
             cell.actCellView.layer.cornerRadius = 8
