@@ -33,9 +33,10 @@ extension ActionPlanVC: UITableViewDelegate {
         
         //Component of Edit Action
         let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
-            //MARK: -- Segue ke halaman action detail utk edit
-            //self?.performSegue(withIdentifier: "goToEditAction", sender: <#T##Any?#>)
+            //MARK: -- Segue ke halaman action detail utk edit dan munculin datanya sesuai row tsb
+            self?.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
             print("Masuk ke Action Details untuk Edit")
+            
             
             completionHandler(true)
             
@@ -61,8 +62,9 @@ extension ActionPlanVC: UITableViewDelegate {
     ///////
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            //MARK: -- KALO TABLE VIEW : ACTIONPLAN (TAG = 2 ) | KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL
-            //self.performSegue(withIdentifier: "goToAddAction", sender: self)
+            //MARK: -KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL UTK EDIT
+            //MUNCULIN DATA SESUAI ROW YG DI SELECT
+            self.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
             print("Masuk ke Action Details untuk edit")
       
     }

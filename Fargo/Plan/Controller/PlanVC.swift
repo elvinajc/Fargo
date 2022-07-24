@@ -48,7 +48,7 @@ class PlanVC: UIViewController {
            backItem.title = ""
            navigationItem.backBarButtonItem = backItem
         
-        //MARK: -- Passing row yg di select + datanya ke halaman action plan details
+        //MARK: -- Passing row yg di select + datanya ke halaman action plan
         if (segue.identifier == "goToActionPlan"){
             let indexPath = reqTableView.indexPathForSelectedRow!
             let actionPlan = segue.destination as? ActionPlanVC

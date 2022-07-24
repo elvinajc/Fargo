@@ -23,6 +23,7 @@
 		A452AB4D288C091F00B4F2DA /* ActTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB4C288C091F00B4F2DA /* ActTableViewExtension.swift */; };
 		A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49239AA288AB6DF007FFA90 /* RequirementCell.swift */; };
 		A49239AD288AB6DF007FFA90 /* RequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49239AB288AB6DF007FFA90 /* RequirementCell.xib */; };
+		A49B7BDE288D0DAC00C6128F /* ActionPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B7BDD288D0DAC00C6128F /* ActionPlanDetailVC.swift */; };
 		A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */; };
 		A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49DE2DF288862750074CAF3 /* TabBar.storyboard */; };
 		A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49DE2E1288863750074CAF3 /* TabBarVC.swift */; };
@@ -57,6 +58,7 @@
 		A452AB4C288C091F00B4F2DA /* ActTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActTableViewExtension.swift; sourceTree = "<group>"; };
 		A49239AA288AB6DF007FFA90 /* RequirementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementCell.swift; sourceTree = "<group>"; };
 		A49239AB288AB6DF007FFA90 /* RequirementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequirementCell.xib; sourceTree = "<group>"; };
+		A49B7BDD288D0DAC00C6128F /* ActionPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanDetailVC.swift; sourceTree = "<group>"; };
 		A49DE2DD288841D80074CAF3 /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
 		A49DE2DF288862750074CAF3 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A49DE2E1288863750074CAF3 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				A4AAB6BC288866230010782C /* PlanVC.swift */,
 				A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */,
+				A49B7BDD288D0DAC00C6128F /* ActionPlanDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49B7BDE288D0DAC00C6128F /* ActionPlanDetailVC.swift in Sources */,
 				A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */,
 				A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */,
 				A419BA8A2887FEB30073E723 /* Requirement+CoreDataProperties.swift in Sources */,

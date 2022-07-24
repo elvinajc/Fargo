@@ -55,7 +55,8 @@ class ActionPlanVC: UIViewController {
     //Func
     @IBAction func addActBtnAction(_ sender: UIBarButtonItem) {
       //MARK: -- perform segue ke action plan detail
-      //  self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        self.performSegue(withIdentifier: "goToAddActionPlan", sender: self)
+        print("KEPENCET")
     }
     
     func configureUIActPlan(){
