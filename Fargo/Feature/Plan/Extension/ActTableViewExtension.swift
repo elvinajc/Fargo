@@ -86,7 +86,7 @@ extension ActionPlanVC: UITableViewDataSource{
         //MARK: -- Harusnya cell.actTitle.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
         //    cell.actTitle.text = "ABCDEFG"
-
+            cell.selectionStyle = .none
             cell.layer.cornerRadius = 8
             cell.actCellView.layer.cornerRadius = 8
             

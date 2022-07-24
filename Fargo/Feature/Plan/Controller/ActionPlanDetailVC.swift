@@ -73,6 +73,7 @@ class ActionPlanDetailVC: UIViewController {
         
         //Row heightnya dinamis sesuai masing masing cell
         //actPlanDetTableView.rowHeight = 44
+        //actPlanDetTableView.bounces = false
     }
     
     func registerCell(){
@@ -88,6 +89,7 @@ class ActionPlanDetailVC: UIViewController {
         actPlanDetTableView.registerCell(type: TextFieldTableViewCell.self, identifier: "TextFieldCell")
         actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "TextViewCell")
         //actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "DatePickerCell")
+        
     }
         
       

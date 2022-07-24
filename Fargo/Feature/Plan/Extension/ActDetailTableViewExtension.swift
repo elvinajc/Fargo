@@ -54,22 +54,26 @@ extension ActionPlanDetailVC : UITableViewDataSource{
 //    }
 //
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let section = ActPlanDetailCellSection(rawValue: indexPath.row) else { return UITableViewCell() }
-    
+        guard let section = ActPlanDetailCellSection(rawValue: indexPath.section) else { return UITableViewCell() }
+   //     let cell  = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+        
         switch section {
             case .actionNameTl       :
-                 let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath) as! TextFieldTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath) as! TextFieldTableViewCell
                 //cell.textLabel?.text = SettingCellFillOpt(rawValue: 0)?.description
-
-                return cell
+                 cell.backgroundColor = .clear
+                 cell.layer.cornerRadius = 8
+                 cell.selectionStyle = .none
+                 //cell.actCellView.layer.cornerRadius = 8
+            return cell
             
             case .actionDescTl       :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewTableViewCell
             
 //                cell.selectionStyle = .none
 //                cell.setEnable(isEnable: isAbleToEdit)
@@ -87,14 +91,33 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 return cell
             
             case .learningResourceTl :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
+              let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
            
                 return cell
             
             case .setDateTl          :
                 //MARK: -- MASIH BELOM DIGANTI
-               //  let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+               // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
+               guard let sections = SetDateSect(rawValue: indexPath.row) else { return UITableViewCell() }
+            
+                switch sections{
+                    
+                    case .startDate :
+                      let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+                      return cell
+                    
+                    case .endDate :
+                     let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+                     return cell
+                
+                    default:
+                     ""
+                }
+            
+        }
+        
+    }
+                
             
                //cell.textLabel?.text = SettingCellFillOpt(rawValue: 0)?.description
               
@@ -103,9 +126,7 @@ extension ActionPlanDetailVC : UITableViewDataSource{
             
                 // cell.layer.cornerRadius = 8
                 //cell.actCellView.layer.cornerRadius = 8
-            return cell
-        
-        }
+ 
         
 //        switch indexPath.section {
 //            case 0 : cell.backgroundColor = .darkChoco
@@ -116,8 +137,6 @@ extension ActionPlanDetailVC : UITableViewDataSource{
 //            default: break
 //        }
             
-
-    }
 
     
     

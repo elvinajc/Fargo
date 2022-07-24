@@ -85,7 +85,7 @@ extension PlanVC: UITableViewDataSource{
         //MARK: -- Harusnya cell.reqTitle.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
         //    cell.reqTitle.text = "ABCDEFG"
-
+            cell.selectionStyle = .none
             cell.layer.cornerRadius = 8
             cell.reqCellView.layer.cornerRadius = 8
             
