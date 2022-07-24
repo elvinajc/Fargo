@@ -38,7 +38,7 @@ class ActionPlanVC: UIViewController {
         
         //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
         //Sementara: is hidden = false
-        noActPlanLabel.isHidden = false
+         noActPlanLabel.isHidden = false
         
         //TableView
          self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
@@ -50,6 +50,11 @@ class ActionPlanVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        //Set left nav bar item titlenya dari back ke kosong
+           let backItem = UIBarButtonItem()
+           backItem.title = ""
+           navigationItem.backBarButtonItem = backItem
     }
     
     //Func
