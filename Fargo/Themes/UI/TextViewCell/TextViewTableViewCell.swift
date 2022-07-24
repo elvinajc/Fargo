@@ -28,7 +28,7 @@ class TextViewTableViewCell: UITableViewCell {
             textViewField.textColor = UIColor.softGray
         }
         
-        func setTextView(text: String) {
+        func setTextViewText(text: String) {
             textViewField.text = text
             textViewField.textColor = UIColor.black
         }

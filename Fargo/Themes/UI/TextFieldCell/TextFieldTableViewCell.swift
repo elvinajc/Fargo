@@ -9,16 +9,36 @@ import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        //.addDoneButtonOnKeyboard()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var textFieldField: UITextField!
     
-}
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            
+            textFieldField.addDoneButtonOnKeyboard()
+            textFieldField.delegate = self
+        }
+        
+        func setTextFieldText(text: String) {
+            textFieldField.text = text
+        }
+        
+        func setHint(text: String) {
+            textFieldField.placeholder = text
+        }
+        
+        func setEnable(isEnable: Bool) {
+            textFieldField.isEnabled = isEnable
+            if isEnable {
+                textFieldField.textColor = UIColor.black
+            }else {
+                textFieldField.textColor = UIColor.systemGray
+            }
+        }
+    }
+
+    extension TextFieldTableViewCell: UITextFieldDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textFieldField.resignFirstResponder()
+        }
+    }
