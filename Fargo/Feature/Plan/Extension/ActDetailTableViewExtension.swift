@@ -18,14 +18,14 @@ extension ActionPlanDetailVC : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        guard let section = ActPlanDetailCellSection(rawValue: section) else { return 0 }
         switch section {
-            case 0 : return 1
-            case 1 : return 1
-            case 2 : return 1
-            case 3 : return 1
-            case 4 : return 2
-            default: return 0
+            case .actionNameTl       : return ActionNameSect.allCases.count
+            case .actionDescTl       : return ActionDescSect.allCases.count
+            case .successParameterTl : return SuccessParamSect.allCases.count
+            case .learningResourceTl : return LearningResourcesSect.allCases.count
+            case .setDateTl          : return SetDateSect.allCases.count
+            default                  : return 0
         }
         
     }
