@@ -40,10 +40,8 @@ class ActionPlanVC: UIViewController {
         //Sementara: is hidden = false
          noActPlanLabel.isHidden = false
         
-        //TableView
-         self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
-         actTableView.delegate = self
-         actTableView.dataSource = self
+        //DELEGATE + DATA SOURCE
+        
         
     }
     
@@ -67,6 +65,7 @@ class ActionPlanVC: UIViewController {
     func configureUIActPlan(){
         configureReqView()
         setRoundedActProgView()
+        setTableView()
     }
 
     func configureReqView(){
@@ -81,6 +80,24 @@ class ActionPlanVC: UIViewController {
         actProgView.layer.cornerRadius = 20
         // Round Top right corner, Top left corner
         actProgView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    func setTableView(){
+        //Register Table View Cell
+        regisTableViewCell()
+        
+        //Delegate + Data Source
+        actTableView.delegate = self
+        actTableView.dataSource = self
+    }
+    
+    func regisTableViewCell(){
+        //RegisterCell
+        //Register Pakai Cara Manual:
+        //self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
+        
+        //Register Pakai Helper (UINib + Loader):
+        actTableView.registerCell(type: ActionCell.self, identifier: "actCell")
     }
     
     

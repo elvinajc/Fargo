@@ -16,6 +16,7 @@
 		A419BA97288804B00073E723 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA96288804B00073E723 /* ColorPallete.swift */; };
 		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
 		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
+		A43A4CB7288D308800CB61AA /* UINIB+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */; };
 		A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */; };
 		A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB46288BF9F700B4F2DA /* ActionCell.swift */; };
 		A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AB47288BF9F700B4F2DA /* ActionCell.xib */; };
@@ -53,6 +54,7 @@
 		A419BA96288804B00073E723 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
+		A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINIB+Loader.swift"; sourceTree = "<group>"; };
 		A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanVC.swift; sourceTree = "<group>"; };
 		A452AB46288BF9F700B4F2DA /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		A452AB47288BF9F700B4F2DA /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
@@ -103,14 +105,14 @@
 				A419BA812887FEB30073E723 /* ActionPlan+CoreDataClass.swift */,
 				A419BA822887FEB30073E723 /* ActionPlan+CoreDataProperties.swift */,
 			);
-			name = CoreDataModel;
-			path = ../CoreDataModel;
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		A419BA95288804330073E723 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				A419BA96288804B00073E723 /* ColorPallete.swift */,
+				A43A4CB0288D2F5F00CB61AA /* Color */,
+				A43A4CB1288D2F7300CB61AA /* UI */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -121,6 +123,74 @@
 				A419BA982888077A0073E723 /* CoreDataManager.swift */,
 			);
 			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		A43A4CAD288D2C9700CB61AA /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A4AAB6B6288864860010782C /* TabBar */,
+				A4AAB6B7288864AE0010782C /* GoalSetting */,
+				A4AAB6C62888665E0010782C /* MyGoal */,
+				A4AAB6C9288866D80010782C /* Plan */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A43A4CAF288D2CF900CB61AA /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA8D2887FF780073E723 /* CoreDataModel */,
+				A419BA9A2888077F0073E723 /* CoreDataManager */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		A43A4CB0288D2F5F00CB61AA /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				A419BA96288804B00073E723 /* ColorPallete.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		A43A4CB1288D2F7300CB61AA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A43A4CB3288D2F9000CB61AA /* TextFieldTableViewCell */,
+				A43A4CB2288D2F8000CB61AA /* TextViewTableViewCell */,
+				A43A4CB4288D2FAF00CB61AA /* DatePickerViewTableViewCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A43A4CB2288D2F8000CB61AA /* TextViewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8F81628892526004F271C /* Default Extension */,
+			);
+			path = TextViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		A43A4CB3288D2F9000CB61AA /* TextFieldTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextFieldTableViewCell;
+			sourceTree = "<group>";
+		};
+		A43A4CB4288D2FAF00CB61AA /* DatePickerViewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatePickerViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		A43A4CB5288D2FFA00CB61AA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		A452AB3E288BBA7200B4F2DA /* Extension */ = {
@@ -195,10 +265,7 @@
 		A4AAB6BB288866040010782C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A4F768F428879BDC00D7253D /* AppDelegate.swift */,
-				A4F768F628879BDC00D7253D /* SceneDelegate.swift */,
-				A4F7690028879BDF00D7253D /* Assets.xcassets */,
-				A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */,
+				A43A4CAF288D2CF900CB61AA /* Core Data */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -281,15 +348,14 @@
 		A4F768F328879BDC00D7253D /* Fargo */ = {
 			isa = PBXGroup;
 			children = (
+				A43A4CAD288D2C9700CB61AA /* Feature */,
 				A419BA95288804330073E723 /* Themes */,
-				A4A8F81628892526004F271C /* Default Extension */,
-				A419BA8D2887FF780073E723 /* CoreDataModel */,
-				A419BA9A2888077F0073E723 /* CoreDataManager */,
-				A4AAB6B6288864860010782C /* TabBar */,
-				A4AAB6B7288864AE0010782C /* GoalSetting */,
-				A4AAB6C62888665E0010782C /* MyGoal */,
-				A4AAB6C9288866D80010782C /* Plan */,
+				A43A4CB5288D2FFA00CB61AA /* Helper */,
 				A4AAB6BB288866040010782C /* Utilities */,
+				A4F768F428879BDC00D7253D /* AppDelegate.swift */,
+				A4F768F628879BDC00D7253D /* SceneDelegate.swift */,
+				A4F7690028879BDF00D7253D /* Assets.xcassets */,
+				A4F7690228879BDF00D7253D /* LaunchScreen.storyboard */,
 				A4F7690528879BDF00D7253D /* Info.plist */,
 				A4F768FD28879BDC00D7253D /* Fargo.xcdatamodeld */,
 			);
@@ -381,6 +447,7 @@
 				A419BA97288804B00073E723 /* ColorPallete.swift in Sources */,
 				A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */,
 				A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */,
+				A43A4CB7288D308800CB61AA /* UINIB+Loader.swift in Sources */,
 				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
 				A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */,

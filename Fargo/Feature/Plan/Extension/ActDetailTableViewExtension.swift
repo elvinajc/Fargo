@@ -14,7 +14,7 @@ extension ActionPlanDetailVC : UITableViewDelegate {
 
 extension ActionPlanDetailVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -22,7 +22,7 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
     
 
-          //  cell.layer.cornerRadius = 8
+          // cell.layer.cornerRadius = 8
           //cell.actCellView.layer.cornerRadius = 8
             
 

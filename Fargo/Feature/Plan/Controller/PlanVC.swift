@@ -32,10 +32,8 @@ class PlanVC: UIViewController {
         //Sementara: is hidden = false
         noRequirementLabel.isHidden = false
         
-        //TableView
-        self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
-        reqTableView.delegate = self
-        reqTableView.dataSource = self
+        //DELEGATE + DATA SOURCE
+        
         
     }
     
@@ -70,6 +68,7 @@ class PlanVC: UIViewController {
     func configureUIPlan(){
         configureInfoView()
         setRoundedDetView()
+        setTableView()
     }
 
     func configureInfoView(){
@@ -84,6 +83,23 @@ class PlanVC: UIViewController {
         reqDetailView.layer.cornerRadius = 20
         // Round Top right corner, Top left corner
         reqDetailView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    func setTableView(){
+        //Register Table View Cell
+        regisTableViewCell()
+        
+        //Delegate + Data Source
+        reqTableView.delegate = self
+        reqTableView.dataSource = self
+    }
+    
+    func regisTableViewCell(){
+        //Register Pakai Cara Manual:
+        //self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
+        
+        //Register Pakai Helper (UINib + Loader):
+        reqTableView.registerCell(type: RequirementCell.self, identifier: "reqCell")
     }
     
     func loadAddAlert(){
