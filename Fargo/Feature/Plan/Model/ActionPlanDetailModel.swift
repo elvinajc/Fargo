@@ -6,7 +6,7 @@
 //
 
 //Section Title
-enum CellSectionTitle: Int, CaseIterable,CustomStringConvertible{
+enum ActPlanDetailCellSection: Int, CaseIterable,CustomStringConvertible{
     case actionNameTl
     case actionDescTl
     case successParameterTl

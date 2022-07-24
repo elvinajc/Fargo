@@ -26,12 +26,6 @@ class GoalSettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        //textfield delegate
-        goalField.delegate = self
-        reasonField.delegate = self
-        
-        
      
         configureUI()
         
@@ -42,12 +36,6 @@ class GoalSettingVC: UIViewController {
         confNavBar()
         confTextView()
         addGestureRecDismissKeyboard()
-        
-        //add done button to keyboard (goalfield & reasonfield)
-        goalField.addDoneButtonOnKeyboard()
-        reasonField.addDoneButtonOnKeyboard()
-    
-        
     }
     
     func confNavBar(){
@@ -80,7 +68,14 @@ class GoalSettingVC: UIViewController {
         reasonField.layer.cornerRadius = 8
         reasonField.text = "e.g. I want to get a new experience, get many connections, get high salary to buy a new house"
         reasonField.textColor = .softGray
+        
+        //textfield delegate
+        goalField.delegate = self
+        reasonField.delegate = self
        
+        //add done button to keyboard (goalfield & reasonfield)
+        goalField.addDoneButtonOnKeyboard()
+        reasonField.addDoneButtonOnKeyboard()
         
     }
     
