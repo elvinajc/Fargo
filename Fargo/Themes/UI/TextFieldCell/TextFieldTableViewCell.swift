@@ -25,6 +25,9 @@ class TextFieldTableViewCell: UITableViewCell {
         
         func setHint(text: String) {
             textFieldField.placeholder = text
+            textFieldField.attributedPlaceholder = NSAttributedString(string: text,
+                                         attributes: [NSAttributedString.Key.foregroundColor: UIColor.softGray])
+
         }
         
         func setEnable(isEnable: Bool) {
@@ -32,7 +35,7 @@ class TextFieldTableViewCell: UITableViewCell {
             if isEnable {
                 textFieldField.textColor = UIColor.black
             }else {
-                textFieldField.textColor = UIColor.systemGray
+                textFieldField.textColor = UIColor.softGray
             }
         }
     }

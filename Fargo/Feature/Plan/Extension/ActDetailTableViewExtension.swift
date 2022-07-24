@@ -60,9 +60,12 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         switch section {
             case .actionNameTl       :
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath) as! TextFieldTableViewCell
-                 cell.backgroundColor = .clear
-                 cell.layer.cornerRadius = 8
-                 cell.selectionStyle = .none
+                cell.backgroundColor = .clear
+                cell.layer.cornerRadius = 8
+                cell.selectionStyle = .none
+                cell.setEnable(isEnable: true)
+                cell.setHint(text: "e.g. Learn basic of core data (max. 30 char)")
+                
               
             return cell
             
@@ -71,6 +74,8 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.backgroundColor = .clear
                 cell.layer.cornerRadius = 8
                 cell.selectionStyle = .none
+                cell.setEnable(isEnable: true)
+                cell.setPlaceholder(text: "e.g. Understand about basic of core data in theory")
                     
                 return cell
             
