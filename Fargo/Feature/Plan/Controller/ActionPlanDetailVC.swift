@@ -11,7 +11,7 @@ class ActionPlanDetailVC: UIViewController {
     
     
     //Properties
-    let actPlanDetTableView = UITableView()
+    let actPlanDetTableView = UITableView(frame: .zero, style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,8 @@ class ActionPlanDetailVC: UIViewController {
         
         //Row heightnya dinamis sesuai masing masing cell
         //actPlanDetTableView.rowHeight = 44
-        //actPlanDetTableView.bounces = false
+    
+        
     }
     
     func registerCell(){
@@ -101,7 +102,7 @@ class ActionPlanDetailVC: UIViewController {
         //ADD Constraint
         constraints.append(actPlanDetTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)) //jarak 20 dari kiri
         constraints.append(actPlanDetTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 20)) // jarak 20 dari kanan
-       // constraints.append(tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 200)) // jarak 200 dari bawah
+        constraints.append(actPlanDetTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)) // jarak 0 dari bawah
         constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)) // jarak 20 dari atas
         
         constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 )) // lebar tableView 0.90 x dari view

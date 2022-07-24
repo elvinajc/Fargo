@@ -123,5 +123,19 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     
+        guard let section = ActPlanDetailCellSection(rawValue: indexPath.section) else { return 0 }
+        switch section {
+            case .actionNameTl       : return 44
+            case .actionDescTl       : return 105
+            case .successParameterTl : return 105
+            case .learningResourceTl : return 105
+            case .setDateTl          : return 44
+            default                  : return 0
+        }
+        
+    }
+    
     
 }
