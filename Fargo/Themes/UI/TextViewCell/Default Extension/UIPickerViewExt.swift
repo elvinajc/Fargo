@@ -24,12 +24,15 @@ extension UIPickerView{
       }
       
      @objc func doneButtonAction() {
-         self.resignFirstResponder()
-         
          //Save state ke user default
       // defaults.setValue(selectRow, forKey: pick)
          
          print("DATE NYA KE SAVE DISINI BRO")
+         
+         
+         self.resignFirstResponder()
+         
+      
      }
     
 

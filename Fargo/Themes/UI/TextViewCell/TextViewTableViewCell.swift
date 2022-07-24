@@ -10,25 +10,24 @@ import UIKit
 class TextViewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textViewField: UITextView!
-    
-        var placeholder = "Placeholder Text"
+        
+        var placeholder = "Placeholder"
         
         override func awakeFromNib() {
             super.awakeFromNib()
             
             textViewField.layer.cornerRadius = 8
             textViewField.addDoneButtonOnKeyboard()
-            
             textViewField.delegate = self
-            
         }
         
         func setPlaceholder(text: String) {
-            textViewField.text = text
+            placeholder = " \(text)"
+            textViewField.text = placeholder
             textViewField.textColor = UIColor.softGray
         }
         
-        func setTextViewText(text: String) {
+        func setTextView(text: String) {
             textViewField.text = text
             textViewField.textColor = UIColor.black
         }
@@ -57,11 +56,8 @@ class TextViewTableViewCell: UITableViewCell {
             if textViewField.text.isEmpty
             {
                 textViewField.text = placeholder
-                textViewField.textColor = UIColor.softGray
+                textViewField.textColor = UIColor.systemGray3
             }
-            textView.resignFirstResponder()
+            textViewField.resignFirstResponder()
         }
-
     }
-
-    
