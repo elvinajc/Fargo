@@ -84,6 +84,8 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.backgroundColor = .clear
                 cell.layer.cornerRadius = 8
                 cell.selectionStyle = .none
+                cell.setEnable(isEnable: true)
+                cell.setPlaceholder(text: "e.g. I can create a mind map about how core data works")
                 
                 return cell
             
@@ -92,6 +94,8 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.backgroundColor = .clear
                 cell.layer.cornerRadius = 8
                 cell.selectionStyle = .none
+                cell.setEnable(isEnable: true)
+                cell.setPlaceholder(text: "Put the video / website link that you use as study references here")
             
                 return cell
             
@@ -106,8 +110,12 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                     // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
                       let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
                       //cell.backgroundColor = .clear
+                      let setDates = SetDateSect(rawValue: indexPath.row)
+                      cell.textLabel?.text = setDates?.description
+                    
                       cell.layer.cornerRadius = 8
                       cell.selectionStyle = .none
+                      //cell.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
                       
                       return cell
                     
@@ -115,7 +123,10 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                     // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
                      let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
                      //cell.backgroundColor = .clear
-                     cell.layer.cornerRadius = 8
+                     let setDates = SetDateSect(rawValue: indexPath.row)
+                     cell.textLabel?.text = setDates?.description
+                   
+                     cell.contentView.layer.cornerRadius = 8
                      cell.selectionStyle = .none
                     
                     return cell

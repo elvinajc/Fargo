@@ -27,8 +27,6 @@ class ActionPlanDetailVC: UIViewController {
     func configureUIActPlanDetail(){
         confNavBar()
         setTableView()
-        confTextField()
-        confTextView()
         addGestureRecDismissKeyboard()
     }
     
@@ -103,7 +101,7 @@ class ActionPlanDetailVC: UIViewController {
         constraints.append(actPlanDetTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)) //jarak 20 dari kiri
         constraints.append(actPlanDetTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 20)) // jarak 20 dari kanan
         constraints.append(actPlanDetTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)) // jarak 0 dari bawah
-        constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)) // jarak 20 dari atas
+        constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)) // jarak 20 dari atas
         
         constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 )) // lebar tableView 0.90 x dari view
        //constraints.append(tableView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.33 )) // tinggi tableView 0.33 x dari view
@@ -114,35 +112,6 @@ class ActionPlanDetailVC: UIViewController {
         NSLayoutConstraint.activate(constraints)
         
     }
-    
-    func confTextField(){
-        
-    }
-    
-    func confTextView(){
-        
-    }
-    
-//    func condTextView(){
-//            goalField.tag = 1
-//            goalField.layer.cornerRadius = 8
-//            goalField.text =  "e.g. I want to be an iOS Developer at ABCDX company"
-//            goalField.textColor = .softGray
-//       
-//            
-//            reasonField.tag = 2
-//            reasonField.layer.cornerRadius = 8
-//            reasonField.text = "e.g. I want to get a new experience, get many connections, get high salary to buy a new house"
-//            reasonField.textColor = .softGray
-//            
-//            //textfield delegate
-//            goalField.delegate = self
-//            reasonField.delegate = self
-//           
-//            //add done button to keyboard (goalfield & reasonfield)
-//            goalField.addDoneButtonOnKeyboard()
-//            reasonField.addDoneButtonOnKeyboard()
-//    }
     
     
     func addGestureRecDismissKeyboard(){

@@ -99,7 +99,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="200.66666666666666"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="210" translatesAutoresizingMaskIntoConstraints="NO" id="MGi-nA-3ru">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="37.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="38"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Goal    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NZ-l4-As6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="37.666666666666664"/>
@@ -146,7 +146,7 @@ ABCDX company</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KYF-u3-hax">
-                                                <rect key="frame" x="0.0" y="231" width="356" height="187"/>
+                                                <rect key="frame" x="0.0" y="230.66666666666663" width="356" height="187"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason To Achieve The Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynx-rx-bsK">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="24"/>

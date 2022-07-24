@@ -20,12 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="385" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="123456789123456789123456789123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W9-s5-eYR">
-                                <rect key="frame" x="37" y="19" width="292" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-Uy-beh">
                                 <rect key="frame" x="8" y="19.5" width="21" height="21"/>
                                 <constraints>
@@ -40,16 +34,31 @@
                                     <action selector="checkmarkBtnAction:" destination="TLG-Z0-5KD" eventType="touchUpInside" id="G8P-zR-CmR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1234567891234567891234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W9-s5-eYR">
+                                <rect key="frame" x="37" y="19" width="249" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Aug" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RA-KI-5zV">
+                                <rect key="frame" x="325" y="18" width="52" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.2901961207" green="0.098039209840000002" blue="0.078431375319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.97647058959999999" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3WB-Uy-beh" firstAttribute="centerY" secondItem="Hwe-8s-Hqb" secondAttribute="centerY" id="GiG-Yr-Jn1"/>
                             <constraint firstAttribute="bottom" secondItem="5W9-s5-eYR" secondAttribute="bottom" constant="20" symbolic="YES" id="KUO-7p-rYo"/>
+                            <constraint firstAttribute="bottom" secondItem="7RA-KI-5zV" secondAttribute="bottom" constant="22" id="Kxh-3u-TxJ"/>
                             <constraint firstItem="5W9-s5-eYR" firstAttribute="leading" secondItem="3WB-Uy-beh" secondAttribute="trailing" constant="8" id="UGd-4S-nja"/>
                             <constraint firstItem="5W9-s5-eYR" firstAttribute="centerY" secondItem="Hwe-8s-Hqb" secondAttribute="centerY" id="ViW-hj-Mjs"/>
                             <constraint firstItem="3WB-Uy-beh" firstAttribute="leading" secondItem="Hwe-8s-Hqb" secondAttribute="leading" constant="8" id="WS9-Lq-wXM"/>
+                            <constraint firstAttribute="trailing" secondItem="7RA-KI-5zV" secondAttribute="trailing" constant="8" id="cnS-xI-Vvv"/>
                             <constraint firstItem="5W9-s5-eYR" firstAttribute="top" secondItem="Hwe-8s-Hqb" secondAttribute="top" constant="20" symbolic="YES" id="hdl-2S-Zdd"/>
+                            <constraint firstItem="7RA-KI-5zV" firstAttribute="top" secondItem="Hwe-8s-Hqb" secondAttribute="top" constant="18" id="wf4-3Z-cgj"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,6 +76,7 @@
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="actCellView" destination="Hwe-8s-Hqb" id="GB7-Zy-PKR"/>
+                <outlet property="actDateLbl" destination="7RA-KI-5zV" id="raN-Kc-Qvn"/>
                 <outlet property="actNameLbl" destination="5W9-s5-eYR" id="Eut-WC-sop"/>
                 <outlet property="checkmarkButton" destination="3WB-Uy-beh" id="SMD-cx-5gN"/>
             </connections>

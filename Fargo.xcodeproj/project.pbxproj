@@ -41,6 +41,8 @@
 		A4AAB6BD288866230010782C /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BC288866230010782C /* PlanVC.swift */; };
 		A4AAB6C3288866470010782C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C2288866470010782C /* Plan.storyboard */; };
 		A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C4288866510010782C /* MyGoal.storyboard */; };
+		A4E4D08A288D8E8000FC7AF8 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E4D088288D8E8000FC7AF8 /* DatePickerTableViewCell.swift */; };
+		A4E4D08B288D8E8000FC7AF8 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E4D089288D8E8000FC7AF8 /* DatePickerTableViewCell.xib */; };
 		A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F428879BDC00D7253D /* AppDelegate.swift */; };
 		A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F628879BDC00D7253D /* SceneDelegate.swift */; };
 		A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4F768FD28879BDC00D7253D /* Fargo.xcdatamodeld */; };
@@ -84,6 +86,8 @@
 		A4AAB6BC288866230010782C /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
 		A4AAB6C2288866470010782C /* Plan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		A4AAB6C4288866510010782C /* MyGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGoal.storyboard; sourceTree = "<group>"; };
+		A4E4D088288D8E8000FC7AF8 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		A4E4D089288D8E8000FC7AF8 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		A4F768F128879BDC00D7253D /* Fargo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fargo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F768F428879BDC00D7253D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F768F628879BDC00D7253D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 		A43A4CBA288D4F4400CB61AA /* DatePickerViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				A4E4D088288D8E8000FC7AF8 /* DatePickerTableViewCell.swift */,
+				A4E4D089288D8E8000FC7AF8 /* DatePickerTableViewCell.xib */,
 			);
 			path = DatePickerViewCell;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 			files = (
 				A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */,
 				A43A4CC2288D521400CB61AA /* TextViewTableViewCell.xib in Resources */,
+				A4E4D08B288D8E8000FC7AF8 /* DatePickerTableViewCell.xib in Resources */,
 				A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */,
 				A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */,
 				A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */,
@@ -467,6 +474,7 @@
 				A49239AC288AB6DF007FFA90 /* RequirementCell.swift in Sources */,
 				A43A4CB7288D308800CB61AA /* UINIB+Loader.swift in Sources */,
 				A4F7691028879ED900D7253D /* GoalSettingVC.swift in Sources */,
+				A4E4D08A288D8E8000FC7AF8 /* DatePickerTableViewCell.swift in Sources */,
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
 				A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */,
 				A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */,

@@ -13,8 +13,9 @@ class ActionCell: UITableViewCell {
     @IBOutlet weak var actCellView: UIView!
     @IBOutlet weak var checkmarkButton: UIButton!
     @IBOutlet weak var actNameLbl: UILabel!
+    @IBOutlet weak var actDateLbl: UILabel!
     
-      //ImageIcon
+    //ImageIcon
      let uncheckIcon = UIImage(systemName: "square")
      let checkIcon = UIImage(systemName: "checkmark.square.fill")
     
