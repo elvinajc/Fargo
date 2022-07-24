@@ -17,6 +17,8 @@ class TextViewTableViewCell: UITableViewCell {
             super.awakeFromNib()
             
             textViewField.layer.cornerRadius = 8
+            textViewField.addDoneButtonOnKeyboard()
+            
             textViewField.delegate = self
             
         }

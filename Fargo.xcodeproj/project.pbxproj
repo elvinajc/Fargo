@@ -21,6 +21,7 @@
 		A43A4CBE288D520500CB61AA /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A4CBC288D520500CB61AA /* TextFieldTableViewCell.xib */; };
 		A43A4CC1288D521400CB61AA /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CBF288D521400CB61AA /* TextViewTableViewCell.swift */; };
 		A43A4CC2288D521400CB61AA /* TextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A4CC0288D521400CB61AA /* TextViewTableViewCell.xib */; };
+		A43A4CC4288D71F600CB61AA /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CC3288D71F600CB61AA /* UITextFieldExt.swift */; };
 		A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */; };
 		A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB46288BF9F700B4F2DA /* ActionCell.swift */; };
 		A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AB47288BF9F700B4F2DA /* ActionCell.xib */; };
@@ -63,6 +64,7 @@
 		A43A4CBC288D520500CB61AA /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		A43A4CBF288D521400CB61AA /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		A43A4CC0288D521400CB61AA /* TextViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTableViewCell.xib; sourceTree = "<group>"; };
+		A43A4CC3288D71F600CB61AA /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
 		A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanVC.swift; sourceTree = "<group>"; };
 		A452AB46288BF9F700B4F2DA /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		A452AB47288BF9F700B4F2DA /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A8F81428891E85004F271C /* UITextViewExt.swift */,
+				A43A4CC3288D71F600CB61AA /* UITextFieldExt.swift */,
 			);
 			path = "Default Extension";
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				A4F768FF28879BDC00D7253D /* Fargo.xcdatamodeld in Sources */,
 				A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */,
 				A4A8F81528891E85004F271C /* UITextViewExt.swift in Sources */,
+				A43A4CC4288D71F600CB61AA /* UITextFieldExt.swift in Sources */,
 				A4A8F81828894150004F271C /* MyGoalVC.swift in Sources */,
 				A452AB4B288C08FE00B4F2DA /* ReqTableViewExtension.swift in Sources */,
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
