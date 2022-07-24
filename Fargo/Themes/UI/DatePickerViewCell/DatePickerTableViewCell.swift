@@ -9,22 +9,28 @@ import UIKit
 
 class DatePickerTableViewCell: UITableViewCell {
 
-    let InputField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.textColor = .gray
-        return tf
-    }()
+    @IBOutlet weak var dateView: UIView!
+ 
+    @IBOutlet weak var dateField: UITextField!
+    
+  
+    
+    let pickerView = UIDatePicker()
+
+    var selectRow : Int = 0
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        dateField.textColor = .darkChoco
+        dateField.layer.borderWidth = 0
+        dateField.inputView = pickerView
+        
+
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+ 
+    
     
 }

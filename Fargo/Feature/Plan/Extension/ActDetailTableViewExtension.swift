@@ -53,6 +53,8 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         return 30
     }
     
+ 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let section = ActPlanDetailCellSection(rawValue: indexPath.section) else { return UITableViewCell() }
@@ -64,7 +66,7 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.layer.cornerRadius = 8
                 cell.selectionStyle = .none
                 cell.setEnable(isEnable: true)
-                cell.setHint(text: "e.g. Learn basic of core data (max. 30 char)")
+                cell.setHint(text: "e.g. Learn basic of core data (max. 25 char)")
                 
               
             return cell
@@ -107,28 +109,39 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 switch sections{
                     
                     case .startDate :
-                    // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
-                      let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+                      let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell", for: indexPath)as! DatePickerTableViewCell
+                     // let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
                       //cell.backgroundColor = .clear
                       let setDates = SetDateSect(rawValue: indexPath.row)
                       cell.textLabel?.text = setDates?.description
-                    
-                      cell.layer.cornerRadius = 8
+                      cell.backgroundColor = .clear
                       cell.selectionStyle = .none
-                      //cell.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-                      
+                    
+                      //Set Rounded Corner Top Left & Right
+                      cell.dateView.layer.cornerRadius = 8
+                      cell.dateView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+                    
+                      //Add Gray Border Separator Gray Color
+                      let bottomBorder = CALayer()
+                      bottomBorder.frame = CGRect(x: 8.0, y: 43.0, width: cell.contentView.frame.size.width, height: 0.5)
+                      bottomBorder.backgroundColor = UIColor.softGray.cgColor
+                      cell.contentView.layer.addSublayer(bottomBorder)
+                    
                       return cell
                     
+                    
                     case .endDate :
-                    // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
-                     let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+                     let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell", for: indexPath)as! DatePickerTableViewCell
+                    // let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
                      //cell.backgroundColor = .clear
                      let setDates = SetDateSect(rawValue: indexPath.row)
                      cell.textLabel?.text = setDates?.description
-                   
-                     cell.contentView.layer.cornerRadius = 8
+                     cell.backgroundColor = .clear
                      cell.selectionStyle = .none
                     
+                    //Set Rounded Corner Top Left & Right
+                    cell.dateView.layer.cornerRadius = 8
+                    cell.dateView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
                     return cell
                 
                     default:

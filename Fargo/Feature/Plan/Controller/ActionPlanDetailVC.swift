@@ -37,15 +37,26 @@ class ActionPlanDetailVC: UIViewController {
     }
 
     @objc func done() {
-        //MARK: -- SAVE GOAL & REASON KE CORE DATA
-        print("doness")
+        //MARK: -- SAVE ACTION DETAILS KE CORE DATA
+        print("Action Details Saved")
         
 //        print(goalField.text as Any)
 //        print(reasonField.text as Any)
         
         //perform segue balik ke halaman action plam
-        //self.performSegue(withIdentifier: "goToActionPlan", sender: self)
         self.navigationController?.popViewController(animated: true)
+        
+        
+        //MARK: IF START DATE & IF ENDDATE, bikin jd 2  case
+//        defaultFocusTime = Int(focusSelectedTxt)!*60
+//     //testing valuenya keganti gak
+//        print("Focus")
+//        print(defaultFocusTime)
+
+        //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
+//        let row = pickerView.selectedRow(inComponent: 0)
+//        pickerView.selectRow(row, inComponent: 0, animated: true)
+//        selectRow = row
         
     }
     
@@ -88,7 +99,7 @@ class ActionPlanDetailVC: UIViewController {
         //Register Pakai Helper (UINib + Loader):
         actPlanDetTableView.registerCell(type: TextFieldTableViewCell.self, identifier: "TextFieldCell")
         actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "TextViewCell")
-        //actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "DatePickerCell")
+        actPlanDetTableView.registerCell(type: DatePickerTableViewCell.self, identifier: "DatePickerCell")
         
     }
 
