@@ -27,7 +27,8 @@ class ActionPlanDetailVC: UIViewController {
     func configureUIActPlanDetail(){
         confNavBar()
         setTableView()
-//        confTextView()
+        confTextField()
+        confTextView()
         addGestureRecDismissKeyboard()
     }
     
@@ -91,8 +92,7 @@ class ActionPlanDetailVC: UIViewController {
         //actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "DatePickerCell")
         
     }
-        
-      
+
     
     func addTableViewConstraint(){
         
@@ -104,7 +104,7 @@ class ActionPlanDetailVC: UIViewController {
        // constraints.append(tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 200)) // jarak 200 dari bawah
         constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)) // jarak 20 dari atas
         
-       constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 )) // lebar tableView 0.90 x dari view
+        constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 )) // lebar tableView 0.90 x dari view
        //constraints.append(tableView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.33 )) // tinggi tableView 0.33 x dari view
         constraints.append(actPlanDetTableView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor))
         constraints.append(actPlanDetTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
@@ -113,6 +113,36 @@ class ActionPlanDetailVC: UIViewController {
         NSLayoutConstraint.activate(constraints)
         
     }
+    
+    func confTextField(){
+        
+    }
+    
+    func confTextView(){
+        
+    }
+    
+//    func condTextView(){
+//            goalField.tag = 1
+//            goalField.layer.cornerRadius = 8
+//            goalField.text =  "e.g. I want to be an iOS Developer at ABCDX company"
+//            goalField.textColor = .softGray
+//       
+//            
+//            reasonField.tag = 2
+//            reasonField.layer.cornerRadius = 8
+//            reasonField.text = "e.g. I want to get a new experience, get many connections, get high salary to buy a new house"
+//            reasonField.textColor = .softGray
+//            
+//            //textfield delegate
+//            goalField.delegate = self
+//            reasonField.delegate = self
+//           
+//            //add done button to keyboard (goalfield & reasonfield)
+//            goalField.addDoneButtonOnKeyboard()
+//            reasonField.addDoneButtonOnKeyboard()
+//    }
+    
     
     func addGestureRecDismissKeyboard(){
         //Looks for single or multiple taps.
@@ -123,6 +153,13 @@ class ActionPlanDetailVC: UIViewController {
 
         view.addGestureRecognizer(tap)
     }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     
 
 }

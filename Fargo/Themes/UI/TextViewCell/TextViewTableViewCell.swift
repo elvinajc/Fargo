@@ -9,15 +9,57 @@ import UIKit
 
 class TextViewTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var textViewField: UITextView!
     
-}
+        var placeholder = "Placeholder Text"
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            
+            textViewField.layer.cornerRadius = 8
+            textViewField.delegate = self
+            
+        }
+        
+        func setPlaceholder(text: String) {
+            textViewField.text = text
+            textViewField.textColor = UIColor.softGray
+        }
+        
+        func setTextView(text: String) {
+            textViewField.text = text
+            textViewField.textColor = UIColor.black
+        }
+        
+        func setEnable(isEnable: Bool) {
+            textViewField.isEditable = isEnable
+            if isEnable {
+                textViewField.textColor = UIColor.black
+            }else {
+                textViewField.textColor = UIColor.softGray
+            }
+        }
+     
+    }
+
+    extension TextViewTableViewCell: UITextViewDelegate {
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if (textViewField.text == placeholder)
+            {
+                textViewField.text = nil
+                textViewField.textColor = UIColor.black
+            }
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if textViewField.text.isEmpty
+            {
+                textViewField.text = placeholder
+                textViewField.textColor = UIColor.softGray
+            }
+            textView.resignFirstResponder()
+        }
+
+    }
+
+    

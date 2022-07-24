@@ -49,10 +49,6 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         return view
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        <#code#>
-//    }
-//
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
@@ -60,55 +56,64 @@ extension ActionPlanDetailVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let section = ActPlanDetailCellSection(rawValue: indexPath.section) else { return UITableViewCell() }
-   //     let cell  = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
-        
+ 
         switch section {
             case .actionNameTl       :
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath) as! TextFieldTableViewCell
-                //cell.textLabel?.text = SettingCellFillOpt(rawValue: 0)?.description
                  cell.backgroundColor = .clear
                  cell.layer.cornerRadius = 8
                  cell.selectionStyle = .none
-                 //cell.actCellView.layer.cornerRadius = 8
+              
             return cell
             
             case .actionDescTl       :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewTableViewCell
-            
-//                cell.selectionStyle = .none
-//                cell.setEnable(isEnable: isAbleToEdit)
-//                cell.setLabel(text: "Description")
-//                guard let description = monster?.description else { return cell }
-//                cell.setTextView(text: description)
-
-//               default:
-//                let cell = UITableViewCell()
+                cell.backgroundColor = .clear
+                cell.layer.cornerRadius = 8
+                cell.selectionStyle = .none
+                    
                 return cell
             
             case .successParameterTl :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
-           
+                cell.backgroundColor = .clear
+                cell.layer.cornerRadius = 8
+                cell.selectionStyle = .none
+                
                 return cell
             
             case .learningResourceTl :
-              let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
-           
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)as! TextViewTableViewCell
+                cell.backgroundColor = .clear
+                cell.layer.cornerRadius = 8
+                cell.selectionStyle = .none
+            
                 return cell
             
             case .setDateTl          :
                 //MARK: -- MASIH BELOM DIGANTI
-               // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
+               
                guard let sections = SetDateSect(rawValue: indexPath.row) else { return UITableViewCell() }
             
                 switch sections{
                     
                     case .startDate :
+                    // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
                       let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
+                      //cell.backgroundColor = .clear
+                      cell.layer.cornerRadius = 8
+                      cell.selectionStyle = .none
+                      
                       return cell
                     
                     case .endDate :
+                    // let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.identifier, for: indexPath)
                      let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
-                     return cell
+                     //cell.backgroundColor = .clear
+                     cell.layer.cornerRadius = 8
+                     cell.selectionStyle = .none
+                    
+                    return cell
                 
                     default:
                      ""
@@ -117,27 +122,6 @@ extension ActionPlanDetailVC : UITableViewDataSource{
         }
         
     }
-                
-            
-               //cell.textLabel?.text = SettingCellFillOpt(rawValue: 0)?.description
-              
-               // Remove selection style
-               // cell.selectionStyle = .none
-            
-                // cell.layer.cornerRadius = 8
-                //cell.actCellView.layer.cornerRadius = 8
- 
-        
-//        switch indexPath.section {
-//            case 0 : cell.backgroundColor = .darkChoco
-//            case 1 : cell.backgroundColor = .darkGray
-//            case 2 : cell.backgroundColor = .lilDarkGray
-//            case 3 : cell.backgroundColor = .softEmeraldGreen
-//            case 4 : cell.backgroundColor = .blue
-//            default: break
-//        }
-            
-
     
     
 }
