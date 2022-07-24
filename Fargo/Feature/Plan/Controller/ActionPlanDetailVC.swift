@@ -77,23 +77,20 @@ class ActionPlanDetailVC: UIViewController {
     
     func registerCell(){
         //MARK: -- Register cell :
-        //Example:
+        //Register ngetes
         actPlanDetTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Test")
         
-        //Action Name
-        //Action Desc
-        //Success Parameter
-        //Learning Resources
-        //Set Date
-        
-        
-        //        tableView.register(FocusSetTextFieldPickerViewCell.self, forCellReuseIdentifier: FocusSetTextFieldPickerViewCell.identifier)
-        //        tableView.register(SBreakSetTextFieldPickerViewCell.self, forCellReuseIdentifier:  SBreakSetTextFieldPickerViewCell.identifier)
-        //        tableView.register(LBreakSetTextFieldPickerViewCell.self, forCellReuseIdentifier:  LBreakSetTextFieldPickerViewCell.identifier)
-        //        tableView.register(LBAfterSetTextFieldPickerViewCell.self, forCellReuseIdentifier:  LBAfterSetTextFieldPickerViewCell.identifier)
-        //        tableView.register(SwitchCell.self, forCellReuseIdentifier: SwitchCell.identifier) //->Manggil dari class cell
-              
+        //Register NIB Cell
+        //Register Pakai Cara Manual:
+        //self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
+
+        //Register Pakai Helper (UINib + Loader):
+        actPlanDetTableView.registerCell(type: TextFieldTableViewCell.self, identifier: "TextFieldCell")
+        actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "TextViewCell")
+        //actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "DatePickerCell")
     }
+        
+      
     
     func addTableViewConstraint(){
         

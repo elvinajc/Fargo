@@ -17,6 +17,10 @@
 		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
 		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
 		A43A4CB7288D308800CB61AA /* UINIB+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */; };
+		A43A4CBD288D520500CB61AA /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CBB288D520500CB61AA /* TextFieldTableViewCell.swift */; };
+		A43A4CBE288D520500CB61AA /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A4CBC288D520500CB61AA /* TextFieldTableViewCell.xib */; };
+		A43A4CC1288D521400CB61AA /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CBF288D521400CB61AA /* TextViewTableViewCell.swift */; };
+		A43A4CC2288D521400CB61AA /* TextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A4CC0288D521400CB61AA /* TextViewTableViewCell.xib */; };
 		A452AB40288BD5D800B4F2DA /* ActionPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */; };
 		A452AB48288BF9F700B4F2DA /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452AB46288BF9F700B4F2DA /* ActionCell.swift */; };
 		A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AB47288BF9F700B4F2DA /* ActionCell.xib */; };
@@ -55,6 +59,10 @@
 		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
 		A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINIB+Loader.swift"; sourceTree = "<group>"; };
+		A43A4CBB288D520500CB61AA /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		A43A4CBC288D520500CB61AA /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		A43A4CBF288D521400CB61AA /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		A43A4CC0288D521400CB61AA /* TextViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTableViewCell.xib; sourceTree = "<group>"; };
 		A452AB3F288BD5D800B4F2DA /* ActionPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanVC.swift; sourceTree = "<group>"; };
 		A452AB46288BF9F700B4F2DA /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		A452AB47288BF9F700B4F2DA /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
@@ -111,8 +119,8 @@
 		A419BA95288804330073E723 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				A43A4CB0288D2F5F00CB61AA /* Color */,
 				A43A4CB1288D2F7300CB61AA /* UI */,
+				A43A4CB0288D2F5F00CB61AA /* Color */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -156,33 +164,11 @@
 		A43A4CB1288D2F7300CB61AA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A43A4CB3288D2F9000CB61AA /* TextFieldTableViewCell */,
-				A43A4CB2288D2F8000CB61AA /* TextViewTableViewCell */,
-				A43A4CB4288D2FAF00CB61AA /* DatePickerViewTableViewCell */,
+				A43A4CB8288D4F0E00CB61AA /* TextFieldCell */,
+				A43A4CB9288D4F3100CB61AA /* TextViewCell */,
+				A43A4CBA288D4F4400CB61AA /* DatePickerViewCell */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		A43A4CB2288D2F8000CB61AA /* TextViewTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				A4A8F81628892526004F271C /* Default Extension */,
-			);
-			path = TextViewTableViewCell;
-			sourceTree = "<group>";
-		};
-		A43A4CB3288D2F9000CB61AA /* TextFieldTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TextFieldTableViewCell;
-			sourceTree = "<group>";
-		};
-		A43A4CB4288D2FAF00CB61AA /* DatePickerViewTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DatePickerViewTableViewCell;
 			sourceTree = "<group>";
 		};
 		A43A4CB5288D2FFA00CB61AA /* Helper */ = {
@@ -191,6 +177,32 @@
 				A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A43A4CB8288D4F0E00CB61AA /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				A43A4CBB288D520500CB61AA /* TextFieldTableViewCell.swift */,
+				A43A4CBC288D520500CB61AA /* TextFieldTableViewCell.xib */,
+			);
+			path = TextFieldCell;
+			sourceTree = "<group>";
+		};
+		A43A4CB9288D4F3100CB61AA /* TextViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8F81628892526004F271C /* Default Extension */,
+				A43A4CBF288D521400CB61AA /* TextViewTableViewCell.swift */,
+				A43A4CC0288D521400CB61AA /* TextViewTableViewCell.xib */,
+			);
+			path = TextViewCell;
+			sourceTree = "<group>";
+		};
+		A43A4CBA288D4F4400CB61AA /* DatePickerViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatePickerViewCell;
 			sourceTree = "<group>";
 		};
 		A452AB3E288BBA7200B4F2DA /* Extension */ = {
@@ -421,9 +433,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A49DE2E0288862750074CAF3 /* TabBar.storyboard in Resources */,
+				A43A4CC2288D521400CB61AA /* TextViewTableViewCell.xib in Resources */,
 				A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */,
 				A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */,
 				A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */,
+				A43A4CBE288D520500CB61AA /* TextFieldTableViewCell.xib in Resources */,
 				A4AAB6C3288866470010782C /* Plan.storyboard in Resources */,
 				A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */,
 				A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */,
@@ -439,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A49B7BDE288D0DAC00C6128F /* ActionPlanDetailVC.swift in Sources */,
+				A43A4CC1288D521400CB61AA /* TextViewTableViewCell.swift in Sources */,
 				A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */,
 				A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */,
 				A49B7BE3288D1E3D00C6128F /* ActDetailTableViewExtension.swift in Sources */,
@@ -461,6 +476,7 @@
 				A452AB4D288C091F00B4F2DA /* ActTableViewExtension.swift in Sources */,
 				A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */,
 				A419BA872887FEB30073E723 /* ActionPlan+CoreDataClass.swift in Sources */,
+				A43A4CBD288D520500CB61AA /* TextFieldTableViewCell.swift in Sources */,
 				A49B7BE0288D19E500C6128F /* ActionPlanDetailModel.swift in Sources */,
 				A4F768F728879BDC00D7253D /* SceneDelegate.swift in Sources */,
 				A4AAB6BD288866230010782C /* PlanVC.swift in Sources */,
