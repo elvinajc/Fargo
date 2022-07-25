@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Init LoadVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="InitLoadVC" customModule="Fargo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="1" green="0.97647058959999999" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <connections>
+                        <segue destination="EVw-Dk-veA" kind="presentation" identifier="goToGoalSettingFL" modalPresentationStyle="fullScreen" id="1ND-AJ-y2k"/>
+                        <segue destination="Oyd-vj-qEz" kind="presentation" identifier="goToTabBarFL" modalPresentationStyle="fullScreen" id="3tV-RK-l2r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16" y="50"/>
+        </scene>
+        <!--GoalSetting-->
+        <scene sceneID="huq-a0-J3b">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="goalSettingSB" storyboardName="GoalSetting" id="EVw-Dk-veA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AaS-hK-qba"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4o-rM-aJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="625" y="-23"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="YWp-cG-rLy">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarSB" storyboardName="TabBar" id="Oyd-vj-qEz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="C03-yt-0Gu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNH-8H-g4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="122"/>
+        </scene>
+    </scenes>
+</document>

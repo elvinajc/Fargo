@@ -5,32 +5,33 @@
 //  Created by Elvina Jacia on 20/07/22.
 //
 
-
+import CoreData
 import UIKit
 
 class GoalSettingVC: UIViewController {
 
-    //Properties
- 
+    //Properties 
     @IBOutlet weak var goalQuestLabel: UILabel!
-    
     @IBOutlet weak var goalField: UITextView!
-    
     @IBOutlet weak var reasonLabel: UILabel!
-    
     @IBOutlet weak var reasonField: UITextView!
     
-  //  var pickerTag: Int = 0;
-    
+    //MARK: CORE DATA 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var goals: [Goal] = [Goal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
         configureUI()
-        
+       
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+      //   checkTheGoal()
+    }
+    
     //Function
     func configureUI(){
         confNavBar()
@@ -51,6 +52,8 @@ class GoalSettingVC: UIViewController {
         
         print("Goal  : \(goalField.text!)")
         print("Reason: \(reasonField.text!)")
+        
+        saveGoalReason()
         
         //perform segue
         self.performSegue(withIdentifier: "goToTabBar", sender: self)
@@ -96,5 +99,22 @@ class GoalSettingVC: UIViewController {
         view.endEditing(true)
     }
     
+    //MARK: CORE DATA FUNCT
+ 
+    
+    func saveGoalReason(){
+        // Create a goal obj
+        let newGoal = Goal(context: self.context)
+        newGoal.goalDesc = goalField.text
+        newGoal.reason = reasonField.text
+     
+        // Save goal data
+        do {
+            try self.context.save()
+        } catch {
+            print(error)
+        }
+    
+    }
 
 }

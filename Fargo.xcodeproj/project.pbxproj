@@ -43,6 +43,8 @@
 		A4AAB6BD288866230010782C /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAB6BC288866230010782C /* PlanVC.swift */; };
 		A4AAB6C3288866470010782C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C2288866470010782C /* Plan.storyboard */; };
 		A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AAB6C4288866510010782C /* MyGoal.storyboard */; };
+		A4D9A8C7288EA1940071F328 /* InitLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9A8C6288EA1940071F328 /* InitLoadVC.swift */; };
+		A4D9A8C9288EA1A50071F328 /* InitLoad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D9A8C8288EA1A50071F328 /* InitLoad.storyboard */; };
 		A4E4D08A288D8E8000FC7AF8 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E4D088288D8E8000FC7AF8 /* DatePickerTableViewCell.swift */; };
 		A4E4D08B288D8E8000FC7AF8 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E4D089288D8E8000FC7AF8 /* DatePickerTableViewCell.xib */; };
 		A4F768F528879BDC00D7253D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F768F428879BDC00D7253D /* AppDelegate.swift */; };
@@ -90,6 +92,8 @@
 		A4AAB6BC288866230010782C /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
 		A4AAB6C2288866470010782C /* Plan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		A4AAB6C4288866510010782C /* MyGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGoal.storyboard; sourceTree = "<group>"; };
+		A4D9A8C6288EA1940071F328 /* InitLoadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitLoadVC.swift; sourceTree = "<group>"; };
+		A4D9A8C8288EA1A50071F328 /* InitLoad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitLoad.storyboard; sourceTree = "<group>"; };
 		A4E4D088288D8E8000FC7AF8 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		A4E4D089288D8E8000FC7AF8 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		A4F768F128879BDC00D7253D /* Fargo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fargo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +150,8 @@
 		A43A4CAD288D2C9700CB61AA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A4D9A8C8288EA1A50071F328 /* InitLoad.storyboard */,
+				A4D9A8C6288EA1940071F328 /* InitLoadVC.swift */,
 				A4AAB6B6288864860010782C /* TabBar */,
 				A4AAB6B7288864AE0010782C /* GoalSetting */,
 				A4AAB6C62888665E0010782C /* MyGoal */,
@@ -453,6 +459,7 @@
 				A4AAB6C5288866510010782C /* MyGoal.storyboard in Resources */,
 				A4F7690428879BDF00D7253D /* LaunchScreen.storyboard in Resources */,
 				A4F7690128879BDF00D7253D /* Assets.xcassets in Resources */,
+				A4D9A8C9288EA1A50071F328 /* InitLoad.storyboard in Resources */,
 				A43A4CBE288D520500CB61AA /* TextFieldTableViewCell.xib in Resources */,
 				A4AAB6C3288866470010782C /* Plan.storyboard in Resources */,
 				A452AB49288BF9F700B4F2DA /* ActionCell.xib in Resources */,
@@ -470,6 +477,7 @@
 			files = (
 				A49B7BDE288D0DAC00C6128F /* ActionPlanDetailVC.swift in Sources */,
 				A43A4CC1288D521400CB61AA /* TextViewTableViewCell.swift in Sources */,
+				A4D9A8C7288EA1940071F328 /* InitLoadVC.swift in Sources */,
 				A4643A22288DAABD0034B2B3 /* UITableViewCellExt.swift in Sources */,
 				A49DE2E2288863750074CAF3 /* TabBarVC.swift in Sources */,
 				A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */,
@@ -645,7 +653,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Fargo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = GoalSetting;
+				INFOPLIST_KEY_UIMainStoryboardFile = InitLoad;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -674,7 +682,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Fargo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = GoalSetting;
+				INFOPLIST_KEY_UIMainStoryboardFile = InitLoad;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
