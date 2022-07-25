@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MyGoalVC: UIViewController {
     
     //Properties
@@ -14,22 +15,23 @@ class MyGoalVC: UIViewController {
     @IBOutlet weak var circleProgressView: UIView!
     
     @IBOutlet weak var progressPercentNumLabel: UILabel!
-    
-    
-    
+
     @IBOutlet weak var editGoalBtn: UIButton!
     
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var reasonLabel: UILabel!
     
     @IBOutlet weak var detailView: UIView!
-    
+
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureMyGoalUI()
         getGoalData()
+        
+        
         
     }
     
@@ -72,6 +74,12 @@ class MyGoalVC: UIViewController {
     func getGoalData(){
        //Ambil data goal dari core data & tampilkan ke label yg ada
         print("GET GOAL DATA")
+ 
+      //  goalLabel.text = goalSetting.goalFill
+        goalLabel.textColor = .white
+        goalLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+        
+     //   reasonLabel.text = goalSetting.reasonFill
         
     }
     
