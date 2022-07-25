@@ -38,26 +38,13 @@ class ActionPlanDetailVC: UIViewController {
 
     @objc func done() {
         //MARK: -- SAVE ACTION DETAILS KE CORE DATA
+        //Panggil function utk validasi row
+        updateActionDetail()
         print("Action Details Saved")
         
-//        print(goalField.text as Any)
-//        print(reasonField.text as Any)
-        
+     
         //perform segue balik ke halaman action plam
         self.navigationController?.popViewController(animated: true)
-        
-        
-        //MARK: IF START DATE & IF ENDDATE, bikin jd 2  case
-//        defaultFocusTime = Int(focusSelectedTxt)!*60
-//     //testing valuenya keganti gak
-//        print("Focus")
-//        print(defaultFocusTime)
-
-        //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
-//        let row = pickerView.selectedRow(inComponent: 0)
-//        pickerView.selectRow(row, inComponent: 0, animated: true)
-//        selectRow = row
-        
     }
     
     
@@ -90,7 +77,7 @@ class ActionPlanDetailVC: UIViewController {
     func registerCell(){
         //MARK: -- Register cell :
         //Register ngetes
-        actPlanDetTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Test")
+        //actPlanDetTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Test")
         
         //Register NIB Cell
         //Register Pakai Cara Manual:
@@ -141,6 +128,77 @@ class ActionPlanDetailVC: UIViewController {
         view.endEditing(true)
     }
     
+    func updateActionDetail() {
+        //Name
+        let nameIndexPath = IndexPath(row: 0, section: 0)
+        guard let actNameCell = actPlanDetTableView.cellForRow(at: nameIndexPath) as? TextFieldTableViewCell,
+        let name = actNameCell.textFieldField.text else  { return }
+        
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
+            print("Name : \(name)")
+            //monster?.name = name
+        
+        //Desc
+        let descIndexPath = IndexPath(row: 0, section: 1)
+        guard let descCell = actPlanDetTableView.cellForRow(at: descIndexPath) as? TextViewTableViewCell,
+            let desc = descCell.textViewField.text  else { return }
+        if desc != descCell.placeholder {
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
+            //monster?.description = desc
+            print("Description : \(desc)")
+        }
+        
+        //SuccessParameter
+        let successIndexPath = IndexPath(row: 0, section: 2)
+        guard let successCell = actPlanDetTableView.cellForRow(at: successIndexPath) as? TextViewTableViewCell,
+            let success = successCell.textViewField.text  else { return }
+        if success != successCell.placeholder {
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
+            //monster?.successParam = success
+            print("Success : \(success)")
+        }
+        
+        //LearningResources
+        let learningIndexPath = IndexPath(row: 0, section: 3)
+        guard let learningCell = actPlanDetTableView.cellForRow(at: learningIndexPath) as? TextViewTableViewCell,
+            let learning = learningCell.textViewField.text  else { return }
+        if learning != learningCell.placeholder {
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
+            //monster?.learning = learning
+            print("Learning : \(learning)")
+        }
+        
+        //StartDate
+        let sdateIndexPath = IndexPath(row: 0, section: 4)
+        guard let sdateCell = actPlanDetTableView.cellForRow(at: sdateIndexPath) as? DatePickerTableViewCell,
+            let sdate = sdateCell.dateField.text  else { return }
+            
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA (Date format ubah dari text ke date)
+            //monster?.startDate = startDate
+            print("Start Date: \(sdate)")
+        
+            //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
+//             let row = pickerView.selectedRow(inComponent: 0)
+//             pickerView.selectRow(row, inComponent: 0, animated: true)
+//             selectRow = row
+        
+        
+        //EndDate
+        let edateIndexPath = IndexPath(row: 1, section: 4)
+        guard let edateCell = actPlanDetTableView.cellForRow(at: edateIndexPath) as? DatePickerTableViewCell,
+            let edate = edateCell.dateField.text  else { return }
+            
+            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA (Date format ubah dari text ke date)
+            //monster?.startDate = startDate
+            print("End Date: \(edate)")
+        
+            //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
+//             let row = pickerView.selectedRow(inComponent: 0)
+//             pickerView.selectRow(row, inComponent: 0, animated: true)
+//             selectRow = row
+        
+        
+    }
     
-
+//bracket class
 }
