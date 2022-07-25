@@ -19,9 +19,17 @@ class ActionCell: UITableViewCell {
      let uncheckIcon = UIImage(systemName: "square")
      let checkIcon = UIImage(systemName: "checkmark.square.fill")
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+         checkmarkButton.tintColor = .softGray
+//        if checkmarkButton.currentImage == uncheckIcon{
+//            //checkmarkButton.tintColor = .softGray
+//            checkmarkButton.backgroundColor = .clear
+//        } else {
+//            checkmarkButton.tintColor = .darkChoco
+//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,11 +45,13 @@ class ActionCell: UITableViewCell {
         //Ganti button sesuai kalo dipencet : checkmarkButton.setImage(image, forState: .normal)
         //Update progress
         
-//        if checkmarkButton.isSelected {
-//            checkmarkButton.isSelected = false
-//        } else{
-//            checkmarkButton.isSelected = true
-//        }
+      
+            //checkmarkButton.isSelected = false
+            checkmarkButton.setImage(checkIcon, for: .normal)
+            checkmarkButton.tintColor = .darkChoco
+       
+            checkmarkButton.isSelected = true
+    
         
         print("CHECKMARK DIPENCET")
         
