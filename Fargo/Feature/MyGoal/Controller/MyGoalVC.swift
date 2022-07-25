@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 
-class MyGoalVC: UIViewController {
+class MyGoalVC: UIViewController{
+
     
     //Properties
     @IBOutlet weak var progressView: UIView!
@@ -23,7 +25,8 @@ class MyGoalVC: UIViewController {
     
     @IBOutlet weak var detailView: UIView!
 
-  
+   //MARK: -- CORE DATA
+    var goalss = [Goal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,12 @@ class MyGoalVC: UIViewController {
         goalLabel.layer.cornerRadius = 20
         reasonLabel.layer.masksToBounds = true
         reasonLabel.layer.cornerRadius = 20
+        
+        goalLabel.textColor = .white
+        goalLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+
+         reasonLabel.textColor = .white
+         reasonLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     
     func setRoundedView(){
@@ -74,12 +83,25 @@ class MyGoalVC: UIViewController {
     func getGoalData(){
        //Ambil data goal dari core data & tampilkan ke label yg ada
         print("GET GOAL DATA")
- 
-      //  goalLabel.text = goalSetting.goalFill
-        goalLabel.textColor = .white
-        goalLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         
-     //   reasonLabel.text = goalSetting.reasonFill
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let requests = NSFetchRequest<NSFetchRequestResult> (entityName: "Goal")
+        
+        do{
+            let results : NSArray = try context.fetch(requests) as NSArray
+            for result in results {
+                if let goal = (result as AnyObject).value(forKey: "goalDesc") as? String {
+                    goalLabel.text = goal
+    
+                }
+                if let reason = (result as AnyObject).value(forKey: "reason") as? String {
+                    reasonLabel.text = reason
+                }
+            }
+        }catch{
+            print(error)
+        }
         
     }
     
@@ -89,8 +111,7 @@ class MyGoalVC: UIViewController {
         self.performSegue(withIdentifier: "goToGoalSetting", sender: self)
     }
     
-  
-    
+
     
 }
 

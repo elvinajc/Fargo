@@ -21,6 +21,8 @@ class GoalSettingVC: UIViewController {
     //MARK: CORE DATA
     var goals = [Goal]()
     var firstLoad = true
+
+    
     var goalFill = ""
     var reasonFill = ""
     
@@ -58,9 +60,8 @@ class GoalSettingVC: UIViewController {
         goalFill = goalField.text
         reasonFill = reasonField.text
         
+    
         saveGoalReason()
-        
-        
         
     }
     
@@ -163,7 +164,7 @@ class GoalSettingVC: UIViewController {
         }catch{
             print(error)
         }
-        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
