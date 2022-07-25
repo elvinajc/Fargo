@@ -118,7 +118,7 @@ class PlanVC: UIViewController {
             let title = alertController.textFields![0] as UITextField
                
             //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
-                print(title.text)
+                print("Requirement Title: \(title.text!)")
                 
             })
         
@@ -153,7 +153,7 @@ class PlanVC: UIViewController {
                 let title = alertController.textFields![0] as UITextField
                
                 //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
-                print(title.text)
+                print("Requirement Title Change To: \(title.text!)")
                 
             })
         

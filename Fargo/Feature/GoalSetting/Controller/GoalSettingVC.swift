@@ -47,10 +47,10 @@ class GoalSettingVC: UIViewController {
 
     @objc func done() {
         //MARK: -- SAVE GOAL & REASON KE CORE DATA
-        print("doness")
+        print("Done Set The Goals")
         
-        print(goalField.text as Any)
-        print(reasonField.text as Any)
+        print("Goal  : \(goalField.text!)")
+        print("Reason: \(reasonField.text!)")
         
         //perform segue
         self.performSegue(withIdentifier: "goToTabBar", sender: self)
