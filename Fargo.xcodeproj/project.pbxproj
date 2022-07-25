@@ -150,8 +150,7 @@
 		A43A4CAD288D2C9700CB61AA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				A4D9A8C8288EA1A50071F328 /* InitLoad.storyboard */,
-				A4D9A8C6288EA1940071F328 /* InitLoadVC.swift */,
+				A464BFA2288EF1BE000630C2 /* Init */,
 				A4AAB6B6288864860010782C /* TabBar */,
 				A4AAB6B7288864AE0010782C /* GoalSetting */,
 				A4AAB6C62888665E0010782C /* MyGoal */,
@@ -231,6 +230,15 @@
 				A49B7BE2288D1E3D00C6128F /* ActDetailTableViewExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A464BFA2288EF1BE000630C2 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				A4D9A8C8288EA1A50071F328 /* InitLoad.storyboard */,
+				A4D9A8C6288EA1940071F328 /* InitLoadVC.swift */,
+			);
+			path = Init;
 			sourceTree = "<group>";
 		};
 		A49B7BE1288D1AA900C6128F /* Model */ = {

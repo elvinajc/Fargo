@@ -5,6 +5,7 @@
 //  Created by Elvina Jacia on 20/07/22.
 //
 
+import CoreData
 import UIKit
 
 class PlanVC: UIViewController {
@@ -17,6 +18,10 @@ class PlanVC: UIViewController {
     
     @IBOutlet weak var reqTableView: UITableView!
     
+    var requirements = [Requirement]()
+    var reqTitle = ""
+    var firstLoad = true
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
@@ -28,14 +33,21 @@ class PlanVC: UIViewController {
         // Do any additional setup after loading the view.
         configureUIPlan()
         
+        if(firstLoad){
+            fetchRequirementData()
+        }
+        
         //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
-        //Sementara: is hidden = false
-        noRequirementLabel.isHidden = false
-        
+        if requirements.isEmpty {
+            noRequirementLabel.isHidden = false
+        } else {
+            noRequirementLabel.isHidden = true
+        }
+
         //DELEGATE + DATA SOURCE
-        
-        
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -55,6 +67,17 @@ class PlanVC: UIViewController {
            // actionPlan!.selectedRequirement = selectedRequirement
             reqTableView.deselectRow(at: indexPath, animated: true)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reqTableView.reloadData()
+        
+        if requirements.isEmpty {
+            noRequirementLabel.isHidden = false
+        } else {
+            noRequirementLabel.isHidden = true
+        }
+
     }
     
     //Func
@@ -116,9 +139,11 @@ class PlanVC: UIViewController {
             //Save & delete action
             let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
             let title = alertController.textFields![0] as UITextField
+                self.reqTitle = title.text!
                
             //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
                 print("Requirement Title: \(title.text!)")
+                self.saveRequirementData()
                 
             })
         
@@ -141,7 +166,7 @@ class PlanVC: UIViewController {
             alertController.addTextField { (textField : UITextField!) -> Void in
                 
                 //MARK: -- Text Placeholder ambil dari core data (requirement title).
-                textField.placeholder = "Tampilin Title Lama"
+                textField.placeholder = self.reqTitle
             }
         
             //Change alert button color:
@@ -168,5 +193,57 @@ class PlanVC: UIViewController {
             self.present(alertController, animated: true, completion: nil)
  
     }
+    
+    
+    //MARK: -- FUNC SAVE REQUIREMENT KE CORE DATA
+    
+    func saveRequirementData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
+        
+        // Create a req obj
+        let newReq = Requirement(entity: entity!, insertInto: context)
+        newReq.setValue(self.reqTitle, forKey: "requirementTitle")
+        
+        // Save req data
+        do {
+            try context.save()
+            //Tambahin ke arraylist
+            requirements.append(newReq)
+            
+        } catch {
+            print(error)
+        }
+        
+        reqTableView.reloadData()
+        
+        if requirements.isEmpty {
+            noRequirementLabel.isHidden = false
+        } else {
+            noRequirementLabel.isHidden = true
+        }
+
+    }
+    
+    func fetchRequirementData(){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult> (entityName: "Requirement")
+        
+        do{
+            let results : NSArray = try context.fetch(request) as NSArray
+            for result in results {
+                let newReq = result as! Requirement
+                requirements.append(newReq)
+            }
+        }catch{
+            print(error)
+        }
+        reqTableView.reloadData()
+    }
+    
+
     
 }

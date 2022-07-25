@@ -27,14 +27,14 @@ class MyGoalVC: UIViewController{
 
    //MARK: -- CORE DATA
     var goalss = [Goal]()
+    var actionPlan = [ActionPlan]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureMyGoalUI()
         getGoalData()
-        
-        
+    
         
     }
     
@@ -79,6 +79,11 @@ class MyGoalVC: UIViewController{
         detailView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
+    //MARK: -- FUNC BUTTON ACTION
+    @IBAction func editBtnAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToGoalSetting", sender: self)
+    }
+    
     //MARK: -- FUNC GET DATA FROM CORE DATA
     func getGoalData(){
        //Ambil data goal dari core data & tampilkan ke label yg ada
@@ -93,7 +98,6 @@ class MyGoalVC: UIViewController{
             for result in results {
                 if let goal = (result as AnyObject).value(forKey: "goalDesc") as? String {
                     goalLabel.text = goal
-    
                 }
                 if let reason = (result as AnyObject).value(forKey: "reason") as? String {
                     reasonLabel.text = reason
@@ -105,12 +109,10 @@ class MyGoalVC: UIViewController{
         
     }
     
-    
-    //MARK: -- FUNC BUTTON ACTION
-    @IBAction func editBtnAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToGoalSetting", sender: self)
+    //MARK: FETCH DATA DARI CORE DATA, COUNT JUMLAH DATA YG STATUSNYA COMPLETE & SET CIRCLE PROGRESS BAR
+    func getActionData(){
+        //Count jumlah task yg statusnya "complete",
     }
-    
 
     
 }

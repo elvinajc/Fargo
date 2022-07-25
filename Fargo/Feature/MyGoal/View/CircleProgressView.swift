@@ -95,8 +95,8 @@ class CircleProgressView: UIView {
 
 
         //Properties
-        private var backLayer: CAShapeLayer!
-        private var foreLayer: CAShapeLayer!
+         var backLayer: CAShapeLayer!
+         var foreLayer: CAShapeLayer!
    
         var imageIcon: UIImageView!
         let listIcon = UIImage(systemName: "list.bullet.rectangle")
@@ -114,12 +114,9 @@ class CircleProgressView: UIView {
             //Draw Fore Layer
             foreLayer = createCircleLayer(rect: rect, strokeColor: UIColor.darkGreen.cgColor, fillColor: UIColor.clear.cgColor, lineWidth: lineWidth)
    
-    
-            //Utk set forelayer udah keisi berapa persen
-            //0.5 = 50%
-            foreLayer.strokeEnd = 0.3
-            
-                
+            //MARK: -- UTK SET WARNA FORELAYER
+            calculateForeLayer()
+
             //Add layer ke view
             layer.addSublayer(backLayer)
             
@@ -169,6 +166,11 @@ class CircleProgressView: UIView {
     }
     
 
+    private func calculateForeLayer(){
+        //Utk set forelayer udah keisi berapa persen
+        //0.5 = 50%
+        foreLayer.strokeEnd = 0.15
+    }
     
 
 }

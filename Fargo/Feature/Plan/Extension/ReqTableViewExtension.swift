@@ -75,7 +75,7 @@ extension PlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //MARK: -- Harusnya return array of data requirement.count
         //Sementara return 1 dlu buat coba
-        return 2
+        return requirements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,6 +89,9 @@ extension PlanVC: UITableViewDataSource{
             cell.layer.cornerRadius = 8
             cell.reqCellView.layer.cornerRadius = 8
             
+            let thisReq: Requirement!
+            thisReq = requirements[indexPath.row]
+            cell.reqTitle.text = thisReq.requirementTitle
 
             return cell
         }
