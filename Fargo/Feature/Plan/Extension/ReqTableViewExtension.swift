@@ -5,7 +5,7 @@
 //  Created by Elvina Jacia on 23/07/22.
 //
 
-
+import CoreData
 import UIKit
 
 extension PlanVC: UITableViewDelegate {
@@ -30,11 +30,72 @@ extension PlanVC: UITableViewDelegate {
        }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Selected Req
+        let req = self.requirements[indexPath.row]
+        editPlaceHD = req.requirementTitle!
         
         //Component of Edit Action
         let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
             //Munculin alert edit
-            self!.loadEditAlert()
+            //self!.loadEditAlert()
+            let alertController = UIAlertController(title: "Edit Requirement Title", message: "Change the requirement title", preferredStyle: .alert)
+            alertController.addTextField { (textField : UITextField!) -> Void in
+                
+                //MARK: -- Text Placeholder ambil dari core data (requirement title).
+                textField.text = self?.editPlaceHD
+                
+            }
+        
+            //Change alert button color:
+            UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.darkChoco
+            
+        
+            //Save & delete action
+            let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+                let title = alertController.textFields![0] as UITextField
+               
+                //MARK: --SAVE EDIT REQUIREMENT TITLE TO CORE DATA
+                print("Requirement Title Change To: \(title.text!)")
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+                let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
+                
+//                // Create a req obj
+//                let newReq = Requirement(entity: entity!, insertInto: context)
+//                newReq.setValue(self!.reqTitle, forKey: "requirementTitle")
+                
+                // Save req data
+                req.requirementTitle = title.text
+                
+                do {
+                    try context.save()
+                    //Tambahin ke arraylist
+                    //self!.requirements.append(newReq)
+                    
+                } catch {
+                    print(error)
+                }
+                
+                self!.reqTableView.reloadData()
+                
+                if self!.requirements.isEmpty {
+                    self!.noRequirementLabel.isHidden = false
+                } else {
+                    self!.noRequirementLabel.isHidden = true
+                }
+                
+            })
+        
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
+
+            alertController.addAction(cancelAction)
+            alertController.addAction(saveAction)
+        
+            //Bikin save button lebih di bold
+            alertController.preferredAction = saveAction
+        
+            self!.present(alertController, animated: true, completion: nil)
             
             completionHandler(true)
             
@@ -44,8 +105,8 @@ extension PlanVC: UITableViewDelegate {
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
             //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
-            //self?.deleteData(ideaTitle: showIdeasList[indexPath.row].ideasTitle!)
-            //showIdeasList.remove(at: indexPath.row)
+            self?.deleteData(requeTitle: self!.requirements[indexPath.row].requirementTitle!)
+            self?.requirements.remove(at: indexPath.row)
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
@@ -89,8 +150,7 @@ extension PlanVC: UITableViewDataSource{
             cell.layer.cornerRadius = 8
             cell.reqCellView.layer.cornerRadius = 8
             
-            let thisReq: Requirement!
-            thisReq = requirements[indexPath.row]
+            let thisReq = self.requirements[indexPath.row]
             cell.reqTitle.text = thisReq.requirementTitle
 
             return cell

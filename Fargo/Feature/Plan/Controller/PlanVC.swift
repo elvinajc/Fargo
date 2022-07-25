@@ -22,6 +22,8 @@ class PlanVC: UIViewController {
     var reqTitle = ""
     var firstLoad = true
     
+    var editPlaceHD = ""
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
@@ -166,7 +168,8 @@ class PlanVC: UIViewController {
             alertController.addTextField { (textField : UITextField!) -> Void in
                 
                 //MARK: -- Text Placeholder ambil dari core data (requirement title).
-                textField.placeholder = self.reqTitle
+                textField.text = self.editPlaceHD
+                
             }
         
             //Change alert button color:
@@ -177,8 +180,9 @@ class PlanVC: UIViewController {
             let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
                 let title = alertController.textFields![0] as UITextField
                
-                //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
+                //MARK: --SAVE EDIT REQUIREMENT TITLE TO CORE DATA
                 print("Requirement Title Change To: \(title.text!)")
+                self.editRequirementData()
                 
             })
         
@@ -245,5 +249,70 @@ class PlanVC: UIViewController {
     }
     
 
+    func editRequirementData(){
+        // Selected Requirement
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
+        
+        // Create a req obj
+        let newReq = Requirement(entity: entity!, insertInto: context)
+        newReq.setValue(self.reqTitle, forKey: "requirementTitle")
+        
+        // Save req data
+        do {
+            try context.save()
+            //Tambahin ke arraylist
+            requirements.append(newReq)
+            
+        } catch {
+            print(error)
+        }
+        
+        reqTableView.reloadData()
+        
+        if requirements.isEmpty {
+            noRequirementLabel.isHidden = false
+        } else {
+            noRequirementLabel.isHidden = true
+        }
+    }
+    
+    func deleteData(requeTitle: String) {
+            
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Requirement")
+            
+        //set obj yang mau di delete
+        request.predicate = NSPredicate(format: "requirementTitle == %@", requeTitle)
+               
+        do {
+            let objectFrom = try context.fetch(request)
+                   
+            let objectToDelete = objectFrom[0] as! NSManagedObject
+            context.delete(objectToDelete)
+                   
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+
+        } catch let error as NSError {
+            print("Error due to : \(error.localizedDescription)")
+        }
+        
+        reqTableView.reloadData()
+        
+        if requirements.isEmpty {
+            noRequirementLabel.isHidden = false
+        } else {
+            noRequirementLabel.isHidden = true
+        }
+               
+    }
+        
     
 }
