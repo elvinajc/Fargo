@@ -8,6 +8,7 @@
 import CoreData
 import UIKit
 
+
 class ActionPlanVC: UIViewController {
     
     //Properties
@@ -31,6 +32,7 @@ class ActionPlanVC: UIViewController {
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
         

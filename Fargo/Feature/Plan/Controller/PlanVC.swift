@@ -8,6 +8,7 @@
 import CoreData
 import UIKit
 
+
 class PlanVC: UIViewController {
     
     //Properties
@@ -26,6 +27,7 @@ class PlanVC: UIViewController {
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var fetchedResultController : NSFetchedResultsController<Requirement>!
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +67,7 @@ class PlanVC: UIViewController {
            navigationItem.backBarButtonItem = backItem
         
         //MARK: -- Passing row yg di select + datanya ke halaman action plan
-        if (segue.identifier == "goToActionPlan"){
+        if segue.identifier == "goToActionPlan" {
             let indexPath = reqTableView.indexPathForSelectedRow!
             let actionPlan = segue.destination as? ActionPlanVC
             let selectedRequirement : Requirement!

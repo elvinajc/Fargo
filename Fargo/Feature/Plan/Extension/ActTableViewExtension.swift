@@ -45,9 +45,35 @@ extension ActionPlanVC: UITableViewDelegate {
         
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
-            //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
-            //self?.deleteData(ideaTitle: showIdeasList[indexPath.row].ideasTitle!)
-            //showIdeasList.remove(at: indexPath.row)
+            //MARK: -- REMOVE DATA  ACTION PLANNYA DARI CORE DATA & ARRAY
+    
+            //DELETE DATA
+            let actToRemove = self?.actionplans[indexPath.row]
+            self?.context.delete(actToRemove!)
+           
+            do {
+                try self!.context.save()
+                
+            } catch {
+                print(error)
+            }
+            
+            //Refetch data
+            do{
+                self?.actionplans = try self!.context.fetch(ActionPlan.fetchRequest())
+                    DispatchQueue.main.async {
+                        self!.actTableView.reloadData()
+
+                        if self!.actionplans.isEmpty {
+                           self!.noActPlanLabel.isHidden = false
+                        } else {
+                            self!.noActPlanLabel.isHidden = true
+                        }
+                    }
+            } catch {
+                print(error)
+            }
+
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
