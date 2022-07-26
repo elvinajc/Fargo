@@ -24,13 +24,14 @@ extension Goal {
 
 // MARK: Generated accessors for requirement
 extension Goal {
-
+    //Add one req to the goal
     @objc(addRequirementObject:)
     @NSManaged public func addToRequirement(_ value: Requirement)
 
     @objc(removeRequirementObject:)
     @NSManaged public func removeFromRequirement(_ value: Requirement)
-
+    
+    //Add multiple req to the goal
     @objc(addRequirement:)
     @NSManaged public func addToRequirement(_ values: NSSet)
 

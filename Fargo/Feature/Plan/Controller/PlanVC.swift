@@ -170,8 +170,6 @@ class PlanVC: UIViewController {
     //MARK: -- FUNC SAVE REQUIREMENT KE CORE DATA
     
     func saveRequirementData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
         
         // Create a req obj

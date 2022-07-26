@@ -113,28 +113,44 @@ class GoalSettingVC: UIViewController {
     //MARK: CORE DATA FUNCT
 
     func saveGoalReason(){
-        goals.removeAll()
+       //goals.removeAll()
         
+      
         let entity = NSEntityDescription.entity(forEntityName: "Goal", in: context)
-        
-        // Create a goal obj
-        let newGoal = Goal(entity: entity!, insertInto: context)
-        newGoal.setValue(self.goalField.text, forKey: "goalDesc")
-        newGoal.setValue(self.reasonField.text, forKey: "reason")
-        
-        // Save goal data
-        do {
-            try context.save()
-            //Tambahin ke arraylist
-            goals.append(newGoal)
+      
+        if goals.isEmpty{
+            // Create a goal obj
+            let newGoal = Goal(entity: entity!, insertInto: context)
+            newGoal.setValue(self.goalField.text, forKey: "goalDesc")
+            newGoal.setValue(self.reasonField.text, forKey: "reason")
             
-            //perform segue
-            self.performSegue(withIdentifier: "goToTabBar", sender: self)
+            // Save goal data
+            do {
+                try context.save()
+                //Tambahin ke arraylist
+                goals.append(newGoal)
+                
+                //perform segue
+                self.performSegue(withIdentifier: "goToTabBar", sender: self)
+                
+            } catch {
+                print(error)
+            }
+        }else{
+            // Save & change req data
+            let goal = Goal()
+            goal.setValue(self.goalField.text, forKey: "goalDesc")
+            goal.setValue(self.reasonField.text, forKey: "reason")
             
-        } catch {
-            print(error)
+            do {
+                try self.context.save()
+                
+            } catch {
+                print(error)
+            }
         }
-       
+        
+        print("GOALSNYA ADA : \(goals.count)")
 
     }
         
