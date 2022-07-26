@@ -37,6 +37,7 @@ class GoalSettingVC: UIViewController {
             fetchGoalData()
         }
         configureUI()
+    
     }
 
     //Function

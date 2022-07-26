@@ -19,6 +19,7 @@ class PlanVC: UIViewController {
     @IBOutlet weak var reqTableView: UITableView!
     
     //MARK: CORE DATA PROPERTIES
+    var goals = [Goal]()
     var requirements = [Requirement]()
     var reqTitle = ""
     var editPlaceHD = ""
@@ -178,7 +179,12 @@ class PlanVC: UIViewController {
         
         // Save req data
         do {
+            //MARK: -- Add Req to the goal
+            let goal = Goal(context: context)
+            goal.addToRequirement(newReq)
+
             try context.save()
+            
             //Tambahin ke arraylist
             requirements.append(newReq)
             
