@@ -33,6 +33,15 @@ class ActionPlanVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        
+        actTableView.reloadData()
+
+         if actionplans.isEmpty {
+            noActPlanLabel.isHidden = false
+         } else {
+             noActPlanLabel.isHidden = true
+         }
+
     }
     
     
@@ -78,14 +87,7 @@ class ActionPlanVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       actTableView.reloadData()
-
-        if actionplans.isEmpty {
-           noActPlanLabel.isHidden = false
-        } else {
-            noActPlanLabel.isHidden = true
-        }
-
+        fetchActionPlanData()
     }
     
     //Func
@@ -142,6 +144,7 @@ class ActionPlanVC: UIViewController {
     
     //MARK: FETCH ACTION PLAN DATA(HARUS DI CEK)
     func fetchActionPlanData(){
+        actionplans.removeAll()
         
         let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
 //        let pred = NSPredicate(format: "requirements == %@", self.selectedRequirement!.requirementTitle!)

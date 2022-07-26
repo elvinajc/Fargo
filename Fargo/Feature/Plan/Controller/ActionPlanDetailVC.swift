@@ -43,7 +43,7 @@ class ActionPlanDetailVC: UIViewController {
         //Panggil function utk validasi row
         updateActionDetail()
         print("Action Details Saved")
-     
+        
         //perform segue balik ke halaman action plam
         self.navigationController?.popViewController(animated: true)
     }
@@ -236,6 +236,9 @@ class ActionPlanDetailVC: UIViewController {
         
         print("JUMLAH ACTION PLAN: \(actionplans.count)")
     }
+
     
 //bracket class
 }
+
+
