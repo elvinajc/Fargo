@@ -146,12 +146,9 @@ extension PlanVC: UITableViewDelegate {
     ///////
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
             //MARK: --KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN
             //Buat ngetes masuk ke halaman action plan:
             self.performSegue(withIdentifier: "goToActionPlan", sender: self)
-            
-      
     }
     
     

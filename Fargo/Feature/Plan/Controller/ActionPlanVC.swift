@@ -23,6 +23,10 @@ class ActionPlanVC: UIViewController {
     
     @IBOutlet weak var noActPlanLabel: UILabel!
     @IBOutlet weak var actTableView: UITableView!
+    
+    //MARK: PROPERTIES CORE DATA
+    var requirements = [Requirement]()
+    var selectedRequirement: Requirement? = nil
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
@@ -35,10 +39,6 @@ class ActionPlanVC: UIViewController {
         
         // Do any additional setup after loading the view.
         configureUIActPlan()
-        
-        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
-        //Sementara: is hidden = false
-         noActPlanLabel.isHidden = false
         
         //DELEGATE + DATA SOURCE
         
@@ -66,6 +66,13 @@ class ActionPlanVC: UIViewController {
         configureReqView()
         setRoundedActProgView()
         setTableView()
+        
+        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
+        //Sementara: is hidden = false
+         noActPlanLabel.isHidden = false
+        
+        //MARK: -- Set reqTitleLabel sesuai sama yg dipilih
+        reqTitleLabel.text = selectedRequirement?.requirementTitle!
     }
 
     func configureReqView(){

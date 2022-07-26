@@ -67,11 +67,12 @@ class PlanVC: UIViewController {
         if (segue.identifier == "goToActionPlan"){
             let indexPath = reqTableView.indexPathForSelectedRow!
             let actionPlan = segue.destination as? ActionPlanVC
-           // let selectedRequirement : RequirementData!
-           // selectedRequirement = showIdeasList[indexPath.row]
-           // actionPlan!.selectedRequirement = selectedRequirement
+            let selectedRequirement : Requirement!
+            selectedRequirement = requirements[indexPath.row]
+            actionPlan!.selectedRequirement = selectedRequirement
             reqTableView.deselectRow(at: indexPath, animated: true)
         }
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -165,42 +166,6 @@ class PlanVC: UIViewController {
     }
     
     
-//    func loadEditAlert(){
-//        
-//            let alertController = UIAlertController(title: "Edit Requirement Title", message: "Change the requirement title", preferredStyle: .alert)
-//            alertController.addTextField { (textField : UITextField!) -> Void in
-//                
-//                //MARK: -- Text Placeholder ambil dari core data (requirement title).
-//                textField.text = self.editPlaceHD
-//                
-//            }
-//        
-//            //Change alert button color:
-//            UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.darkChoco
-//            
-//        
-//            //Save & delete action
-//            let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
-//                let title = alertController.textFields![0] as UITextField
-//               
-//                //MARK: --SAVE EDIT REQUIREMENT TITLE TO CORE DATA
-//                print("Requirement Title Change To: \(title.text!)")
-//              //  self.editRequirementData()
-//                
-//            })
-//        
-//            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
-//
-//            alertController.addAction(cancelAction)
-//            alertController.addAction(saveAction)
-//        
-//            //Bikin save button lebih di bold
-//            alertController.preferredAction = saveAction
-//        
-//            self.present(alertController, animated: true, completion: nil)
-// 
-//    }
-    
     
     //MARK: -- FUNC SAVE REQUIREMENT KE CORE DATA
     
@@ -255,71 +220,5 @@ class PlanVC: UIViewController {
     }
     
 
-//    func editRequirementData(){
-//        // Selected Requirement
-//        
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
-//        
-//        // Create a req obj
-//        let newReq = Requirement(entity: entity!, insertInto: context)
-//        newReq.setValue(self.reqTitle, forKey: "requirementTitle")
-//        
-//        // Save req data
-//        do {
-//            try context.save()
-//            //Tambahin ke arraylist
-//            requirements.append(newReq)
-//            
-//        } catch {
-//            print(error)
-//        }
-//        
-//        reqTableView.reloadData()
-//        
-//        if requirements.isEmpty {
-//            noRequirementLabel.isHidden = false
-//        } else {
-//            noRequirementLabel.isHidden = true
-//        }
-//    }
-    
-    func deleteData(requeTitle: String) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Requirement")
-
-        //set obj yang mau di delete
-        request.predicate = NSPredicate(format: "requirementTitle == %@", requeTitle)
-
-        do {
-            let objectFrom = try context.fetch(request)
-
-            let objectToDelete = objectFrom[0] as! NSManagedObject
-            context.delete(objectToDelete)
-
-            do {
-                try context.save()
-                
-                DispatchQueue.main.async {
-                    self.reqTableView.reloadData()
-                    
-                    if self.requirements.isEmpty {
-                        self.noRequirementLabel.isHidden = false
-                    } else {
-                        self.noRequirementLabel.isHidden = true
-                    }
-                }
-                
-            } catch {
-                print(error)
-            }
-
-        } catch let error as NSError {
-            print("Error due to : \(error.localizedDescription)")
-        }
-
-  
-    }
-        
     
 }
