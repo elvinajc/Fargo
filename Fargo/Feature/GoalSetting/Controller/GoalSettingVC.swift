@@ -21,10 +21,12 @@ class GoalSettingVC: UIViewController {
     //MARK: CORE DATA
     var goals = [Goal]()
     var firstLoad = true
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
 
     
-    var goalFill = ""
-    var reasonFill = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +58,6 @@ class GoalSettingVC: UIViewController {
         
         print("Goal  : \(goalField.text!)")
         print("Reason: \(reasonField.text!)")
-        
-        goalFill = goalField.text
-        reasonFill = reasonField.text
-        
     
         saveGoalReason()
         
@@ -102,7 +100,6 @@ class GoalSettingVC: UIViewController {
 
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-
         view.addGestureRecognizer(tap)
     }
     
@@ -118,8 +115,6 @@ class GoalSettingVC: UIViewController {
     func saveGoalReason(){
         goals.removeAll()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Goal", in: context)
         
         // Create a goal obj
@@ -145,8 +140,6 @@ class GoalSettingVC: UIViewController {
         
 
     func fetchGoalData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult> (entityName: "Goal")
         
         do{
@@ -154,11 +147,9 @@ class GoalSettingVC: UIViewController {
             for result in results {
                 if let goal = (result as AnyObject).value(forKey: "goalDesc") as? String {
                     goalField.text = goal
-                    goalFill = goalField.text
                 }
                 if let reason = (result as AnyObject).value(forKey: "reason") as? String {
                     reasonField.text = reason
-                    reasonFill = reasonField.text
                 }
             }
         }catch{

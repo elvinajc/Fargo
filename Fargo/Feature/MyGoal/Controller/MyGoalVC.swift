@@ -28,6 +28,7 @@ class MyGoalVC: UIViewController{
    //MARK: -- CORE DATA
     var goalss = [Goal]()
     var actionPlan = [ActionPlan]()
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +90,6 @@ class MyGoalVC: UIViewController{
        //Ambil data goal dari core data & tampilkan ke label yg ada
         print("GET GOAL DATA")
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let requests = NSFetchRequest<NSFetchRequestResult> (entityName: "Goal")
         
         do{

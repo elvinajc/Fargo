@@ -57,35 +57,30 @@ extension PlanVC: UITableViewDelegate {
                 //MARK: --SAVE EDIT REQUIREMENT TITLE TO CORE DATA
                 print("Requirement Title Change To: \(title.text!)")
                 
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-                let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: context)
+                let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: self!.context)
                 
-//                // Create a req obj
-//                let newReq = Requirement(entity: entity!, insertInto: context)
-//                newReq.setValue(self!.reqTitle, forKey: "requirementTitle")
-                
-                // Save req data
+                // Save & change req data
                 req.requirementTitle = title.text
                 
                 do {
-                    try context.save()
-                    //Tambahin ke arraylist
-                    //self!.requirements.append(newReq)
+                    try self!.context.save()
+                    
+                    DispatchQueue.main.async {
+                        self!.reqTableView.reloadData()
+                        
+                        if self!.requirements.isEmpty {
+                            self!.noRequirementLabel.isHidden = false
+                        } else {
+                            self!.noRequirementLabel.isHidden = true
+                        }
+                    }
                     
                 } catch {
                     print(error)
                 }
                 
-                self!.reqTableView.reloadData()
-                
-                if self!.requirements.isEmpty {
-                    self!.noRequirementLabel.isHidden = false
-                } else {
-                    self!.noRequirementLabel.isHidden = true
-                }
-                
             })
+            
         
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
 
@@ -105,8 +100,38 @@ extension PlanVC: UITableViewDelegate {
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
             //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
-            self?.deleteData(requeTitle: self!.requirements[indexPath.row].requirementTitle!)
-            self?.requirements.remove(at: indexPath.row)
+//            self?.deleteData(requeTitle: self!.requirements[indexPath.row].requirementTitle!)
+//            self?.requirements.remove(at: indexPath.row)
+            
+            let reqToRemove = self?.requirements[indexPath.row]
+            self?.context.delete(reqToRemove!)
+           
+            do {
+                try self!.context.save()
+                
+            } catch {
+                print(error)
+            }
+            
+            //Refetch data
+            do{
+                self?.requirements = try self!.context.fetch(Requirement.fetchRequest())
+                    DispatchQueue.main.async {
+                        self!.reqTableView.reloadData()
+
+                        if self!.requirements.isEmpty {
+                           self!.noRequirementLabel.isHidden = false
+                        } else {
+                            self!.noRequirementLabel.isHidden = true
+                        }
+                    }
+            } catch {
+                print(error)
+            }
+            
+
+            
+            
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
@@ -151,6 +176,7 @@ extension PlanVC: UITableViewDataSource{
             cell.reqCellView.layer.cornerRadius = 8
             
             let thisReq = self.requirements[indexPath.row]
+            print("THIS REQUIREMENT INCLUDE : \(requirements.count)")
             cell.reqTitle.text = thisReq.requirementTitle
 
             return cell
