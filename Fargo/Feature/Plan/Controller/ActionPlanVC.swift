@@ -5,7 +5,7 @@
 //  Created by Elvina Jacia on 23/07/22.
 //
 
-
+import CoreData
 import UIKit
 
 class ActionPlanVC: UIViewController {
@@ -26,7 +26,10 @@ class ActionPlanVC: UIViewController {
     
     //MARK: PROPERTIES CORE DATA
     var requirements = [Requirement]()
+    var actionplans = [ActionPlan]()
     var selectedRequirement: Requirement? = nil
+    var firstLoad = true
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
@@ -40,9 +43,27 @@ class ActionPlanVC: UIViewController {
         // Do any additional setup after loading the view.
         configureUIActPlan()
         
+        if (firstLoad) {
+            fetchActionPlanData()
+        }
+        
+        actTableView.reloadData()
+
+         if actionplans.isEmpty {
+            noActPlanLabel.isHidden = false
+         } else {
+             noActPlanLabel.isHidden = true
+         }
+
+        
+        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
+        if actionplans.isEmpty {
+            noActPlanLabel.isHidden = false
+        } else {
+            noActPlanLabel.isHidden = true
+        }
+
         //DELEGATE + DATA SOURCE
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,6 +74,18 @@ class ActionPlanVC: UIViewController {
            let backItem = UIBarButtonItem()
            backItem.title = ""
            navigationItem.backBarButtonItem = backItem
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       actTableView.reloadData()
+
+        if actionplans.isEmpty {
+           noActPlanLabel.isHidden = false
+        } else {
+            noActPlanLabel.isHidden = true
+        }
+
     }
     
     //Func
@@ -107,6 +140,36 @@ class ActionPlanVC: UIViewController {
         actTableView.registerCell(type: ActionCell.self, identifier: "actCell")
     }
     
+    //MARK: FETCH ACTION PLAN DATA(HARUS DI CEK)
+    func fetchActionPlanData(){
+        
+        let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
+//        let pred = NSPredicate(format: "requirements == %@", self.selectedRequirement!.requirementTitle!)
+//        request.predicate = pred
+        
+        do{
+            
+            let results : NSArray = try context.fetch(request) as NSArray
+            for result in results {
+                let act = result as! ActionPlan
+                actionplans.append(act)
+                
+                DispatchQueue.main.async {
+                    self.actTableView.reloadData()
+                    
+                    if self.actionplans.isEmpty {
+                        self.noActPlanLabel.isHidden = false
+                    } else {
+                        self.noActPlanLabel.isHidden = true
+                    }
+                }
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+
     
 }
 

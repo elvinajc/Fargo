@@ -4,7 +4,7 @@
 //
 //  Created by Elvina Jacia on 24/07/22.
 //
-
+import CoreData
 import UIKit
 
 class ActionPlanDetailVC: UIViewController {
@@ -12,14 +12,16 @@ class ActionPlanDetailVC: UIViewController {
     
     //Properties
     let actPlanDetTableView = UITableView(frame: .zero, style: .grouped)
-
+    
+    //MARK: -- PROPERTIES UTK CORE DATA
+    var requirements = [Requirement]()
+    var actionplans = [ActionPlan]()
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         configureUIActPlanDetail()
-        
-        
     }
 
     //Func
@@ -41,7 +43,6 @@ class ActionPlanDetailVC: UIViewController {
         //Panggil function utk validasi row
         updateActionDetail()
         print("Action Details Saved")
-        
      
         //perform segue balik ke halaman action plam
         self.navigationController?.popViewController(animated: true)
@@ -197,7 +198,43 @@ class ActionPlanDetailVC: UIViewController {
 //             pickerView.selectRow(row, inComponent: 0, animated: true)
 //             selectRow = row
         
+        //MARK: ADD ACTION PLAN DATA KE CORE DATA 
+        let entity = NSEntityDescription.entity(forEntityName: "ActionPlan", in: context)
         
+        // Create a req obj
+        let newAct = ActionPlan(entity: entity!, insertInto: context)
+        newAct.setValue(name, forKey: "actionName")
+        newAct.setValue(desc, forKey: "actionDesc")
+        newAct.setValue(success, forKey: "successParameter")
+        newAct.setValue(learning, forKey: "learningResources")
+      
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMMM d, yyyy"
+        
+        let ssdate = dateFormatter.date(from:sdate)!
+        let eedate = dateFormatter.date(from:edate)!
+        
+        newAct.setValue(ssdate, forKey: "startDate")
+        newAct.setValue(eedate, forKey: "endDate")
+        newAct.setValue("Undone", forKey: "status")
+        
+        // Save req data
+        do {
+            //MARK: --Coba Add Req to the goal
+//            let req = Requirement(context: context)
+//            req.addToActionPlan(newAct)
+
+            try context.save()
+            
+            //Tambahin ke arraylist
+            actionplans.append(newAct)
+            
+            
+        } catch {
+            print(error)
+        }
+        
+        print("JUMLAH ACTION PLAN: \(actionplans.count)")
     }
     
 //bracket class

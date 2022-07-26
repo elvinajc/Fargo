@@ -76,6 +76,7 @@ class PlanVC: UIViewController {
     
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         reqTableView.reloadData()
         
@@ -179,7 +180,7 @@ class PlanVC: UIViewController {
         
         // Save req data
         do {
-            //MARK: -- Add Req to the goal
+            //MARK: --Coba Add Req to the goal
             let goal = Goal(context: context)
             goal.addToRequirement(newReq)
 
@@ -211,8 +212,8 @@ class PlanVC: UIViewController {
         do{
             let results : NSArray = try context.fetch(request) as NSArray
             for result in results {
-                let newReq = result as! Requirement
-                requirements.append(newReq)
+                let req = result as! Requirement
+                requirements.append(req)
                 
                 DispatchQueue.main.async {
                     self.reqTableView.reloadData()

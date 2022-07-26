@@ -74,23 +74,24 @@ extension ActionPlanVC: UITableViewDelegate {
 
 extension ActionPlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //MARK: -- Harusnya return array of data requirement.count
+        //MARK: -- Harusnya return array of data actionplans.count
         //Sementara return 1 dlu buat coba
-        return 2
+        return actionplans.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "actCell", for : indexPath) as? ActionCell{
-        //MARK: -- Harusnya cell.actTitle.text = self."namaArray"[indexPath.row]
+        //MARK: -- Harusnya cell.actNameLabel.text = self."namaArray"[indexPath.row]
             //Sementara isi asal dulu:
         //    cell.actTitle.text = "ABCDEFG"
             cell.selectionStyle = .none
             cell.layer.cornerRadius = 8
             cell.actCellView.layer.cornerRadius = 8
             
-
+            let thisAct = self.actionplans[indexPath.row]
+            print("THIS ACTION PLANS INCLUDE : \(actionplans.count)")
+            cell.actNameLbl.text = thisAct.actionName
             return cell
         }
 
