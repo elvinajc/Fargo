@@ -59,6 +59,9 @@ class DatePickerTableViewCell: UITableViewCell {
         dateField.inputAccessoryView = toolBar
     }
     
+    func setDateFieldText(text: String) {
+       dateField.text = text
+    }
     
     func setDateField(){
         //Set DateField Appearance

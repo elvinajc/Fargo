@@ -67,7 +67,10 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.selectionStyle = .none
                 cell.setEnable(isEnable: true)
                 cell.setHint(text: "e.g. Learn basic of core data (max. 25 char)")
-                
+            
+                if (selectedActionPlan != nil){
+                    cell.setTextFieldText(text: (selectedActionPlan?.actionName!)!)
+                }
               
             return cell
             
@@ -78,7 +81,11 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.selectionStyle = .none
                 cell.setEnable(isEnable: true)
                 cell.setPlaceholder(text: "e.g. Understand about basic of core data in theory")
-                    
+            
+                if (selectedActionPlan != nil){
+                cell.setTextView(text: (selectedActionPlan?.actionDesc!)!)
+                }
+            
                 return cell
             
             case .successParameterTl :
@@ -88,7 +95,11 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.selectionStyle = .none
                 cell.setEnable(isEnable: true)
                 cell.setPlaceholder(text: "e.g. I can create a mind map about how core data works")
-                
+            
+                if (selectedActionPlan != nil){
+                cell.setTextView(text: (selectedActionPlan?.successParameter!)!)
+                }
+            
                 return cell
             
             case .learningResourceTl :
@@ -98,6 +109,10 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                 cell.selectionStyle = .none
                 cell.setEnable(isEnable: true)
                 cell.setPlaceholder(text: "Put the video / website link that you use as study references here")
+            
+                if (selectedActionPlan != nil){
+                cell.setTextView(text: (selectedActionPlan?.learningResources!)!)
+                }
             
                 return cell
             
@@ -109,8 +124,6 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                     
                     case .startDate :
                       let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell", for: indexPath)as! DatePickerTableViewCell
-                     // let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
-                      //cell.backgroundColor = .clear
                       let setDates = SetDateSect(rawValue: indexPath.row)
                       cell.textLabel?.text = setDates?.description
                       cell.backgroundColor = .clear
@@ -125,6 +138,13 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                       bottomBorder.frame = CGRect(x: 8.0, y: 43.0, width: cell.contentView.frame.size.width, height: 0.5)
                       bottomBorder.backgroundColor = UIColor.softGray.cgColor
                       cell.contentView.layer.addSublayer(bottomBorder)
+                    
+                    if (selectedActionPlan != nil){
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MMM d, yyyy"
+                        let sdate = dateFormatter.string(from : (selectedActionPlan?.startDate)!)
+                        cell.setDateFieldText(text: sdate)
+                    }
                     
                       return cell
                     
@@ -141,6 +161,14 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                     //Set Rounded Corner Top Left & Right
                     cell.dateView.layer.cornerRadius = 8
                     cell.dateView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+                    
+                    if (selectedActionPlan != nil){
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MMM d, yyyy"
+                        let edate = dateFormatter.string(from : (selectedActionPlan?.endDate)!)
+                        cell.setDateFieldText(text: edate)
+                    }
+                    
                     return cell
                 
                     default:

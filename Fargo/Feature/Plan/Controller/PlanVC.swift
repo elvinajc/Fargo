@@ -27,9 +27,6 @@ class PlanVC: UIViewController {
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var fetchedResultController : NSFetchedResultsController<Requirement>!
-
-    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
