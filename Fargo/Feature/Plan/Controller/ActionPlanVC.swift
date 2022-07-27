@@ -55,6 +55,7 @@ class ActionPlanVC: UIViewController {
         configureUIActPlan()
         
         if (firstLoad) {
+            firstLoad = false
             fetchActionPlanData()
         }
         
@@ -85,6 +86,19 @@ class ActionPlanVC: UIViewController {
            let backItem = UIBarButtonItem()
            backItem.title = ""
            navigationItem.backBarButtonItem = backItem
+        
+        //Segue utk ke edit
+        if (segue.identifier == "goToEditActionPlan"){
+            let indexPath = actTableView.indexPathForSelectedRow
+            let destVC = segue.destination as? ActionPlanDetailVC
+            let selectedActionPlan : ActionPlan!
+ 
+                selectedActionPlan = actionplans[indexPath!.row]
+            
+            destVC!.selectedActionPlan = selectedActionPlan
+            
+            actTableView.deselectRow(at: indexPath!, animated: true)
+        }
     
     }
     

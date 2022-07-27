@@ -118,6 +118,11 @@ extension ActionPlanVC: UITableViewDataSource{
             let thisAct = self.actionplans[indexPath.row]
             print("THIS ACTION PLANS INCLUDE : \(actionplans.count)")
             cell.actNameLbl.text = thisAct.actionName
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "d MMM"
+            let edate = dateFormatter.string(from: thisAct.endDate!)
+            cell.actDateLbl.text = edate
             return cell
         }
 

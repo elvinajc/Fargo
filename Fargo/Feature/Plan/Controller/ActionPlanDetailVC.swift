@@ -17,11 +17,13 @@ class ActionPlanDetailVC: UIViewController {
     var requirements = [Requirement]()
     var actionplans = [ActionPlan]()
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var selectedActionPlan: ActionPlan? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureUIActPlanDetail()
+        
     }
 
     //Func
@@ -198,45 +200,78 @@ class ActionPlanDetailVC: UIViewController {
 //             pickerView.selectRow(row, inComponent: 0, animated: true)
 //             selectRow = row
         
-        //MARK: ADD ACTION PLAN DATA KE CORE DATA 
-        let entity = NSEntityDescription.entity(forEntityName: "ActionPlan", in: context)
-        
-        // Create a req obj
-        let newAct = ActionPlan(entity: entity!, insertInto: context)
-        newAct.setValue(name, forKey: "actionName")
-        newAct.setValue(desc, forKey: "actionDesc")
-        newAct.setValue(success, forKey: "successParameter")
-        newAct.setValue(learning, forKey: "learningResources")
-      
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMMM d, yyyy"
-        
-        let ssdate = dateFormatter.date(from:sdate)!
-        let eedate = dateFormatter.date(from:edate)!
-        
-        newAct.setValue(ssdate, forKey: "startDate")
-        newAct.setValue(eedate, forKey: "endDate")
-        newAct.setValue("Undone", forKey: "status")
-        
-        // Save req data
-        do {
-            //MARK: --Coba Add Req to the goal
-//            let req = Requirement(context: context)
-//            req.addToActionPlan(newAct)
+        //MARK: ADD ACTION PLAN DATA KE CORE DATA
+        if(selectedActionPlan == nil){
+            let entity = NSEntityDescription.entity(forEntityName: "ActionPlan", in: context)
+            
+            // Create a req obj
+            let newAct = ActionPlan(entity: entity!, insertInto: context)
+            newAct.setValue(name, forKey: "actionName")
+            newAct.setValue(desc, forKey: "actionDesc")
+            newAct.setValue(success, forKey: "successParameter")
+            newAct.setValue(learning, forKey: "learningResources")
+          
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMMM d, yyyy"
+            
+            let ssdate = dateFormatter.date(from:sdate)!
+            let eedate = dateFormatter.date(from:edate)!
+            
+            newAct.setValue(ssdate, forKey: "startDate")
+            newAct.setValue(eedate, forKey: "endDate")
+            newAct.setValue("Undone", forKey: "status")
+            
+            // Save req data
+            do {
+                //MARK: --Coba Add Req to the goal
+    //            let req = Requirement(context: context)
+    //            req.addToActionPlan(newAct)
 
-            try context.save()
+                try context.save()
+                
+                //Tambahin ke arraylist
+                actionplans.append(newAct)
+                
+                
+            } catch {
+                print(error)
+            }
+        
+        } else {
+            //MARK: EDIT ACTION PLAN DATA KE CORE DATA
             
-            //Tambahin ke arraylist
-            actionplans.append(newAct)
-            
-            
-        } catch {
-            print(error)
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
+            do {
+                let results: NSArray = try context.fetch(request) as NSArray
+                for result in results{
+                    let actPlan = result as! ActionPlan
+                    if(actPlan == selectedActionPlan){
+                        actPlan.actionName = name
+                        actPlan.actionDesc = desc
+                        actPlan.successParameter = success
+                        actPlan.learningResources = learning
+                        
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MMMMM d, yyyy"
+                        let ssdate = dateFormatter.date(from:sdate)!
+                        let eedate = dateFormatter.date(from:edate)!
+                        
+                        actPlan.startDate = ssdate
+                        actPlan.endDate = eedate
+                   
+                        try context.save()
+  
+                        //selected.append(actPlan)
+                        }
+                    }
+                } catch  {
+                    print("Fetch failed")
+                }
         }
         
         print("JUMLAH ACTION PLAN: \(actionplans.count)")
     }
-
+    
     
 //bracket class
 }

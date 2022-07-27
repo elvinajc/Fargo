@@ -42,6 +42,7 @@ class PlanVC: UIViewController {
         configureUIPlan()
         
         if(firstLoad){
+            firstLoad = false
             fetchRequirementData()
         }
         
