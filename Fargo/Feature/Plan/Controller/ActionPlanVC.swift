@@ -8,8 +8,17 @@
 import CoreData
 import UIKit
 
+protocol updateProgressLabel{
+    func buttonClicked(numOfDone: Int)
+}
 
-class ActionPlanVC: UIViewController {
+class ActionPlanVC: UIViewController, updateProgressLabel {
+    func buttonClicked(numOfDone: Int) {
+        self.numOfActDone.text = "\(numOfDone)"
+        print(self.actionplans)
+        doneCount = numOfDone
+    }
+    
     
     //Properties
     @IBOutlet weak var addActBtn: UIBarButtonItem!
@@ -35,6 +44,8 @@ class ActionPlanVC: UIViewController {
 
     var actStatus = ""
     var buttonRow : Int = 0
+    
+    var doneCount = 0
      
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,7 +157,7 @@ class ActionPlanVC: UIViewController {
     
     //MARK: FETCH ACTION PLAN DATA(HARUS DI CEK)
     func fetchActionPlanData(){
-        var doneCount = 0
+  //      var doneCount = 0
         var allActionCount = 0
         
         actionplans.removeAll()
@@ -173,19 +184,20 @@ class ActionPlanVC: UIViewController {
                     
                     //Set Progress Label
                     //MARK: -- Jumlah done still must be fixed
-                    if act.status == "Done"{
-                        doneCount += 1
-                    }
-                    
-                    print("DONE COUNT \(doneCount)")
-                    self.numOfActDone.text = "\(doneCount)"
-                    print(self.actionplans)
+//                    if act.status == "Done"{
+//                        doneCount += 1
+//                    }
+//                    
+//                    print("DONE COUNT \(doneCount)")
+//                    self.numOfActDone.text = "\(doneCount)"
+//                    print(self.actionplans)
+                    self.numOfActDone.text = "\(self.doneCount)"
                     
                     allActionCount = self.actionplans.count
                     print("ALL ACTION = \(allActionCount)")
                     self.numOfAllAct.text = "\(allActionCount)"
                     
-
+                   // refreshControl.beginRefreshing()
                 }
             }
         }catch{

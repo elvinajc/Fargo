@@ -151,6 +151,7 @@ extension ActionPlanVC: UITableViewDataSource{
 
             
             cell.delegate = self
+            cell.delegates = self
 
             return cell
         }

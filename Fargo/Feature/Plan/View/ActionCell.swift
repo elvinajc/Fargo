@@ -13,6 +13,7 @@ protocol receiveStatus{
 }
 
 class ActionCell: UITableViewCell {
+
     
     //Properties
     @IBOutlet weak var actCellView: UIView!
@@ -32,6 +33,9 @@ class ActionCell: UITableViewCell {
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var delegate: receiveStatus?
+    var delegates: updateProgressLabel?
+    
+    var countDone : Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,6 +65,10 @@ class ActionCell: UITableViewCell {
                 actionStatus = "Done"
                 delegate?.buttonTap(status: "Done")
                 
+                countDone += 1
+                
+                delegates?.buttonClicked(numOfDone: countDone)
+                
                 //updateCheckmarkStatus()
                 print("CHECKMARK Done")
                 
@@ -70,6 +78,16 @@ class ActionCell: UITableViewCell {
                 checkmarkButton.isSelected = false
                 actionStatus = "Undone"
                 delegate?.buttonTap(status: "Undone")
+                
+                countDone -= 1
+                
+                //Supaya value countDone ga dibawah 0
+                if countDone < 0{
+                    countDone = 0
+                }
+                
+                delegates?.buttonClicked(numOfDone: countDone)
+                
                 
                // updateCheckmarkStatus()
                 print("CHECKMARK Undone")
