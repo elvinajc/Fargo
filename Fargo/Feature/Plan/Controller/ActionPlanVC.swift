@@ -31,8 +31,7 @@ class ActionPlanVC: UIViewController {
     var selectedRequirement: Requirement? = nil
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var doneCount = 0
-    var undoneCount = 0
+
 
     var actStatus = ""
     var buttonRow : Int = 0
@@ -40,6 +39,8 @@ class ActionPlanVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        
+        fetchActionPlanData()
         
         actTableView.reloadData()
 
@@ -61,26 +62,8 @@ class ActionPlanVC: UIViewController {
         
         if (firstLoad) {
             firstLoad = false
-            fetchActionPlanData()
-           // fetchProgressStatus()
+           // fetchActionPlanData()
         }
-        
-        actTableView.reloadData()
-
-         if actionplans.isEmpty {
-            noActPlanLabel.isHidden = false
-         } else {
-             noActPlanLabel.isHidden = true
-         }
-
-        
-        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
-        if actionplans.isEmpty {
-            noActPlanLabel.isHidden = false
-        } else {
-            noActPlanLabel.isHidden = true
-        }
-
         
         //DELEGATE + DATA SOURCE
     }
@@ -110,7 +93,6 @@ class ActionPlanVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        fetchActionPlanData()
        // fetchProgressStatus()
     }
     
@@ -125,10 +107,6 @@ class ActionPlanVC: UIViewController {
         configureReqView()
         setRoundedActProgView()
         setTableView()
-        
-        //MARK: -- CEK DATA DI CORE DATA, KALO GA ADA, isHidden = false | KALO ADA, isHidden = true
-        //Sementara: is hidden = false
-         noActPlanLabel.isHidden = false
         
         //MARK: -- Set reqTitleLabel sesuai sama yg dipilih
         reqTitleLabel.text = selectedRequirement?.requirementTitle!
@@ -168,6 +146,8 @@ class ActionPlanVC: UIViewController {
     
     //MARK: FETCH ACTION PLAN DATA(HARUS DI CEK)
     func fetchActionPlanData(){
+        var doneCount = 0
+        var allActionCount = 0
         
         actionplans.removeAll()
         
@@ -190,6 +170,22 @@ class ActionPlanVC: UIViewController {
                     } else {
                         self.noActPlanLabel.isHidden = true
                     }
+                    
+                    //Set Progress Label
+                    //MARK: -- Jumlah done still must be fixed
+                    if act.status == "Done"{
+                        doneCount += 1
+                    }
+                    
+                    print("DONE COUNT \(doneCount)")
+                    self.numOfActDone.text = "\(doneCount)"
+                    print(self.actionplans)
+                    
+                    allActionCount = self.actionplans.count
+                    print("ALL ACTION = \(allActionCount)")
+                    self.numOfAllAct.text = "\(allActionCount)"
+                    
+
                 }
             }
         }catch{
@@ -198,44 +194,11 @@ class ActionPlanVC: UIViewController {
     }
     
     
-//    func fetchProgressStatus(){
-//        let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
-//
-//        do{
-//            let results : NSArray = try context.fetch(request) as NSArray
-//            let predUndone = NSPredicate(format: "status == %@", "Undone")
-//            request.predicate = predUndone
-//
-//            for result in results {
-//                let act = result as! ActionPlan
-//
-////                undoneCount = act.status!.count - 4
-////                print("UNDONE COUNT \(undoneCount)")
-//
-//                if act.status == "Done"{
-//                    doneCount = act.status!.count-2
-//                    print("DONE COUNT \(doneCount)")
-//                }
-//
-////                if act.status == "Undone"{
-////                    undoneCount = act.status!.count
-////                    print("UNDONE COUNT \(undoneCount)")
-////                }
-//
-//            }
-//        }catch{
-//            print(error)
-//        }
-//    }
-    
     func updateCheckmarkStatus(){
         
         let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
             do{
                   let results : NSArray = try context.fetch(request) as NSArray
-//                  for result in results {
-//                      let act = result as! ActionPlan
-                      //ganti status sesuai di index = button row menjadi actStatus
                       
                       actionplans[buttonRow].status! = actStatus
                       print("STATUSNYA : \(actionplans[buttonRow].status)")
@@ -258,4 +221,5 @@ class ActionPlanVC: UIViewController {
        print("ROW YG DIPENCET : \(buttonNumber)")
     }
 }
+
 

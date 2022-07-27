@@ -74,13 +74,10 @@ class ActionCell: UITableViewCell {
                // updateCheckmarkStatus()
                 print("CHECKMARK Undone")
             }
-
-        
-       
         
     }
     
-
+    
 
     
     
