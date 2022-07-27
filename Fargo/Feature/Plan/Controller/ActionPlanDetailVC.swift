@@ -238,8 +238,7 @@ class ActionPlanDetailVC: UIViewController {
             }
         
         } else {
-            //MARK: EDIT ACTION PLAN DATA KE CORE DATA
-            
+            //MARK: -- EDIT ACTION PLAN DATA KE CORE DATA
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
             do {
                 let results: NSArray = try context.fetch(request) as NSArray

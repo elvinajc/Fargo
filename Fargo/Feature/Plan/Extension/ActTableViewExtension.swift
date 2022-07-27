@@ -5,7 +5,7 @@
 //  Created by Elvina Jacia on 23/07/22.
 //
 
-
+import CoreData
 import UIKit
 
 extension ActionPlanVC: UITableViewDelegate {
@@ -32,16 +32,17 @@ extension ActionPlanVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         //Component of Edit Action
-        let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
-            //MARK: -- Segue ke halaman action detail utk edit dan munculin datanya sesuai row tsb
-            self?.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
-            print("Masuk ke Action Details untuk Edit")
-            
-            
-            completionHandler(true)
-            
-        }
-        edit.backgroundColor = UIColor.lilDarkGray
+//        let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
+//            //MARK: -- Segue ke halaman action detail utk edit dan munculin datanya sesuai row tsb
+//            self?.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
+//            print("Masuk ke Action Details untuk Edit")
+//
+//
+//            //BATAS
+//            completionHandler(true)
+//
+//        }
+//        edit.backgroundColor = UIColor.lilDarkGray
         
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
@@ -80,7 +81,7 @@ extension ActionPlanVC: UITableViewDelegate {
         
         
         //Masukin Edit & Delete ke Trailing Actionnya
-        let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
+        let configuration = UISwipeActionsConfiguration(actions: [delete]) //, edit])
         configuration.performsFirstActionWithFullSwipe = false
         
         return configuration

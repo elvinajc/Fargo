@@ -93,7 +93,7 @@ class ActionPlanVC: UIViewController {
             let destVC = segue.destination as? ActionPlanDetailVC
             let selectedActionPlan : ActionPlan!
  
-                selectedActionPlan = actionplans[indexPath!.row]
+            selectedActionPlan = actionplans[indexPath!.row]
             
             destVC!.selectedActionPlan = selectedActionPlan
             
