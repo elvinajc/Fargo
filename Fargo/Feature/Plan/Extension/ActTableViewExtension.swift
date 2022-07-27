@@ -8,7 +8,15 @@
 import CoreData
 import UIKit
 
-extension ActionPlanVC: UITableViewDelegate {
+
+extension ActionPlanVC: UITableViewDelegate, receiveStatus {
+
+    func buttonTap(status: String) {
+        print("STATUS SEKARANG: \(status)")
+        actStatus = status
+        updateCheckmarkStatus()
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //cell view height + dikit buat spacing (60 + 2)
         return 62
@@ -118,12 +126,32 @@ extension ActionPlanVC: UITableViewDataSource{
             
             let thisAct = self.actionplans[indexPath.row]
             print("THIS ACTION PLANS INCLUDE : \(actionplans.count)")
+            print("THIS ROW IS \(indexPath.row)")
             cell.actNameLbl.text = thisAct.actionName
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "d MMM"
             let edate = dateFormatter.string(from: thisAct.endDate!)
             cell.actDateLbl.text = edate
+            
+            //cek checkmark button row
+            cell.checkmarkButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
+            cell.checkmarkButton.tag = indexPath.row
+         
+        
+            if thisAct.status == "Done"{
+                cell.checkmarkButton.setImage(cell.checkIcon, for: .normal)
+                cell.checkmarkButton.tintColor = .darkChoco
+                cell.checkmarkButton.isSelected = true
+            } else{
+                cell.checkmarkButton.setImage(cell.uncheckIcon, for: .normal)
+                cell.checkmarkButton.tintColor = .softGray
+                cell.checkmarkButton.isSelected = false
+            }
+
+            
+            cell.delegate = self
+
             return cell
         }
 

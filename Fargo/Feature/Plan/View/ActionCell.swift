@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+protocol receiveStatus{
+    func buttonTap(status: String)
+}
+
 class ActionCell: UITableViewCell {
     
     //Properties
@@ -26,15 +30,15 @@ class ActionCell: UITableViewCell {
     var actionplans = [ActionPlan]()
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+
+    var delegate: receiveStatus?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        fetchStatus()
-    
       
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -49,85 +53,35 @@ class ActionCell: UITableViewCell {
         //Ganti button sesuai kalo dipencet : checkmarkButton.setImage(image, forState: .normal)
         //Update progress
         
-      
-            //checkmarkButton.isSelected = false
-        
-        if checkmarkButton.currentImage == uncheckIcon{
-            checkmarkButton.setImage(checkIcon, for: .normal)
-            checkmarkButton.tintColor = .darkChoco
-            checkmarkButton.isSelected = true
-            actionStatus = "Done"
-            
-            updateCheckmarkStatus()
-            print("CHECKMARK Done")
-            
-        } else {
-            checkmarkButton.setImage(uncheckIcon, for: .normal)
-            checkmarkButton.tintColor = .softGray
-            checkmarkButton.isSelected = true
-            actionStatus = "Undone"
-            
-            updateCheckmarkStatus()
-            print("CHECKMARK Undone")
-        }
-        
-    }
     
-    func updateCheckmarkStatus(){
-    
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
-        do {
-            let results: NSArray = try context.fetch(request) as NSArray
-            for result in results{
-                let actPlan = result as! ActionPlan
-                actPlan.status = actionStatus
-                    
-                    try context.save()
-
-                    }
-        } catch  {
-                print("Fetch failed")
-            }
-    }
-
-    
-    func fetchStatus(){
-        //Fetech statusnya
-        let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
-        
-        do{
-            
-            let results : NSArray = try context.fetch(request) as NSArray
-            let pred = NSPredicate(format: "status == %@", "Undone")
-            request.predicate = pred
-            
-            for result in results {
-                let act = result as! ActionPlan
+            if checkmarkButton.currentImage == uncheckIcon{
+                checkmarkButton.setImage(checkIcon, for: .normal)
+                checkmarkButton.tintColor = .darkChoco
+                checkmarkButton.isSelected = true
+                actionStatus = "Done"
+                delegate?.buttonTap(status: "Done")
                 
-                //let actStatus = (result as AnyObject).value(forKey: "status") as? String
-                actionplans.append(act)
+                //updateCheckmarkStatus()
+                print("CHECKMARK Done")
                 
-                if act.status == "Done"{
-                    checkmarkButton.setImage(checkIcon, for: .normal)
-                    checkmarkButton.tintColor = .darkChoco
-                    checkmarkButton.isSelected = true
-                } else{
-                    checkmarkButton.setImage(uncheckIcon, for: .normal)
-                    checkmarkButton.tintColor = .softGray
-                    checkmarkButton.isSelected = false
-                }
-
+            } else {
+                checkmarkButton.setImage(uncheckIcon, for: .normal)
+                checkmarkButton.tintColor = .softGray
+                checkmarkButton.isSelected = false
+                actionStatus = "Undone"
+                delegate?.buttonTap(status: "Undone")
+                
+               // updateCheckmarkStatus()
+                print("CHECKMARK Undone")
             }
-        }catch{
-            print(error)
-        }
-    }
-    
-    func saveStatus(){
+
+        
+       
         
     }
     
-    
+
+
     
     
 }

@@ -200,11 +200,12 @@ class ActionPlanDetailVC: UIViewController {
 //             pickerView.selectRow(row, inComponent: 0, animated: true)
 //             selectRow = row
         
+        
         //MARK: ADD ACTION PLAN DATA KE CORE DATA
         if(selectedActionPlan == nil){
             let entity = NSEntityDescription.entity(forEntityName: "ActionPlan", in: context)
             
-            // Create a req obj
+            // Create action obj
             let newAct = ActionPlan(entity: entity!, insertInto: context)
             newAct.setValue(name, forKey: "actionName")
             newAct.setValue(desc, forKey: "actionDesc")
