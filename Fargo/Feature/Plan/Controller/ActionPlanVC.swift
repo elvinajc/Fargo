@@ -21,8 +21,8 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
         print("ROW YG DIPENCET : \(buttonRow)")
         updateCheckmarkStatus()
         
-        doneCount += numOfDone
-        self.numOfActDone.text = "\(doneCount)"
+        doneCounts += numOfDone
+        self.numOfActDone.text = "\(doneCounts)"
         print(self.actionplans)
         
     }
@@ -53,11 +53,12 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     var actStatus = ""
     var buttonRow : Int = 0
     
-    var doneCount = 0
+    var doneCounts = 0
      
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        
         
         fetchActionPlanData()
         
@@ -170,7 +171,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     
     //MARK: FETCH ACTION PLAN DATA(HARUS DI CEK)
     func fetchActionPlanData(){
-  //      var doneCount = 0
+        doneCounts = 0
         var allActionCount = 0
         
         actionplans.removeAll()
@@ -188,7 +189,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
                
                 
                 if act.status == "Done"{
-                    doneCount += 1
+                    doneCounts += 1
                 }
             }
         }catch{
@@ -205,13 +206,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
                 self.noActPlanLabel.isHidden = true
             }
             
-            //Set Progress Label
-            //MARK: -- Jumlah done still must be fixed
-//
-//                    print("DONE COUNT \(doneCount)")
-//                    self.numOfActDone.text = "\(doneCount)"
-//                    print(self.actionplans)
-            self.numOfActDone.text = "\(self.doneCount)"
+            self.numOfActDone.text = "\(self.doneCounts)"
             
             allActionCount = self.actionplans.count
             print("ALL ACTION = \(allActionCount)")
@@ -231,7 +226,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
                       actionplans[buttonRow].status! = actStatus
                       print("STATUSNYA : \(actionplans[buttonRow].status)")
                       print("ROW YG DIGANTI \(buttonRow)")
-                      self.numOfActDone.text = "\(self.doneCount)"
+                      self.numOfActDone.text = "\(self.doneCounts)"
                 
                       try context.save()
                 //  }

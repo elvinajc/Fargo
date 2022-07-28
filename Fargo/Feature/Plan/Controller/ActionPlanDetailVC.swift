@@ -92,7 +92,7 @@ class ActionPlanDetailVC: UIViewController {
         actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "TextViewCell")
         actPlanDetTableView.registerCell(type: DatePickerTableViewCell.self, identifier: "DatePickerCell")
         
-    }
+    }   
 
     
     func addTableViewConstraint(){
@@ -176,31 +176,16 @@ class ActionPlanDetailVC: UIViewController {
         let sdateIndexPath = IndexPath(row: 0, section: 4)
         guard let sdateCell = actPlanDetTableView.cellForRow(at: sdateIndexPath) as? DatePickerTableViewCell,
             let sdate = sdateCell.dateField.text  else { return }
-            
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA (Date format ubah dari text ke date)
-            //monster?.startDate = startDate
+
             print("Start Date: \(sdate)")
-        
-            //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
-//             let row = pickerView.selectedRow(inComponent: 0)
-//             pickerView.selectRow(row, inComponent: 0, animated: true)
-//             selectRow = row
         
         
         //EndDate
         let edateIndexPath = IndexPath(row: 1, section: 4)
         guard let edateCell = actPlanDetTableView.cellForRow(at: edateIndexPath) as? DatePickerTableViewCell,
             let edate = edateCell.dateField.text  else { return }
-            
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA (Date format ubah dari text ke date)
-            //monster?.startDate = startDate
+ 
             print("End Date: \(edate)")
-        
-            //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
-//             let row = pickerView.selectedRow(inComponent: 0)
-//             pickerView.selectRow(row, inComponent: 0, animated: true)
-//             selectRow = row
-        
         
         //MARK: ADD ACTION PLAN DATA KE CORE DATA
         if(selectedActionPlan == nil){
@@ -238,6 +223,7 @@ class ActionPlanDetailVC: UIViewController {
         
         } else {
             //MARK: -- EDIT ACTION PLAN DATA KE CORE DATA
+            
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
             do {
                 let results: NSArray = try context.fetch(request) as NSArray
