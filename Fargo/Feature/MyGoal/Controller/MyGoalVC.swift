@@ -151,12 +151,14 @@ class MyGoalVC: UIViewController{
         calculatePercentage()
     }
     
+    
     func calculatePercentage(){
         let allPercent = 100
 
         if countAllActPlan != 0 && countDoneActPlan != 0{
-            let percentPerAction = allPercent / countAllActPlan
-            nowPercent = percentPerAction * countDoneActPlan
+            let percentPerAction = Double(allPercent) / Double(countAllActPlan)
+            nowPercent = Int(ceil(percentPerAction * Double(countDoneActPlan)))
+        
         } else {
             let percentPerAction = 0
             nowPercent = 0
@@ -164,6 +166,7 @@ class MyGoalVC: UIViewController{
         
         print("Now Percent", nowPercent)
     }
+
 
 }
 
