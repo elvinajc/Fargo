@@ -114,7 +114,8 @@ class CircleProgressView: UIView {
             //Draw Fore Layer
             foreLayer = createCircleLayer(rect: rect, strokeColor: UIColor.darkGreen.cgColor, fillColor: UIColor.clear.cgColor, lineWidth: lineWidth)
    
-            //MARK: -- UTK SET WARNA FORELAYER
+            //MARK: -- UTK SET FORELAYER FILLNYA
+            //Start 0 (biar ada animasi)
             calculateForeLayer(strokeEnd: 0.0)
 
             //Add layer ke view

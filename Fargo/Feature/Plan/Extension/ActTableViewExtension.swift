@@ -59,36 +59,18 @@ extension ActionPlanVC: UITableViewDelegate {
             print("Index \(indexPath.row)")
             print("Action \(self!.actionplans.count)")
             let actToRemove = self?.actionplans[indexPath.row]
+            
             self?.context.delete(actToRemove!)
-           
+            
             do {
                 try self!.context.save()
                 
             } catch {
                 print(error)
             }
-            
-            //Refetch data
-//            do{
-//                self?.actionplans = try self!.context.fetch(ActionPlan.fetchRequest())
-//                    DispatchQueue.main.async {
-//                        self!.actTableView.reloadData()
-//
-//                        if self!.actionplans.isEmpty {
-//                           self!.noActPlanLabel.isHidden = false
-//                        } else {
-//                            self!.noActPlanLabel.isHidden = true
-//                        }
-//                    }
-//            } catch {
-//                print(error)
-//            }
-            print("TEST")
-        
+
                 self!.fetchActionPlanData()
         
-            print("ABCD")
-
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato

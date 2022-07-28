@@ -224,7 +224,7 @@ class ActionPlanDetailVC: UIViewController {
             newAct.setValue(eedate, forKey: "endDate")
             newAct.setValue("Undone", forKey: "status")
             
-            // Save action data
+            // Save act data
             do {
                 try context.save()
                 

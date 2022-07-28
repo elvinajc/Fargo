@@ -32,6 +32,8 @@ class MyGoalVC: UIViewController{
     
     var countAllActPlan = 0
     var countDoneActPlan = 0
+    var nowPercent = 0
+    var desPercent : Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +46,20 @@ class MyGoalVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         //Fetch action data
         fetchActionData()
-        
+//        calculatePercentage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //MARK: SET CIRCLE PROGRESS BAR
-        circleProgressView.calculateForeLayer(strokeEnd: 0.5)
+        desPercent = Double(nowPercent) * 0.01
+        print(desPercent)
+        
+        //MARK: SET CIRCLE PROGRESS BAR SESUAI PERSENTASE
+        circleProgressView.calculateForeLayer(strokeEnd: desPercent)
         
         //Set percentLabel
+        progressPercentNumLabel.text = "\(nowPercent)"
+        
+ 
         
     }
     
@@ -123,6 +131,8 @@ class MyGoalVC: UIViewController{
         countAllActPlan = 0
         countDoneActPlan = 0
         
+        actionPlan.removeAll()
+        
         //Count jumlah task yg statusnya "complete",
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
         do {
@@ -141,8 +151,17 @@ class MyGoalVC: UIViewController{
         
         print("Jumlah Done ActionPlan: ", countDoneActPlan)
         print("Jumlah Seluruh ActionPlan: ", countAllActPlan)
+        calculatePercentage()
     }
     
+    func calculatePercentage(){
+        let allPercent = 100
+
+        let percentPerAction = allPercent/countAllActPlan
+        nowPercent = percentPerAction * countDoneActPlan
+
+        print("Now Percent", nowPercent)
+    }
 
 }
 
