@@ -17,7 +17,7 @@
     </entity>
     <entity name="Requirement" representedClassName="Requirement" syncable="YES">
         <attribute name="requirementTitle" optional="YES" attributeType="String"/>
-        <relationship name="actionPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActionPlan" inverseName="requirements" inverseEntity="ActionPlan"/>
+        <relationship name="actionPlan" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ActionPlan" inverseName="requirements" inverseEntity="ActionPlan"/>
         <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="requirement" inverseEntity="Goal"/>
     </entity>
     <elements>

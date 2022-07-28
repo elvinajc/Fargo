@@ -50,17 +50,14 @@ class MyGoalVC: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //Change to des
         desPercent = Double(nowPercent) * 0.01
-        print(desPercent)
         
         //MARK: SET CIRCLE PROGRESS BAR SESUAI PERSENTASE
         circleProgressView.calculateForeLayer(strokeEnd: desPercent)
         
         //Set percentLabel
         progressPercentNumLabel.text = "\(nowPercent)"
-        
- 
-        
     }
     
     //MARK: -- FUNC Configure UI
@@ -157,9 +154,14 @@ class MyGoalVC: UIViewController{
     func calculatePercentage(){
         let allPercent = 100
 
-        let percentPerAction = allPercent/countAllActPlan
-        nowPercent = percentPerAction * countDoneActPlan
-
+        if countAllActPlan != 0 && countDoneActPlan != 0{
+            let percentPerAction = allPercent / countAllActPlan
+            nowPercent = percentPerAction * countDoneActPlan
+        } else {
+            let percentPerAction = 0
+            nowPercent = 0
+        }
+        
         print("Now Percent", nowPercent)
     }
 
