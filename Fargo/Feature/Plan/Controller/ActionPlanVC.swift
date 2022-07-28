@@ -14,16 +14,16 @@ protocol updateProgressLabel{
 
 class ActionPlanVC: UIViewController, updateProgressLabel {
     func buttonClicked(status: String, numOfDone: Int, buttonRow: Int) {
-        print("STATUS SEKARANG: \(status)")
+        //print("STATUS SEKARANG: \(status)")
         actStatus = status
         
         self.buttonRow = buttonRow
-        print("ROW YG DIPENCET : \(buttonRow)")
+        //print("ROW YG DIPENCET : \(buttonRow)")
         updateCheckmarkStatus()
         
         doneCounts += numOfDone
         self.numOfActDone.text = "\(doneCounts)"
-        print(self.actionplans)
+        //print(self.actionplans)
         
     }
     
@@ -59,7 +59,6 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
         
-        
         fetchActionPlanData()
         
         actTableView.reloadData()
@@ -75,8 +74,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
+
         // Do any additional setup after loading the view.
         configureUIActPlan()
         
@@ -84,8 +82,7 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
             firstLoad = false
            // fetchActionPlanData()
         }
-        
-        //DELEGATE + DATA SOURCE
+     
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,7 +122,6 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     @IBAction func addActBtnAction(_ sender: UIBarButtonItem) {
       //MARK: -- perform segue ke action plan detail
         self.performSegue(withIdentifier: "goToAddActionPlan", sender: self)
-        print("KEPENCET")
     }
     
     func configureUIActPlan(){
@@ -162,10 +158,10 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     
     func regisTableViewCell(){
         //RegisterCell
-        //Register Pakai Cara Manual:
+        //Register Manually:
         //self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
         
-        //Register Pakai Helper (UINib + Loader):
+        //Register Using Helper (UINib + Loader):
         actTableView.registerCell(type: ActionCell.self, identifier: "actCell")
     }
     
@@ -209,30 +205,24 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
             self.numOfActDone.text = "\(self.doneCounts)"
             
             allActionCount = self.actionplans.count
-            print("ALL ACTION = \(allActionCount)")
+            //print("ALL ACTION = \(allActionCount)")
             self.numOfAllAct.text = "\(allActionCount)"
-            
-           // refreshControl.beginRefreshing()
         }
     }
     
     
     func updateCheckmarkStatus(){
-        
-  //      let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
-            do{
-                //  let results : NSArray = try context.fetch(request) as NSArray
-                      
-                      actionplans[buttonRow].status! = actStatus
-                      print("STATUSNYA : \(actionplans[buttonRow].status)")
-                      print("ROW YG DIGANTI \(buttonRow)")
-                      self.numOfActDone.text = "\(self.doneCounts)"
+        do{
+            actionplans[buttonRow].status! = actStatus
+            print("STATUSNYA : \(actionplans[buttonRow].status)")
+            print("ROW YG DIGANTI \(buttonRow)")
+            self.numOfActDone.text = "\(self.doneCounts)"
                 
-                      try context.save()
-                //  }
-              }catch{
-                  print(error)
-              }
+            try context.save()
+
+        }catch{
+            print(error)
+        }
         
         
    }

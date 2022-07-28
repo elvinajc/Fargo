@@ -24,8 +24,6 @@ class DatePickerTableViewCell: UITableViewCell {
         setDateField()
         setDatePicker()
         
-        //dateField.addDoneButtonOnKeyboard()
-        
         //MARK: SET VALUE DATE PICKER SESUAI DATA YG DIAMBIL DARI CORE DATA
         //Sementara di set ke date hari ini:
         dateField.text = dateFormatting(date: Date())
@@ -79,20 +77,7 @@ class DatePickerTableViewCell: UITableViewCell {
     }
     
     @objc func donePicker() {
-
         dateField.resignFirstResponder()
-
-//        defaultFocusTime = Int(focusSelectedTxt)!*60
-//     //testing valuenya keganti gak
-//        print("Focus")
-//        print(defaultFocusTime)
-
-        //MARK: TAMBAHAN UTK SET STATE ROW PICKER VIEW
-//        let row = datePicker.selectedRow(inComponent: 0)
-//        datePicker.selectRow(row, inComponent: 0, animated: true)
-//    selectRow = row
-        
-       // defaults.setValue(selectRow, forKey: picker)
     }
     
     

@@ -10,12 +10,7 @@ import UIKit
 
 
 extension ActionPlanVC: UITableViewDelegate {
-//
-//    func buttonTap(status: String) {
-//        print("STATUS SEKARANG: \(status)")
-//        actStatus = status
-//    }
-//    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //cell view height + dikit buat spacing (60 + 2)
         return 62
@@ -37,19 +32,6 @@ extension ActionPlanVC: UITableViewDelegate {
        }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        //Component of Edit Action
-//        let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
-//            //MARK: -- Segue ke halaman action detail utk edit dan munculin datanya sesuai row tsb
-//            self?.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
-//            print("Masuk ke Action Details untuk Edit")
-//
-//
-//            //BATAS
-//            completionHandler(true)
-//
-//        }
-//        edit.backgroundColor = UIColor.lilDarkGray
         
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
@@ -74,8 +56,7 @@ extension ActionPlanVC: UITableViewDelegate {
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
-        
-        
+    
         //Masukin Edit & Delete ke Trailing Actionnya
         let configuration = UISwipeActionsConfiguration(actions: [delete]) //, edit])
         configuration.performsFirstActionWithFullSwipe = false
@@ -86,7 +67,6 @@ extension ActionPlanVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             //MARK: -KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL UTK EDIT
-            //MUNCULIN DATA SESUAI ROW YG DI SELECT
             self.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
             print("Masuk ke Action Details untuk edit")
       
@@ -97,17 +77,12 @@ extension ActionPlanVC: UITableViewDelegate {
 
 extension ActionPlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //MARK: -- Harusnya return array of data actionplans.count
-        //Sementara return 1 dlu buat coba
         return actionplans.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "actCell", for : indexPath) as? ActionCell{
-        //MARK: -- Harusnya cell.actNameLabel.text = self."namaArray"[indexPath.row]
-            //Sementara isi asal dulu:
-        //    cell.actTitle.text = "ABCDEFG"
             cell.selectionStyle = .none
             cell.layer.cornerRadius = 8
             cell.actCellView.layer.cornerRadius = 8
@@ -121,9 +96,6 @@ extension ActionPlanVC: UITableViewDataSource{
             dateFormatter.dateFormat = "d MMM"
             let edate = dateFormatter.string(from: thisAct.endDate!)
             cell.actDateLbl.text = edate
-            
-            //cek checkmark button row
-           // cell.checkmarkButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
             cell.checkmarkButton.tag = indexPath.row
          
         
@@ -137,8 +109,6 @@ extension ActionPlanVC: UITableViewDataSource{
                 cell.checkmarkButton.isSelected = false
             }
 
-            
-         //   cell.delegate = self
             cell.delegates = self
 
             return cell

@@ -46,7 +46,6 @@ class MyGoalVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         //Fetch action data
         fetchActionData()
-//        calculatePercentage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -101,9 +100,7 @@ class MyGoalVC: UIViewController{
     
     //MARK: -- FUNC GET DATA FROM CORE DATA
     func getGoalData(){
-       //Ambil data goal dari core data & tampilkan ke label yg ada
-        print("GET GOAL DATA")
-        
+       //Add from core data & show existing label
         let requests = NSFetchRequest<NSFetchRequestResult> (entityName: "Goal")
         
         do{
@@ -124,7 +121,7 @@ class MyGoalVC: UIViewController{
     
     //MARK: FETCH DATA DARI CORE DATA, COUNT JUMLAH DATA SELURUH ACTION PLAN &  ACTION PLAN YG STATUSNYA DONE
     func fetchActionData(){
-        //Set Supaya data balik ke 0 sblm di fetch
+        //Set data to 0 before fetch
         countAllActPlan = 0
         countDoneActPlan = 0
         

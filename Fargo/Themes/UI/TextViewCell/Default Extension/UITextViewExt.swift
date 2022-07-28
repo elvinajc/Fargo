@@ -9,18 +9,7 @@ import Foundation
 import UIKit
 
 extension UITextView{
-    
-//      @IBInspectable var doneAcc: Bool{
-//          get{
-//              return self.doneAcc
-//          }
-//          set (hasDone) {
-//              if hasDone{
-//                  addDoneButtonOnKeyboard()
-//              }
-//          }
-//      }
-//
+
       func addDoneButtonOnKeyboard(){
           let doneTVToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
           doneTVToolbar.barStyle = .default
@@ -40,13 +29,4 @@ extension UITextView{
      }
     
     
-//    func centerVerticalText() {
-//           self.textAlignment = .center
-//           let fitSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
-//           let size = sizeThatFits(fitSize)
-//           let calculate = (bounds.size.height - size.height * zoomScale) / 2
-//           let offset = max(1, calculate)
-//           contentOffset.y = -offset
-//    }
-
 }

@@ -49,38 +49,17 @@ extension GoalSettingVC: UITextViewDelegate{
                 return
         }
         
-//                if textView == goalField{
-//                    goalField.text = ""
-//                    goalField.textColor = UIColor.black
-//                    print(1)
-//                    return
-//                }
-//                if textView == reasonField{
-//                    reasonField.text = ""
-//                    reasonField.textColor = UIColor.black
-//                    print(2)
-//                    return
-//                }
-//
     }
         
-        
-
-    
-//    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
-//        print(textView.text); //the textView parameter is the textView where text was changed
-//    }
-    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
         switch textView.tag {
-            case 1 :     if goalField.text == "\n"{
-                        goalField.resignFirstResponder()
+            case 1 :    if goalField.text == "\n"{
+                            goalField.resignFirstResponder()
                         }
             case 2 :   if reasonField.text == "\n"{
-                        reasonField.resignFirstResponder()
-                        print("ALALALA")
+                            reasonField.resignFirstResponder()
                         }
             default: ""
         }

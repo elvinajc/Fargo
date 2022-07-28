@@ -151,8 +151,6 @@ extension ActionPlanDetailVC : UITableViewDataSource{
                     
                     case .endDate :
                      let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell", for: indexPath)as! DatePickerTableViewCell
-                    // let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
-                     //cell.backgroundColor = .clear
                      let setDates = SetDateSect(rawValue: indexPath.row)
                      cell.textLabel?.text = setDates?.description
                      cell.backgroundColor = .clear

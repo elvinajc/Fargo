@@ -23,7 +23,7 @@ class ActionPlanDetailVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureUIActPlanDetail()
-        print("Requirements \(requirements)")
+        //print("Requirements \(requirements)")
         
     }
 
@@ -45,7 +45,7 @@ class ActionPlanDetailVC: UIViewController {
         //MARK: -- SAVE ACTION DETAILS KE CORE DATA
         //Panggil function utk validasi row
         updateActionDetail()
-        print("Action Details Saved")
+        //print("Action Details Saved")
         
         //perform segue balik ke halaman action plam
         self.navigationController?.popViewController(animated: true)
@@ -54,8 +54,6 @@ class ActionPlanDetailVC: UIViewController {
     
     func setTableView(){
         //TableView
-        //self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
-        
         view.addSubview(actPlanDetTableView)
        
         //Register table view cell
@@ -72,21 +70,10 @@ class ActionPlanDetailVC: UIViewController {
         addTableViewConstraint()
         actPlanDetTableView.isScrollEnabled = true
         
-        //Row heightnya dinamis sesuai masing masing cell
-        //actPlanDetTableView.rowHeight = 44
-    
-        
     }
     
     func registerCell(){
         //MARK: -- Register cell :
-        //Register ngetes
-        //actPlanDetTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Test")
-        
-        //Register NIB Cell
-        //Register Pakai Cara Manual:
-        //self.actTableView.register(UINib(nibName: "ActionCell", bundle: nil), forCellReuseIdentifier: "actCell")
-
         //Register Pakai Helper (UINib + Loader):
         actPlanDetTableView.registerCell(type: TextFieldTableViewCell.self, identifier: "TextFieldCell")
         actPlanDetTableView.registerCell(type: TextViewTableViewCell.self, identifier: "TextViewCell")
@@ -100,13 +87,12 @@ class ActionPlanDetailVC: UIViewController {
         var constraints = [NSLayoutConstraint]()
         
         //ADD Constraint
-        constraints.append(actPlanDetTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)) //jarak 20 dari kiri
-        constraints.append(actPlanDetTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 20)) // jarak 20 dari kanan
-        constraints.append(actPlanDetTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)) // jarak 0 dari bawah
-        constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)) // jarak 20 dari atas
+        constraints.append(actPlanDetTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20))
+        constraints.append(actPlanDetTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 20))
+        constraints.append(actPlanDetTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0))
+        constraints.append(actPlanDetTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10))
         
-        constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 )) // lebar tableView 0.90 x dari view
-       //constraints.append(tableView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.33 )) // tinggi tableView 0.33 x dari view
+        constraints.append(actPlanDetTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.90 ))
         constraints.append(actPlanDetTableView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor))
         constraints.append(actPlanDetTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         
@@ -119,10 +105,6 @@ class ActionPlanDetailVC: UIViewController {
     func addGestureRecDismissKeyboard(){
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-
         view.addGestureRecognizer(tap)
     }
     
@@ -137,47 +119,39 @@ class ActionPlanDetailVC: UIViewController {
         let nameIndexPath = IndexPath(row: 0, section: 0)
         guard let actNameCell = actPlanDetTableView.cellForRow(at: nameIndexPath) as? TextFieldTableViewCell,
         let name = actNameCell.textFieldField.text else  { return }
-        
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
-            print("Name : \(name)")
-            //monster?.name = name
+    
+           // print("Name : \(name)")
         
         //Desc
         let descIndexPath = IndexPath(row: 0, section: 1)
         guard let descCell = actPlanDetTableView.cellForRow(at: descIndexPath) as? TextViewTableViewCell,
             let desc = descCell.textViewField.text  else { return }
-        if desc != descCell.placeholder {
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
-            //monster?.description = desc
-            print("Description : \(desc)")
-        }
+//        if desc != descCell.placeholder {
+//            //print("Description : \(desc)")
+//        }
         
         //SuccessParameter
         let successIndexPath = IndexPath(row: 0, section: 2)
         guard let successCell = actPlanDetTableView.cellForRow(at: successIndexPath) as? TextViewTableViewCell,
             let success = successCell.textViewField.text  else { return }
-        if success != successCell.placeholder {
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
-            //monster?.successParam = success
-            print("Success : \(success)")
-        }
+//        if success != successCell.placeholder {
+//            //print("Success : \(success)")
+//        }
         
         //LearningResources
         let learningIndexPath = IndexPath(row: 0, section: 3)
         guard let learningCell = actPlanDetTableView.cellForRow(at: learningIndexPath) as? TextViewTableViewCell,
             let learning = learningCell.textViewField.text  else { return }
-        if learning != learningCell.placeholder {
-            //MARK: KALO PAKE CORE DATA UTK SAVE INPUTAN KE CORE DATA
-            //monster?.learning = learning
-            print("Learning : \(learning)")
-        }
+//        if learning != learningCell.placeholder {
+//           // print("Learning : \(learning)")
+//        }
         
         //StartDate
         let sdateIndexPath = IndexPath(row: 0, section: 4)
         guard let sdateCell = actPlanDetTableView.cellForRow(at: sdateIndexPath) as? DatePickerTableViewCell,
             let sdate = sdateCell.dateField.text  else { return }
 
-            print("Start Date: \(sdate)")
+           // print("Start Date: \(sdate)")
         
         
         //EndDate
@@ -185,9 +159,9 @@ class ActionPlanDetailVC: UIViewController {
         guard let edateCell = actPlanDetTableView.cellForRow(at: edateIndexPath) as? DatePickerTableViewCell,
             let edate = edateCell.dateField.text  else { return }
  
-            print("End Date: \(edate)")
+           // print("End Date: \(edate)")
         
-        //MARK: ADD ACTION PLAN DATA KE CORE DATA
+        //MARK: ADD ACTION PLAN DATA TO CORE DATA
         if(selectedActionPlan == nil){
             let entity = NSEntityDescription.entity(forEntityName: "ActionPlan", in: context)
             
@@ -212,11 +186,8 @@ class ActionPlanDetailVC: UIViewController {
             // Save act data
             do {
                 try context.save()
-                
-                //Tambahin ke arraylist
+                //Add to arraylist
                 actionplans.append(newAct)
-                
-                
             } catch {
                 print(error)
             }
@@ -245,7 +216,6 @@ class ActionPlanDetailVC: UIViewController {
                    
                         try context.save()
   
-                        //selected.append(actPlan)
                         }
                     }
                 } catch  {

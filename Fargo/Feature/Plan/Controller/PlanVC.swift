@@ -59,7 +59,7 @@ class PlanVC: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        //Set left nav bar item titlenya dari back ke kosong
+        //Set left nav bar item titlenya from back ke ""
            let backItem = UIBarButtonItem()
            backItem.title = ""
            navigationItem.backBarButtonItem = backItem
@@ -126,10 +126,10 @@ class PlanVC: UIViewController {
     }
     
     func regisTableViewCell(){
-        //Register Pakai Cara Manual:
+        //Register Manually:
         //self.reqTableView.register(UINib(nibName: "RequirementCell", bundle: nil), forCellReuseIdentifier: "reqCell")
         
-        //Register Pakai Helper (UINib + Loader):
+        //Register using helper (UINib + Loader):
         reqTableView.registerCell(type: RequirementCell.self, identifier: "reqCell")
     }
     

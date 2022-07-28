@@ -84,16 +84,7 @@
 import UIKit
 
 class CircleProgressView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
-
+    
         //Properties
          var backLayer: CAShapeLayer!
          var foreLayer: CAShapeLayer!
@@ -114,7 +105,7 @@ class CircleProgressView: UIView {
             //Draw Fore Layer
             foreLayer = createCircleLayer(rect: rect, strokeColor: UIColor.darkGreen.cgColor, fillColor: UIColor.clear.cgColor, lineWidth: lineWidth)
    
-            //MARK: -- UTK SET FORELAYER FILLNYA
+            //MARK: -- Set FORELAYER FILL
             //Start 0 (biar ada animasi)
             calculateForeLayer(strokeEnd: 0.0)
 
@@ -160,7 +151,7 @@ class CircleProgressView: UIView {
             circleLayer.fillColor = fillColor
             circleLayer.lineWidth = lineWidth
         
-        //Buat bikin fillnya jd agak circular
+        //To make circular fill
         //circleLayer.lineCap = .round
             
         return circleLayer
@@ -168,9 +159,7 @@ class CircleProgressView: UIView {
     
 
     func calculateForeLayer(strokeEnd: Double){
-        //Utk set forelayer udah keisi berapa persen
-        //0.5 = 50%
-        print(foreLayer)
+        //Set percentage of forelayer
         foreLayer.strokeEnd = strokeEnd
     }
     

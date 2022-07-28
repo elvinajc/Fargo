@@ -7,10 +7,7 @@
 
 import UIKit
 import CoreData
-//
-//protocol receiveStatus{
-//    func buttonTap(status: String)
-//}
+
 
 class ActionCell: UITableViewCell {
 
@@ -32,11 +29,8 @@ class ActionCell: UITableViewCell {
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-//    var delegate: receiveStatus?
     var delegates: updateProgressLabel?
-    
-//    var countDone : Int = 0
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -53,10 +47,6 @@ class ActionCell: UITableViewCell {
     //Func
     @IBAction func checkmarkBtnAction(_ sender: UIButton) {
         
-        //Ganti button colornya : button.backgroundColor = UIColor.blue
-        //Ganti button sesuai kalo dipencet : checkmarkButton.setImage(image, forState: .normal)
-        //Update progress
-        
         print("TAGNYA" , sender.tag)
     
             if checkmarkButton.currentImage == uncheckIcon{
@@ -64,34 +54,16 @@ class ActionCell: UITableViewCell {
                 checkmarkButton.tintColor = .darkChoco
                 checkmarkButton.isSelected = true
                 actionStatus = "Done"
-                //delegate?.buttonTap(status: "Done")
-                
-//                countDone += 1
-                
                 delegates?.buttonClicked(status: "Done", numOfDone: 1, buttonRow: sender.tag)
-                
-                //updateCheckmarkStatus()
-                print("CHECKMARK Done")
+                //print("CHECKMARK Done")
                 
             } else {
                 checkmarkButton.setImage(uncheckIcon, for: .normal)
                 checkmarkButton.tintColor = .softGray
                 checkmarkButton.isSelected = false
                 actionStatus = "Undone"
-            //    delegate?.buttonTap(status: "Undone")
-                
-//                countDone -= 1
-                
-//                //Supaya value countDone ga dibawah 0
-//                if countDone < 0{
-//                    countDone = 0
-//                }
-                
                 delegates?.buttonClicked(status: "Undone", numOfDone: -1, buttonRow : sender.tag)
-                
-                
-               // updateCheckmarkStatus()
-                print("CHECKMARK Undone")
+               // print("CHECKMARK Undone")
             }
         
     }

@@ -37,7 +37,6 @@ extension PlanVC: UITableViewDelegate {
         //Component of Edit Action
         let edit = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
             //Munculin alert edit
-            //self!.loadEditAlert()
             let alertController = UIAlertController(title: "Edit Requirement Title", message: "Change the requirement title", preferredStyle: .alert)
             alertController.addTextField { (textField : UITextField!) -> Void in
                 
@@ -99,10 +98,8 @@ extension PlanVC: UITableViewDelegate {
         
         //Component of Delete Action
         let delete = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action, view, completionHandler) in
-            //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
-//            self?.deleteData(requeTitle: self!.requirements[indexPath.row].requirementTitle!)
-//            self?.requirements.remove(at: indexPath.row)
             
+            //MARK: -- REMOVE DATA REQUIREMENT BESERTA DENGAN ACTION PLANNYA DARI CORE DATA & ARRAY
             let reqToRemove = self?.requirements[indexPath.row]
             self?.context.delete(reqToRemove!)
            
@@ -129,25 +126,19 @@ extension PlanVC: UITableViewDelegate {
                 print(error)
             }
             
-
-            
-            
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.redTomato
         
         
-        //Masukin Edit & Delete ke Trailing Actionnya
+        //Add Edit & Delete to Trailing Action
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
         configuration.performsFirstActionWithFullSwipe = false
         
         return configuration
     }
-    ///////
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            //MARK: --KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN
-            //Buat ngetes masuk ke halaman action plan:
         self.performSegue(withIdentifier: "goToActionPlan", sender: requirements[indexPath.row])
     }
     
@@ -156,8 +147,6 @@ extension PlanVC: UITableViewDelegate {
 
 extension PlanVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //MARK: -- Harusnya return array of data requirement.count
-        //Sementara return 1 dlu buat coba
         return requirements.count
     }
     
@@ -165,9 +154,6 @@ extension PlanVC: UITableViewDataSource{
     
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "reqCell", for : indexPath) as? RequirementCell{
-        //MARK: -- Harusnya cell.reqTitle.text = self."namaArray"[indexPath.row]
-            //Sementara isi asal dulu:
-        //    cell.reqTitle.text = "ABCDEFG"
             cell.selectionStyle = .none
             cell.layer.cornerRadius = 8
             cell.reqCellView.layer.cornerRadius = 8

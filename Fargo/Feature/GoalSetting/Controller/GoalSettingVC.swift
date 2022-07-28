@@ -23,11 +23,6 @@ class GoalSettingVC: UIViewController {
     var firstLoad = true
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,10 +50,10 @@ class GoalSettingVC: UIViewController {
 
     @objc func done() {
         //MARK: -- SAVE GOAL & REASON KE CORE DATA
-        print("Done Set The Goals")
-        
-        print("Goal  : \(goalField.text!)")
-        print("Reason: \(reasonField.text!)")
+//        print("Done Set The Goals")
+//
+//        print("Goal  : \(goalField.text!)")
+//        print("Reason: \(reasonField.text!)")
     
         saveGoalReason()
         
@@ -98,24 +93,19 @@ class GoalSettingVC: UIViewController {
     func addGestureRecDismissKeyboard(){
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
     
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        //Causes the view (or one of its embedded text views) to resign the first responder status.
         view.endEditing(true)
     }
     
     //MARK: CORE DATA FUNCT
 
     func saveGoalReason(){
-       //goals.removeAll()
-        
       
         let entity = NSEntityDescription.entity(forEntityName: "Goal", in: context)
       
@@ -151,10 +141,9 @@ class GoalSettingVC: UIViewController {
             }
         }
         
-        print("GOALSNYA ADA : \(goals.count)")
+//        print("GOALSNYA ADA : \(goals.count)")
 
     }
-        
 
     func fetchGoalData(){
         let request = NSFetchRequest<NSFetchRequestResult> (entityName: "Goal")
@@ -175,8 +164,5 @@ class GoalSettingVC: UIViewController {
 
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      //
-    }
 
 }
