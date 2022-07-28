@@ -47,7 +47,7 @@ class ActionCell: UITableViewCell {
     //Func
     @IBAction func checkmarkBtnAction(_ sender: UIButton) {
         
-        print("TAGNYA" , sender.tag)
+      //  print("TAGNYA" , sender.tag)
     
             if checkmarkButton.currentImage == uncheckIcon{
                 checkmarkButton.setImage(checkIcon, for: .normal)

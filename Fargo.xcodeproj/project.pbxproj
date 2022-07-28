@@ -14,7 +14,6 @@
 		A419BA8B2887FEB30073E723 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA852887FEB30073E723 /* Goal+CoreDataClass.swift */; };
 		A419BA8C2887FEB30073E723 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA862887FEB30073E723 /* Goal+CoreDataProperties.swift */; };
 		A419BA97288804B00073E723 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA96288804B00073E723 /* ColorPallete.swift */; };
-		A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419BA982888077A0073E723 /* CoreDataManager.swift */; };
 		A419BA9E28881C9E0073E723 /* GoalSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */; };
 		A43A4CB7288D308800CB61AA /* UINIB+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */; };
 		A43A4CBD288D520500CB61AA /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A4CBB288D520500CB61AA /* TextFieldTableViewCell.swift */; };
@@ -63,7 +62,6 @@
 		A419BA852887FEB30073E723 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A419BA862887FEB30073E723 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A419BA96288804B00073E723 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
-		A419BA982888077A0073E723 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A419BA9D28881C9E0073E723 /* GoalSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetting.storyboard; sourceTree = "<group>"; };
 		A43A4CB6288D308800CB61AA /* UINIB+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINIB+Loader.swift"; sourceTree = "<group>"; };
 		A43A4CBB288D520500CB61AA /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,14 +137,6 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
-		A419BA9A2888077F0073E723 /* CoreDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				A419BA982888077A0073E723 /* CoreDataManager.swift */,
-			);
-			path = CoreDataManager;
-			sourceTree = "<group>";
-		};
 		A43A4CAD288D2C9700CB61AA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				A419BA8D2887FF780073E723 /* CoreDataModel */,
-				A419BA9A2888077F0073E723 /* CoreDataManager */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -505,7 +494,6 @@
 				A4A8F81828894150004F271C /* MyGoalVC.swift in Sources */,
 				A452AB4B288C08FE00B4F2DA /* ReqTableViewExtension.swift in Sources */,
 				A49DE2DE288841D80074CAF3 /* TextViewExtension.swift in Sources */,
-				A419BA992888077A0073E723 /* CoreDataManager.swift in Sources */,
 				A419BA882887FEB30073E723 /* ActionPlan+CoreDataProperties.swift in Sources */,
 				A4A8F8402889634B004F271C /* CircleProgressView.swift in Sources */,
 				A452AB4D288C091F00B4F2DA /* ActTableViewExtension.swift in Sources */,

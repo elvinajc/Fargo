@@ -214,8 +214,8 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
     func updateCheckmarkStatus(){
         do{
             actionplans[buttonRow].status! = actStatus
-            print("STATUSNYA : \(actionplans[buttonRow].status)")
-            print("ROW YG DIGANTI \(buttonRow)")
+//            print("STATUSNYA : \(actionplans[buttonRow].status)")
+//            print("ROW YG DIGANTI \(buttonRow)")
             self.numOfActDone.text = "\(self.doneCounts)"
                 
             try context.save()

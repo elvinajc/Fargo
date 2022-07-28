@@ -150,7 +150,7 @@ class PlanVC: UIViewController {
                 self.reqTitle = title.text!
                
             //MARK: --SAVE REQUIREMENT TITLE TO CORE DATA
-                print("Requirement Title: \(title.text!)")
+               // print("Requirement Title: \(title.text!)")
                 self.saveRequirementData()
                 
             })

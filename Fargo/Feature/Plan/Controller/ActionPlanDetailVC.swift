@@ -223,7 +223,7 @@ class ActionPlanDetailVC: UIViewController {
                 }
         }
         
-        print("JUMLAH ACTION PLAN: \(actionplans.count)")
+       // print("JUMLAH ACTION PLAN: \(actionplans.count)")
     }
     
     

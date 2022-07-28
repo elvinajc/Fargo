@@ -54,7 +54,7 @@ extension PlanVC: UITableViewDelegate {
                 let title = alertController.textFields![0] as UITextField
                
                 //MARK: --SAVE EDIT REQUIREMENT TITLE TO CORE DATA
-                print("Requirement Title Change To: \(title.text!)")
+               // print("Requirement Title Change To: \(title.text!)")
                 
                 let entity = NSEntityDescription.entity(forEntityName: "Requirement", in: self!.context)
                 
@@ -159,7 +159,7 @@ extension PlanVC: UITableViewDataSource{
             cell.reqCellView.layer.cornerRadius = 8
             
             let thisReq = self.requirements[indexPath.row]
-            print("THIS REQUIREMENT INCLUDE : \(requirements.count)")
+           // print("THIS REQUIREMENT INCLUDE : \(requirements.count)")
             cell.reqTitle.text = thisReq.requirementTitle
 
             return cell

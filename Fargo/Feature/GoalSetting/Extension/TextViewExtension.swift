@@ -38,12 +38,10 @@ extension GoalSettingVC: UITextViewDelegate{
             case 1 :
                         goalField.text = ""
                         goalField.textColor = UIColor.black
-                        print(1)
                         return
 
             case 2 :    reasonField.text = ""
                         reasonField.textColor = UIColor.black
-                        print(2)
                         return
             default:
                 return
@@ -73,7 +71,7 @@ extension GoalSettingVC: UITextViewDelegate{
                   case 1 :       goalField.text = "e.g. I want to be an iOS Developer at ABCDX company"
                                  goalField.textColor = UIColor.softGray
                             
-                  case 2 :      reasonField.text = "e.g. I want to get a new experience, get many connections, get big salary to buy a new house"
+                  case 2 :      reasonField.text = "e.g. I want to get a new experience, get many connections, get high salary to buy a new house"
                                 reasonField.textColor = UIColor.softGray
                           
                   default: ""

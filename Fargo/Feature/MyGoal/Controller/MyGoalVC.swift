@@ -143,8 +143,8 @@ class MyGoalVC: UIViewController{
             print("Fetch failed")
         }
         
-        print("Jumlah Done ActionPlan: ", countDoneActPlan)
-        print("Jumlah Seluruh ActionPlan: ", countAllActPlan)
+//        print("Jumlah Done ActionPlan: ", countDoneActPlan)
+//        print("Jumlah Seluruh ActionPlan: ", countAllActPlan)
         calculatePercentage()
     }
     
@@ -161,7 +161,7 @@ class MyGoalVC: UIViewController{
             nowPercent = 0
         }
         
-        print("Now Percent", nowPercent)
+        //print("Now Percent", nowPercent)
     }
 
 

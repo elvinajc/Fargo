@@ -38,8 +38,8 @@ extension ActionPlanVC: UITableViewDelegate {
             //MARK: -- REMOVE DATA  ACTION PLANNYA DARI CORE DATA & ARRAY
     
             //DELETE DATA
-            print("Index \(indexPath.row)")
-            print("Action \(self!.actionplans.count)")
+//            print("Index \(indexPath.row)")
+//            print("Action \(self!.actionplans.count)")
             let actToRemove = self?.actionplans[indexPath.row]
             
             self?.context.delete(actToRemove!)
@@ -68,8 +68,6 @@ extension ActionPlanVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             //MARK: -KALAU ROWNYA DI SELECT, DIA AKAN MASUK KE HALAMAN ACTION PLAN DETAIL UTK EDIT
             self.performSegue(withIdentifier: "goToEditActionPlan", sender: self)
-            print("Masuk ke Action Details untuk edit")
-      
     }
     
     
@@ -88,8 +86,8 @@ extension ActionPlanVC: UITableViewDataSource{
             cell.actCellView.layer.cornerRadius = 8
             
             let thisAct = self.actionplans[indexPath.row]
-            print("THIS ACTION PLANS INCLUDE : \(actionplans.count)")
-            print("THIS ROW IS \(indexPath.row)")
+//            print("THIS ACTION PLANS INCLUDE : \(actionplans.count)")
+//            print("THIS ROW IS \(indexPath.row)")
             cell.actNameLbl.text = thisAct.actionName
             
             let dateFormatter = DateFormatter()
