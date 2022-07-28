@@ -9,14 +9,22 @@ import CoreData
 import UIKit
 
 protocol updateProgressLabel{
-    func buttonClicked(numOfDone: Int)
+    func buttonClicked(status: String, numOfDone: Int, buttonRow: Int)
 }
 
 class ActionPlanVC: UIViewController, updateProgressLabel {
-    func buttonClicked(numOfDone: Int) {
-        self.numOfActDone.text = "\(numOfDone)"
+    func buttonClicked(status: String, numOfDone: Int, buttonRow: Int) {
+        print("STATUS SEKARANG: \(status)")
+        actStatus = status
+        
+        self.buttonRow = buttonRow
+        print("ROW YG DIPENCET : \(buttonRow)")
+        updateCheckmarkStatus()
+        
+        doneCount += numOfDone
+        self.numOfActDone.text = "\(doneCount)"
         print(self.actionplans)
-        doneCount = numOfDone
+        
     }
     
     
@@ -87,6 +95,11 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
            let backItem = UIBarButtonItem()
            backItem.title = ""
            navigationItem.backBarButtonItem = backItem
+
+        if (segue.identifier == "goToAddActionPlan"){
+            let destVC = segue.destination as? ActionPlanDetailVC
+            destVC?.requirements = selectedRequirement
+        }
         
         //Segue utk ke edit
         if (segue.identifier == "goToEditActionPlan"){
@@ -163,8 +176,8 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
         actionplans.removeAll()
         
         let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
-//        let pred = NSPredicate(format: "requirements == %@", self.selectedRequirement!.requirementTitle!)
-//        request.predicate = pred
+        let pred = NSPredicate(format: "requirements == %@", self.selectedRequirement!)
+        request.predicate = pred
         
         do{
             let results : NSArray = try context.fetch(request) as NSArray
@@ -173,49 +186,53 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
 
                 actionplans.append(act)
                
-                DispatchQueue.main.async {
-                    self.actTableView.reloadData()
-                    
-                    if self.actionplans.isEmpty {
-                        self.noActPlanLabel.isHidden = false
-                    } else {
-                        self.noActPlanLabel.isHidden = true
-                    }
-                    
-                    //Set Progress Label
-                    //MARK: -- Jumlah done still must be fixed
-//                    if act.status == "Done"{
-//                        doneCount += 1
-//                    }
-//                    
-//                    print("DONE COUNT \(doneCount)")
-//                    self.numOfActDone.text = "\(doneCount)"
-//                    print(self.actionplans)
-                    self.numOfActDone.text = "\(self.doneCount)"
-                    
-                    allActionCount = self.actionplans.count
-                    print("ALL ACTION = \(allActionCount)")
-                    self.numOfAllAct.text = "\(allActionCount)"
-                    
-                   // refreshControl.beginRefreshing()
+                
+                if act.status == "Done"{
+                    doneCount += 1
                 }
             }
         }catch{
             print(error)
+        }
+        
+        
+        DispatchQueue.main.async {
+            self.actTableView.reloadData()
+            
+            if self.actionplans.isEmpty {
+                self.noActPlanLabel.isHidden = false
+            } else {
+                self.noActPlanLabel.isHidden = true
+            }
+            
+            //Set Progress Label
+            //MARK: -- Jumlah done still must be fixed
+//
+//                    print("DONE COUNT \(doneCount)")
+//                    self.numOfActDone.text = "\(doneCount)"
+//                    print(self.actionplans)
+            self.numOfActDone.text = "\(self.doneCount)"
+            
+            allActionCount = self.actionplans.count
+            print("ALL ACTION = \(allActionCount)")
+            self.numOfAllAct.text = "\(allActionCount)"
+            
+           // refreshControl.beginRefreshing()
         }
     }
     
     
     func updateCheckmarkStatus(){
         
-        let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
+  //      let request = NSFetchRequest<NSFetchRequestResult> (entityName: "ActionPlan")
             do{
-                  let results : NSArray = try context.fetch(request) as NSArray
+                //  let results : NSArray = try context.fetch(request) as NSArray
                       
                       actionplans[buttonRow].status! = actStatus
                       print("STATUSNYA : \(actionplans[buttonRow].status)")
                       print("ROW YG DIGANTI \(buttonRow)")
-                      
+                      self.numOfActDone.text = "\(self.doneCount)"
+                
                       try context.save()
                 //  }
               }catch{
@@ -227,11 +244,12 @@ class ActionPlanVC: UIViewController, updateProgressLabel {
 
     
     //Get checkmarkButton row
-   @objc func whichButtonPressed(sender: UIButton) {
-       let buttonNumber = sender.tag
-        buttonRow = buttonNumber
-       print("ROW YG DIPENCET : \(buttonNumber)")
-    }
+//   @objc func whichButtonPressed(sender: UIButton) {
+//       let buttonNumber = sender.tag
+//        buttonRow = buttonNumber
+//       print("ROW YG DIPENCET : \(buttonNumber)")
+//       updateCheckmarkStatus()
+//    }
 }
 
 

@@ -115,7 +115,7 @@ class CircleProgressView: UIView {
             foreLayer = createCircleLayer(rect: rect, strokeColor: UIColor.darkGreen.cgColor, fillColor: UIColor.clear.cgColor, lineWidth: lineWidth)
    
             //MARK: -- UTK SET WARNA FORELAYER
-            calculateForeLayer()
+            calculateForeLayer(strokeEnd: 0.0)
 
             //Add layer ke view
             layer.addSublayer(backLayer)
@@ -166,10 +166,11 @@ class CircleProgressView: UIView {
     }
     
 
-    private func calculateForeLayer(){
+    func calculateForeLayer(strokeEnd: Double){
         //Utk set forelayer udah keisi berapa persen
         //0.5 = 50%
-        foreLayer.strokeEnd = 0.15
+        print(foreLayer)
+        foreLayer.strokeEnd = strokeEnd
     }
     
 

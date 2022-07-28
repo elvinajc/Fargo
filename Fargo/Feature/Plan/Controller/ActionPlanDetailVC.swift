@@ -14,15 +14,16 @@ class ActionPlanDetailVC: UIViewController {
     let actPlanDetTableView = UITableView(frame: .zero, style: .grouped)
     
     //MARK: -- PROPERTIES UTK CORE DATA
-    var requirements = [Requirement]()
+    var requirements : Requirement? = nil
     var actionplans = [ActionPlan]()
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var selectedActionPlan: ActionPlan? = nil
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureUIActPlanDetail()
+        print("Requirements \(requirements)")
         
     }
 
@@ -211,6 +212,7 @@ class ActionPlanDetailVC: UIViewController {
             newAct.setValue(desc, forKey: "actionDesc")
             newAct.setValue(success, forKey: "successParameter")
             newAct.setValue(learning, forKey: "learningResources")
+            newAct.setValue(requirements, forKey: "requirements")
           
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMMMM d, yyyy"
@@ -221,6 +223,9 @@ class ActionPlanDetailVC: UIViewController {
             newAct.setValue(ssdate, forKey: "startDate")
             newAct.setValue(eedate, forKey: "endDate")
             newAct.setValue("Undone", forKey: "status")
+            
+            
+            
             
             // Save req data
             do {

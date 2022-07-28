@@ -14,7 +14,7 @@ class MyGoalVC: UIViewController{
     
     //Properties
     @IBOutlet weak var progressView: UIView!
-    @IBOutlet weak var circleProgressView: UIView!
+    @IBOutlet weak var circleProgressView: CircleProgressView!
     
     @IBOutlet weak var progressPercentNumLabel: UILabel!
 
@@ -35,10 +35,16 @@ class MyGoalVC: UIViewController{
         // Do any additional setup after loading the view.
         configureMyGoalUI()
         getGoalData()
-    
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //Fetchnya disini
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        circleProgressView.calculateForeLayer(strokeEnd: 0.5)
+    }
     
     //MARK: -- FUNC Configure UI
     func configureMyGoalUI(){

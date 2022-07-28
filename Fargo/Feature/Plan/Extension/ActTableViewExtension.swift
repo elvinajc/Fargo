@@ -9,14 +9,13 @@ import CoreData
 import UIKit
 
 
-extension ActionPlanVC: UITableViewDelegate, receiveStatus {
-
-    func buttonTap(status: String) {
-        print("STATUS SEKARANG: \(status)")
-        actStatus = status
-        updateCheckmarkStatus()
-    }
-    
+extension ActionPlanVC: UITableViewDelegate {
+//
+//    func buttonTap(status: String) {
+//        print("STATUS SEKARANG: \(status)")
+//        actStatus = status
+//    }
+//    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //cell view height + dikit buat spacing (60 + 2)
         return 62
@@ -57,6 +56,8 @@ extension ActionPlanVC: UITableViewDelegate, receiveStatus {
             //MARK: -- REMOVE DATA  ACTION PLANNYA DARI CORE DATA & ARRAY
     
             //DELETE DATA
+            print("Index \(indexPath.row)")
+            print("Action \(self!.actionplans.count)")
             let actToRemove = self?.actionplans[indexPath.row]
             self?.context.delete(actToRemove!)
            
@@ -68,20 +69,25 @@ extension ActionPlanVC: UITableViewDelegate, receiveStatus {
             }
             
             //Refetch data
-            do{
-                self?.actionplans = try self!.context.fetch(ActionPlan.fetchRequest())
-                    DispatchQueue.main.async {
-                        self!.actTableView.reloadData()
-
-                        if self!.actionplans.isEmpty {
-                           self!.noActPlanLabel.isHidden = false
-                        } else {
-                            self!.noActPlanLabel.isHidden = true
-                        }
-                    }
-            } catch {
-                print(error)
-            }
+//            do{
+//                self?.actionplans = try self!.context.fetch(ActionPlan.fetchRequest())
+//                    DispatchQueue.main.async {
+//                        self!.actTableView.reloadData()
+//
+//                        if self!.actionplans.isEmpty {
+//                           self!.noActPlanLabel.isHidden = false
+//                        } else {
+//                            self!.noActPlanLabel.isHidden = true
+//                        }
+//                    }
+//            } catch {
+//                print(error)
+//            }
+            print("TEST")
+        
+                self!.fetchActionPlanData()
+        
+            print("ABCD")
 
             completionHandler(true)
         }
@@ -135,7 +141,7 @@ extension ActionPlanVC: UITableViewDataSource{
             cell.actDateLbl.text = edate
             
             //cek checkmark button row
-            cell.checkmarkButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
+           // cell.checkmarkButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
             cell.checkmarkButton.tag = indexPath.row
          
         
@@ -150,7 +156,7 @@ extension ActionPlanVC: UITableViewDataSource{
             }
 
             
-            cell.delegate = self
+         //   cell.delegate = self
             cell.delegates = self
 
             return cell
