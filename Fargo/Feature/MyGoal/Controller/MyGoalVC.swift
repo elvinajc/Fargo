@@ -30,6 +30,9 @@ class MyGoalVC: UIViewController{
     var actionPlan = [ActionPlan]()
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var countAllActPlan = 0
+    var countDoneActPlan = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,11 +42,17 @@ class MyGoalVC: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //Fetchnya disini
+        //Fetch action data
+        fetchActionData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //MARK: SET CIRCLE PROGRESS BAR
         circleProgressView.calculateForeLayer(strokeEnd: 0.5)
+        
+        //Set percentLabel
+        
     }
     
     //MARK: -- FUNC Configure UI
@@ -56,12 +65,6 @@ class MyGoalVC: UIViewController{
     func setProgressView(){
         //Set progress view to rounded corner
         progressView.layer.cornerRadius = 20
-        
-        //Set circle progress bar
-        
-        
-        //Set percentLabel
-        //get percent data dari core data
 
     }
     
@@ -114,11 +117,32 @@ class MyGoalVC: UIViewController{
         
     }
     
-    //MARK: FETCH DATA DARI CORE DATA, COUNT JUMLAH DATA YG STATUSNYA COMPLETE & SET CIRCLE PROGRESS BAR
-    func getActionData(){
+    //MARK: FETCH DATA DARI CORE DATA, COUNT JUMLAH DATA SELURUH ACTION PLAN &  ACTION PLAN YG STATUSNYA DONE
+    func fetchActionData(){
+        //Set Supaya data balik ke 0 sblm di fetch
+        countAllActPlan = 0
+        countDoneActPlan = 0
+        
         //Count jumlah task yg statusnya "complete",
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ActionPlan")
+        do {
+            let results: NSArray = try context.fetch(request) as NSArray
+                for result in results{
+                    countAllActPlan += 1
+                    
+                    let act = result as! ActionPlan
+                    if act.status == "Done"{
+                        countDoneActPlan += 1
+                    }
+                }
+        } catch  {
+            print("Fetch failed")
+        }
+        
+        print("Jumlah Done ActionPlan: ", countDoneActPlan)
+        print("Jumlah Seluruh ActionPlan: ", countAllActPlan)
     }
-
     
+
 }
 

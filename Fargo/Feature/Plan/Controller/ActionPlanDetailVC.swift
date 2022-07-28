@@ -224,15 +224,8 @@ class ActionPlanDetailVC: UIViewController {
             newAct.setValue(eedate, forKey: "endDate")
             newAct.setValue("Undone", forKey: "status")
             
-            
-            
-            
-            // Save req data
+            // Save action data
             do {
-                //MARK: --Coba Add Req to the goal
-    //            let req = Requirement(context: context)
-    //            req.addToActionPlan(newAct)
-
                 try context.save()
                 
                 //Tambahin ke arraylist
